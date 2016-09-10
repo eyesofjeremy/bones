@@ -455,6 +455,10 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+/*********************
+PAGE WIDTH
+Based on ems.
+*********************/
 /******************************************************************
 Site Name:
 Author:
@@ -649,7 +653,7 @@ These are the widths for the mobile grid.
 There are four types, but you can add or customize
 them however you see fit.
 */
-@media (max-width: 767px) {
+@media (max-width: 47.99em) {
   .m-all {
     float: left;
     padding-right: 0.75em;
@@ -681,7 +685,7 @@ them however you see fit.
     padding-right: 0.75em;
     width: 75%; } }
 /* Portrait tablet to landscape */
-@media (min-width: 768px) and (max-width: 1029px) {
+@media (min-width: 48em) and (max-width: 59.99em) {
   .t-all {
     float: left;
     padding-right: 0.75em;
@@ -733,7 +737,7 @@ them however you see fit.
     padding-right: 0.75em;
     width: 80%; } }
 /* Landscape to small desktop */
-@media (min-width: 1030px) {
+@media (min-width: 60em) {
   .d-all {
     float: left;
     padding-right: 0.75em;
