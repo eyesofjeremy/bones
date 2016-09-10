@@ -82,3 +82,22 @@ p {
           font-feature-settings: "liga", "dlig";
 }
 
+/*
+Mixins for typography
+*/
+// use: @extend %crispType
+%crispType {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+}
+
+// use: @extend %strongType
+%strongType {
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;	
+}
+
+%kern {
+  font-feature-settings: "kern";
+  font-kerning: normal;
+}
