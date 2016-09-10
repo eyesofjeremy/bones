@@ -1,0 +1,75 @@
+$page_xs	  : 20em;
+  $page_xs-	: ( $page_xs - .01em );
+$page_s		  :	32em;
+  $page_s-	: ( $page_s - .01em );
+$page_ms	  :	40em;
+  $page_ms-	: ( $page_ms - .01em );
+$page_m		  : 48em;
+  $page_m-	: ( $page_m - .01em );
+$page_l		  : 60em;
+  $page_l-	: ( $page_l - .01em );
+$page_xl	  : 78em;
+  $page_xl-	: ( $page_xl - .01em );
+$page_xxl	  : 108em;
+  $page_xxl-: ( $page_xxl - .01em );
+
+/*--------------------------------------------------------------
+## Layout Queries
+--------------------------------------------------------------*/
+@import "../layout/_0_base";
+
+@media( min-width: $page_s ) {
+  @import "../layout/_1_page-small";
+}
+
+@media( min-width: $page_m ) {
+  @import "../layout/_2_page-medium";
+}
+
+@media( min-width: $page_l ) {
+  @import "../layout/_3_page-large";
+}
+
+@media( min-width: $page_xl ) {
+  @import "../layout/_4_page-xlarge";
+}
+
+body.debug:before {
+	content: 'no mq';
+	position: fixed;
+	z-index: 9;
+	font-size: 1rem;
+	display: block;
+	top: 0;
+	padding: .25em 0;
+	background: yellow;
+	opacity: 0.4;
+	@media only screen and (min-width: $page_xs) {
+		content: 'xsmall';
+		width: $page_xs;
+	}
+	@media only screen and (min-width: $page_s) {
+		content: 'small';
+		width: $page_s;
+	}
+	@media only screen and (min-width: $page_ms) {
+		content: 'small2';
+		width: $page_ms;
+	}
+	@media only screen and (min-width: $page_m) {
+		content: 'medium';
+		width: $page_m;
+	}
+	@media only screen and (min-width: $page_l) {
+		content: 'large';
+		width: $page_l;
+	}
+	@media only screen and (min-width: $page_xl) {
+		content: 'xlarge';
+		width: $page_xl;
+	}
+	@media only screen and (min-width: $page_xxl) {
+		content: 'xxlarge';
+		width: $page_xxl;
+	}
+}

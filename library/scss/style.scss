@@ -58,80 +58,18 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 // forms (inputs & labels)
 @import "modules/forms";
 
-/*********************
-BASE (MOBILE) SIZE
-This are the mobile styles. It's what people see on their phones. If
-you set a great foundation, you won't need to add too many styles in
-the other stylesheets. Remember, keep it light: Speed is Important.
-*********************/
-
-// styles in base.scss
-@import "breakpoints/base";
 
 /*********************
-LARGER MOBILE DEVICES
-This is for devices like the Galaxy Note or something that's
-larger than an iPhone but smaller than a tablet. Let's call them
-tweeners.
+MEDIA QUERIES
+These are organized with em-based breakpoints. The breakpoints can be
+changed in _queries.scss, and perhaps even should be, depending on your 
+design. Rather than basing breakpoints on specific pixels, this approach 
+allows the design to relate to the actual content. If somebody enlarges 
+the page to read something, the design should adapt.
+The layout files are in, um, the layouts folder.
+Have fun!
 *********************/
-@media only screen and (min-width: 481px) {
-
-	// styles in 481up.scss
-	@import "breakpoints/481up";
-
-} // end of media query
-
-/*********************
-TABLET & SMALLER LAPTOPS
-This is the average viewing window. So Desktops, Laptops, and
-in general anyone not viewing on a mobile device. Here's where
-you can add resource intensive styles.
-*********************/
-@media only screen and (min-width: 768px) {
-
-	// styles in 768up.scss
-	@import "breakpoints/768up";
-
-} // end of media query
-
-/*********************
-DESKTOP
-This is the average viewing window. So Desktops, Laptops, and
-in general anyone not viewing on a mobile device. Here's where
-you can add resource intensive styles.
-*********************/
-@media only screen and (min-width: 1030px) {
-
-	// styles in 1030up.scss
-	@import "breakpoints/1030up";
-
-} // end of media query
-
-/*********************
-LARGE VIEWING SIZE
-This is for the larger monitors and possibly full screen viewers.
-*********************/
-@media only screen and (min-width: 1240px) {
-
-	// styles in 1240up.scss
-	@import "breakpoints/1240up";
-
-} // end of media query
-
-/*********************
-RETINA (2x RESOLUTION DEVICES)
-This applies to the retina iPhone (4s) and iPad (2,3) along with
-other displays with a 2x resolution. You can also create a media
-query for retina AND a certain size if you want. Go Nuts.
-*********************/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min--moz-device-pixel-ratio: 1.5),
-       only screen and (min-device-pixel-ratio: 1.5) {
-
-	// styles in 2x.scss
-	@import "breakpoints/2x";
-
-} // end of media query
+@import "partials/queries";
 
 /*********************
 PRINT STYLESHEET

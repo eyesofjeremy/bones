@@ -5,9 +5,14 @@ Author:
 Stylesheet: Base Mobile Stylesheet
 
 Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
+loaded by mobile devices (as well as all browsers). 
+You want to keep it as minimal as possible. This is called at the 
+top of the main stylesheet and will be used across all viewports.
+
+Note: This will also be the end of the line for IE<8, so consider
+that, too. In general, it's best to set a max-width here which
+will keep the design looking like a mobile screen design for those
+browsers.
 
 ******************************************************************/
 
