@@ -147,6 +147,8 @@ h3, .h3 {
 h4, .h4 {
 	font-size: 1.1em;
 	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 h5, .h5 {
@@ -177,7 +179,7 @@ HEADER STYLES
 
 .quick-actions {
   position: absolute;
-  top: .5em;
+  top: 1em;
   left: 0;
   right: 0;
   font-size: .75em;
@@ -922,6 +924,17 @@ FOOTER STYLES
 	clear: both;
 	background-color: $gray_cool;
 	color: #fff;
+	
+	font-size: .875em;
+	
+	h4 {
+	  color: $gray_med;
+	  font-size: 1.5em;
+	}
+	
+	a {
+	  color: #fff;
+	}
 }
 
 	/*

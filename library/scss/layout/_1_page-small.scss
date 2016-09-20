@@ -22,9 +22,16 @@ HEADER STYLES
 *********************/
 
 .quick-actions {
+  left: auto;
+  text-align: right;
   
+  .action {
+    width: auto;
+  }
+
   .tel .act {
     display: inline;
+    margin-right: -1.5em;
   }
 }
 
