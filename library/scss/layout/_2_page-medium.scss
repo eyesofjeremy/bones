@@ -20,8 +20,9 @@ body {}
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
-	width: 760px;
+.site {
+	max-width: $page_l;
+	box-shadow: 0 0 2.5em 1em rgba( 0, 0, 0, .25 );
 }
 
 /*********************
