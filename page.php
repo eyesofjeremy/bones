@@ -11,6 +11,8 @@
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 								<header class="article-header">
+								
+								  <?php bones_featured_image(); ?>
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
