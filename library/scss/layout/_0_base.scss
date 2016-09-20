@@ -74,9 +74,11 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
-	width: 96%;
+.site {
+	width: 100%;
 	margin: 0 auto;
+	background: #fff;
+	max-width: $page_m; // change in queries for larger width site
 }
 
 /*********************
@@ -84,7 +86,7 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color: $link_color;
 
 	/* on hover */
 	&:hover, &:focus {

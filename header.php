@@ -42,7 +42,7 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container">
+		<div id="container" class="site">
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
