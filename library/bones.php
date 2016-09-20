@@ -245,6 +245,11 @@ function bones_load_plugins() {
 // Check for a constant:
 //	if (!defined('MY_PLUGIN_CONSTANT')) {
 
+  // Check for Quick Contact Info
+	if ( ! function_exists('qcinfo_add_admin_menu') ) {
+		// load Social if not already loaded
+		include_once(TEMPLATEPATH.'/library/plugins/quick-contact-info/quick-contact-info.php');
+	}
 }
 
 /*********************
