@@ -17,43 +17,56 @@ Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
 
+$csp_citron:        #cddc2c;
+$csp_blue:          #1c86c7;
+$csp_green_soft:    #819051;
+
+$gray_cool:         #58595b;
+$gray_cool_2:       #6d6e71;
+
+$gray_dark:         #333;
+$gray_med_text:     #707070;
+$gray_med:          #999;
+$gray_light:        #b7b7b7;
+
 $alert-yellow:      #ebe16f;
 $alert-red:         #fbe3e4;
 $alert-green:       #e6efc2;
 $alert-blue:        #d5edf8;
 
-$black:             #323944;
+$black:             #000;
 $white:             #fff;
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
-$text-color:        #5c6b80;
+$text-color:        $gray_cool;
 $meta-gray:         #9fa6b4;
 
 $tan:               #eceee5;
 
 $green:             #7dd667;
 
-$bones-pink:        #f01d4f;
 $blue:              #2980b9;
 
-$link-color:        $bones-pink;
-$link-hover:        darken($link-color, 9%);
+$link_color:        $csp_blue;
+$link-hover:        darken($link_color, 9%);
 
-$border-color:      #ccc;
+$heading_color:     $csp_green_soft;
+
+$button_color:      $csp_citron;
+
+$border_color:      #ccc;
+$border_accent:     $csp_blue;
 $disabled-gray:     #cfcfcf;
 
-
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
-
-/*********************
-PAGE WIDTH
-Based on ems.
-*********************/
+//* Here's a great tutorial on how to
+// use color variables properly:
+// http://sachagreif.com/sass-color-variables/
+//*/
+//*********************
+// PAGE WIDTH
+// Based on ems.
+//*********************/
 $page_xs	  : 20em;
   $page_xs-	: ( $page_xs - .01em );
 $page_s		  :	32em;
@@ -62,7 +75,7 @@ $page_ms	  :	40em;
   $page_ms-	: ( $page_ms - .01em );
 $page_m		  : 48em;
   $page_m-	: ( $page_m - .01em );
-$page_l		  : 60em;
+$page_l		  : 67.5em;
   $page_l-	: ( $page_l - .01em );
 $page_xl	  : 78em;
   $page_xl-	: ( $page_xl - .01em );
