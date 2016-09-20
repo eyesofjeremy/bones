@@ -2,6 +2,13 @@
 
 				<div id="inner-footer" class="wrap cf">
 
+          <a href="<?php echo home_url(); ?>" class="logo" rel="nofollow">
+          <img 
+            src="<?php bloginfo('template_directory'); ?>/library/images/centerstream-white.png" 
+            srcset="<?php bloginfo('template_directory'); ?>/library/images/centerstream-white.png 1x, 
+                    <?php bloginfo('template_directory'); ?>/library/images/centerstream-white@2x.png 2x" 
+            alt="Center Stream Pilates & Bodywork" border="0">
+          </a>
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
     					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)

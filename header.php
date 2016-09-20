@@ -48,8 +48,15 @@
 
 				<div id="inner-header" class="wrap cf">
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					<p id="logo" itemscope itemtype="http://schema.org/Organization">
+					<a href="<?php echo home_url(); ?>" rel="nofollow" class="logo">
+          <img 
+            src="<?php bloginfo('template_directory'); ?>/library/images/centerstreampilates.png" 
+            srcset="<?php bloginfo('template_directory'); ?>/library/images/centerstreampilates.png 1x, 
+                    <?php bloginfo('template_directory'); ?>/library/images/centerstreampilates@2x.png 2x" 
+            alt="Center Stream Pilates & Bodywork" border="0">
+          </a>
+					</p>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
