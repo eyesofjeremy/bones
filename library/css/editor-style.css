@@ -204,15 +204,6 @@ body#tinymce.wp-editor {
   Need help w/ choosing your colors? Try this site out:
   http://0to255.com/
   *********************/
-  /*
-  Here's a great tutorial on how to
-  use color variables properly:
-  http://sachagreif.com/sass-color-variables/
-  */
-  /*********************
-  PAGE WIDTH
-  Based on ems.
-  *********************/
   /******************************************************************
   Site Name:
   Author:
@@ -356,7 +347,7 @@ body#tinymce.wp-editor {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
+  color: #58595b;
   -webkit-font-smoothing: antialiased;
   /*********************
 	LINK STYLES
@@ -582,11 +573,11 @@ body#tinymce.wp-editor {
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig"; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #f01d4f;
+    color: #1c86c7;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #d10e3c; }
+      color: #166b9f; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
@@ -661,7 +652,7 @@ body#tinymce.wp-editor {
     max-width: 100%;
     height: auto; }
   body#tinymce.wp-editor pre {
-    background: #323944;
+    background: #000;
     color: #f8f9fa;
     font-size: 0.9em;
     padding: 1.5em;

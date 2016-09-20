@@ -34,15 +34,6 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
-/*********************
-PAGE WIDTH
-Based on ems.
-*********************/
 /******************************************************************
 Site Name:
 Author:
@@ -184,6 +175,18 @@ anymore, so just be aware that if you drop
 them in here, they won't work.
 */
 /*********************
+HEADER STYLES
+*********************/
+.quick-actions {
+  left: auto;
+  text-align: right; }
+  .quick-actions .action {
+    width: auto; }
+  .quick-actions .tel .act {
+    display: inline;
+    margin-right: -1.5em; }
+
+/*********************
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
@@ -202,6 +205,8 @@ NAVIGATION STYLES
         you can use hover styles here even though this size
         has the possibility of being a mobile device.
         */ }
+        .menu ul li a:hover, .menu ul li a:focus {
+          color: #000; }
 
 /* end .menu */
 /*********************
@@ -249,12 +254,27 @@ GENERAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+.site {
+  max-width: 67.5em;
+  box-shadow: 0 0 2.5em 1em rgba(0, 0, 0, 0.25); }
+
 .wrap {
-  width: 760px; }
+  padding: 0 3em; }
 
 /*********************
 HEADER STYLES
 *********************/
+.header {
+  padding-top: 0; }
+
+.logo {
+  margin-left: -3em;
+  padding-left: 3.5em;
+  padding-right: 3.5em; }
+
+.quick-actions {
+  right: 3em; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -263,8 +283,9 @@ NAVIGATION STYLES
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */ }
+  .header .nav {
+    padding-left: 4.375em; }
   .nav ul {
-    background: #323944;
     margin-top: 0; }
   .nav li {
     float: left;
@@ -279,9 +300,6 @@ NAVIGATION STYLES
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
       */ }
-      .nav li a:hover, .nav li a:focus {
-        color: #fff;
-        text-decoration: underline; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
@@ -318,6 +336,26 @@ NAVIGATION STYLES
 
 /* end .nav */
 /*********************
+POSTS & CONTENT STYLES
+*********************/
+#content {
+  margin-top: 0; }
+
+.hentry {
+  margin-bottom: 1.5em;
+  padding: 1.5em 0; }
+  .hentry header {
+    margin: 0 -3em; }
+    .hentry header .featured-image + h1 {
+      position: absolute;
+      bottom: 1.5em;
+      left: 1.75em;
+      color: white;
+      padding: .1875em .75em;
+      box-sizing: border-box;
+      min-width: 40%; }
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 .sidebar {
@@ -328,8 +366,7 @@ SIDEBARS & ASIDES
   margin-bottom: 0.75em; }
 
 .widget {
-  padding: 0 10px;
-  margin: 2.2em 0; }
+  margin-top: 2.5em; }
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */ }
@@ -374,9 +411,6 @@ This typically targets devices larger than a tablet, but it's your
 design. Shift the media queries to fit your evil scheme.
 
 ******************************************************************/
-.wrap {
-  width: 1040px; }
-
 /*
 you can call the larger styles if you want, but there's really no need
 */
