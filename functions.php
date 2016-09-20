@@ -73,8 +73,9 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'featured-l', 1080, 384, true );
+add_image_size( 'featured-m', 675, 240, true );
+add_image_size( 'featured-s', 405, 144, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -100,8 +101,9 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
+      'featured-l' => __('1080px by 384px'),
+      'featured-m' => __('675px by 240px'),
+      'featured-s' => __('405px by 144px'),
     ) );
 }
 
@@ -229,6 +231,34 @@ function bones_comments( $comment, $args, $depth ) {
   <?php // </li> is added by WordPress automatically ?>
 <?php
 } // don't remove this bracket!
+
+/************* RESPONSIVE FEATURED IMAGE *********************/
+
+// Assumes 3 sizes available, setup above:
+// - featured-l
+// - featured-m
+// - featured-s
+
+function bones_featured_image() {
+  global $post;
+  $thumbnail_id = get_post_thumbnail_id( $post->ID );
+  $thumbnail_data = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+  $alt = $thumbnail_data[0]->post_title;
+  
+  if( $thumbnail_id ) {
+    $image = wp_get_attachment_image_src( $thumbnail_id, 'post-thumbnail' );
+  
+    $img_src = wp_get_attachment_image_url( $thumbnail_id, 'featured-s' );
+    $img_srcset = wp_get_attachment_image_srcset( $thumbnail_id, 'featured-l' );
+  
+  
+    echo '<figure class="featured-image">
+    <img src="' . esc_url( $img_src ) . '"
+       srcset="' . esc_attr( $img_srcset ) . '"
+       alt="' . $alt . '">
+    </figure>';
+  }
+}
 
 
 /*
