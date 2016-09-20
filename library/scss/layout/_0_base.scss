@@ -161,15 +161,18 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+  position: relative;
+	background-color: #fff;
+  padding-top: 3em;
 }
 
-	#logo {
-		margin: 0.75em 0;
+  .logo {
+    display: inline-block;
+    padding: 1.375em 1.375em .5em;
+  }
 
-		a {
-			color: $white;
-		}
+	#logo {
+	  margin: 0;
 	}
 
 /*********************
@@ -192,7 +195,7 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			color: $link_color;
 			text-decoration: none;
 			padding: 0.75em;
 
@@ -264,14 +267,22 @@ POSTS & CONTENT STYLES
 }
 
 		.hentry {
-			background-color: $white;
-			border-radius: 3px;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
 
-			header {
-				border-bottom: 1px solid $light-gray;
+			header, footer {
+			  position: relative;
 				padding: 1.5em;
+			}
+			
+			header {
+			  .featured-image {
+			    margin: -1.5em -1.5em 0;
+			    
+			    img {
+			      display: block;
+			      max-width: 100%;
+			    }			  
+			  }
 			}
 
 			footer {
@@ -288,7 +299,8 @@ POSTS & CONTENT STYLES
 		.single-title,
 		.page-title,
 		.entry-title {
-			margin: 0;
+			margin: 1em 0 0;
+			color: $heading_color;
 		}
 
 		.single-title {}
@@ -835,6 +847,7 @@ SIDEBARS & ASIDES
 	.widgettitle {}
 
 	.widget {
+	  margin: 1.5em 1.5em 0; // same as content padding
 
 		ul {
 
@@ -894,4 +907,6 @@ FOOTER STYLES
 	} /* end .footer-links */
 
 
-	.copyright {}
+	.copyright {
+	  padding: 1.5em;
+	}
