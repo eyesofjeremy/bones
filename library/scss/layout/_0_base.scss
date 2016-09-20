@@ -159,15 +159,18 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+  position: relative;
+	background-color: #fff;
+  padding-top: 3em;
+
+  .logo {
+    display: inline-block;
+    padding: 1.375em 1.375em .5em;
+  }
 }
 
 	#logo {
-		margin: 0.75em 0;
-
-		a {
-			color: $white;
-		}
+	  margin: 0;
 	}
 
 /*********************

@@ -29,7 +29,13 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+
+  .logo {
+    padding-left: 57px;
+    padding-right: 57px;
+  }
+}
 
 	#logo {}
 
