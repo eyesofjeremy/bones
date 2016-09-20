@@ -223,6 +223,29 @@ function bones_theme_support() {
 
 } /* end bones theme support */
 
+/*********************
+INTEGRATED PLUGINS
+Thank you Alex King
+http://alexking.org/blog/2012/07/09/include-plugin-in-wordpress-theme
+*********************/
+
+// Run this code on 'after_theme_setup', when plugins have already been loaded.
+add_action('after_setup_theme', 'bones_load_plugins');
+// This function loads the plugin.
+function bones_load_plugins() {
+// Check to see if your plugin has already been loaded. This can be done in several
+// ways - here are a few examples:
+//
+// Check for a class:
+//	if (!class_exists('MyPluginClass')) {
+//
+// Check for a function:
+//	if (!function_exists('my_plugin_function_name')) {
+//
+// Check for a constant:
+//	if (!defined('MY_PLUGIN_CONSTANT')) {
+
+}
 
 /*********************
 RELATED POSTS FUNCTION
