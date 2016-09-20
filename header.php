@@ -79,6 +79,12 @@
 
 					</nav>
 
+
+          <aside class="quick-actions">
+            <span class="tel action"><span class="act"><?php _e('Phone us at: ', 'bonestheme'); ?></span><?php echo do_shortcode('[phone]'); ?></span>
+            <span class="book action"><a href="#" class="button"><?php _e('Book now', 'bonestheme'); ?></a></span>
+          </aside>
+          
 				</div>
 
 			</header>
