@@ -312,7 +312,19 @@ POSTS & CONTENT STYLES
 
 			header {
 				border-bottom: 1px solid $light-gray;
+			  position: relative;
 				padding: 1.5em;
+			}
+			
+			header {
+			  .featured-image {
+			    margin: -1.5em -1.5em 0;
+			    
+			    img {
+			      display: block;
+			      max-width: 100%;
+			    }			  
+			  }
 			}
 
 			footer {
