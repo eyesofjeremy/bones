@@ -272,7 +272,7 @@ If you use this, don't forget to uncomment the
 add_action below!
 */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway');
+  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:500');
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
