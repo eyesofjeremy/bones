@@ -123,7 +123,7 @@ body#tinymce.wp-editor {
 		tr {
 			border-bottom: 1px solid $gray;
 			&:nth-child(even) {
-				background-color: $light-gray;
+				background-color: $gray_light;
 			}
 		}
 
@@ -137,7 +137,7 @@ body#tinymce.wp-editor {
 		}
 
 		th {
-			background-color: $light-gray;
+			background-color: $gray_light;
 			border-bottom: 1px solid $gray;
 			border-right: 1px solid $gray;
 
@@ -181,7 +181,7 @@ body#tinymce.wp-editor {
 
 		pre {
 			background: $black;
-			color: $light-gray;
+			color: $gray_light;
 			font-size: 0.9em;
 			padding: 1.5em;
 			margin: 0 0 1.5em;
