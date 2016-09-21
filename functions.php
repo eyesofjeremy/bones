@@ -72,10 +72,15 @@ if ( ! isset( $content_width ) ) {
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
-// Thumbnail sizes
-add_image_size( 'featured-l', 1080, 384, true );
-add_image_size( 'featured-m', 675, 240, true );
-add_image_size( 'featured-s', 405, 144, true );
+// Add New Image Size
+add_image_size( 'small', 384 );
+
+// Update Medium and Large Size images to fit our theme design
+update_option( 'medium_size_w', 576 );
+update_option( 'medium_size_h', 342 );
+
+update_option( 'large_size_w', 1080 );
+update_option( 'large_size_h', 640 );
 
 /*
 to add more sizes, simply copy a line from above
@@ -101,9 +106,7 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-      'featured-l' => __('1080px by 384px'),
-      'featured-m' => __('675px by 240px'),
-      'featured-s' => __('405px by 144px'),
+      'small' => __('384px wide'),
     ) );
 }
 
@@ -242,14 +245,15 @@ function bones_comments( $comment, $args, $depth ) {
 function bones_featured_image() {
   global $post;
   $thumbnail_id = get_post_thumbnail_id( $post->ID );
-  $thumbnail_data = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
-  $alt = $thumbnail_data[0]->post_title;
-  
   if( $thumbnail_id ) {
+
+    $thumbnail_data = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+    $alt = $thumbnail_data[0]->post_title;
+  
     $image = wp_get_attachment_image_src( $thumbnail_id, 'post-thumbnail' );
   
-    $img_src = wp_get_attachment_image_url( $thumbnail_id, 'featured-s' );
-    $img_srcset = wp_get_attachment_image_srcset( $thumbnail_id, 'featured-l' );
+    $img_src = wp_get_attachment_image_url( $thumbnail_id, 'small' );
+    $img_srcset = wp_get_attachment_image_srcset( $thumbnail_id, 'large' );
   
   
     echo '<figure class="featured-image">
