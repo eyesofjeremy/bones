@@ -348,6 +348,144 @@ POSTS & CONTENT STYLES
 	.tags {
 		margin: 0;
 	}
+	
+	.pricing {
+	  li {
+      display: inline-block;
+      font-weight: bold;
+      margin-right: 1.5em;
+    }
+  }
+  
+  .tips {
+    background: $gray_light;
+    margin: 0 -1em 1.5em;
+    padding: 1em 1em 1px;
+  
+    h4 {
+      background: $gray_med;
+      color: #fff;
+      font-size: 1.5em;
+      padding: .33em .66em;
+      margin: -.66em -.66em .33em;
+    }
+  }
+  
+  .schedule {
+    position: relative;
+  }
+  
+  .toggle {
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  .button {
+    @extend a.button;
+    width: 12em;
+    transition: .2s all;
+    
+    span {
+      display: inline-block;
+    }
+
+    .toggle:checked + & {
+    
+      span {
+        width: 0;
+        height: 0;
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      &:after {
+        content: 'Close';
+      }
+    }
+  }
+  
+  .hc_sched {
+    color: $csp_green_soft;
+    margin: 1em -1.5em;
+    padding: 0 1.5em;
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s all ease-in-out;
+    opacity: 0;
+    
+    .toggle:checked ~ & {
+      padding: .5em 1.5em;
+      border: solid $csp_citron;
+      border-width: .25em 0;
+      max-height: 800px;
+      overflow: auto;
+      background: #f3f9b7;
+      opacity: 1;
+    }
+    
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    
+    .header {
+      background: none;
+    }
+    
+    .action_icon {
+     
+      img {
+        margin: 0;
+      }
+    }
+    
+    h1 {
+      font-size: 1em;
+      font-weight: bold;
+      font-family: $body-font;
+    }
+    
+    select, .checkboxes {
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+    
+    .hc-button {
+      @extend a.button;
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+
+    table {
+
+      tr, th {
+        background: none !important;
+      }
+
+      th {
+        text-align: left;
+        @extend .smallcaps;
+      }
+      
+      th, td {
+        border: none;
+        padding: .25em .5em;
+      }
+  
+      .schedule_header {
+        border: solid #fff;
+        border-width: 2px 0 0;
+      }
+  
+      .hc_class {
+        border: solid #fff;
+        border-width: 0 0 2px;
+      }
+  
+    }
+  }
+
 
 /******************************************************************
 PAGE NAVI STYLES
