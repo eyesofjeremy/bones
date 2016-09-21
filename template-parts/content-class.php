@@ -1,7 +1,9 @@
     <section class="pilates-class">
-    <h3><?php the_title(); ?> <?php edit_post_link('Edit Class'); ?></h3>
-    
+    <h3><?php the_title(); ?>
+    <?php edit_post_link('Edit Class'); ?>
     <?php the_post_thumbnail( 'small' ); ?>
+    </h3>
+    
     <h4><?php echo get_field('subhead'); ?></h4>
 
       <?php the_content(); ?>
