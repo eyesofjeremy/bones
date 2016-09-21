@@ -161,18 +161,18 @@ h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
-	font-family: $heading_font;
+	color: $csp_green_soft;
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+  @extend .smallcaps;
+  font-size: 1.25em;
 }
 
 h4, .h4 {
 	font-size: 1.1em;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	font-weight: 400;
+	color: $csp_green_soft;
 }
 
 h5, .h5 {
