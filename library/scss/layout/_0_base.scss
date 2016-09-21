@@ -105,15 +105,14 @@ HEADER STYLES
   top: 1em;
   left: 0;
   right: 0;
-  font-size: .75em;
-  letter-spacing: .05em;
-  font-weight: bold;
-  text-transform: uppercase;
+  @extend .smallcaps;
+  color: $gray_med;
   
   a {
     text-decoration: none;
     color: inherit;
     padding: .75em 2em;
+    font-size: 1em;
   }
   
   .action {
