@@ -29,6 +29,20 @@ body {
   @extend %crispType;
 }
 
+a.post-edit-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: none;
+  background: #f60;
+  padding: .125em .5em;
+  
+  &:hover {
+    color: #fff;
+    background: red;
+  }
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
