@@ -423,6 +423,7 @@ POSTS & CONTENT STYLES
   
   .schedule {
     position: relative;
+    z-index: 2;
   }
   
   .toggle {
@@ -453,8 +454,12 @@ POSTS & CONTENT STYLES
       }
     }
   }
-  
+
+@keyframes blinker {  
+  50% { opacity: 0.0; }
+}
   .hc_sched {
+    position: relative;
     color: $csp_green_soft;
     margin: 1em -1.5em;
     padding: 0 1.5em;
@@ -463,14 +468,27 @@ POSTS & CONTENT STYLES
     transition: .3s all ease-in-out;
     opacity: 0;
     
+    &:before {
+      content: '- loading -';
+      animation: blinker 1s linear infinite;
+      position: absolute;
+      top: 1.5em;
+      left: 50%;
+      width: 10em;
+      margin-left: -5em;
+    }
+    
     .toggle:checked ~ & {
       padding: .5em 1.5em;
       border: solid $csp_citron;
       border-width: .25em 0;
       max-height: 800px;
       overflow: auto;
-      background: #f3f9b7;
       opacity: 1;
+      
+      &, & .schedule {
+        background: #f3f9b7;
+      }
     }
     
     &:after {
