@@ -4,6 +4,7 @@
     <?php the_post_thumbnail( 'small' ); ?>
     </h3>
     
+    <div class="content">
     <h4><?php echo get_field('subhead'); ?></h4>
 
       <?php the_content(); ?>
@@ -12,10 +13,11 @@
 
     <?php if( get_field('tips') ) { ?>
       <div class="tips">
-        <h4>Tips</h4>
+        <h4>Tips<i class="dashicons dashicons-yes"></i></h4>
         <?php echo get_field('tips'); ?>
       </div>
     <?php } # endif ?>
+    </div>
     
     <div class="schedule">
        <?php 
