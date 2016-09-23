@@ -163,17 +163,17 @@ POSTS & CONTENT STYLES
 
   .hentry {
     margin-bottom: 1.5em;
-    padding: 1.5em 0;
+    padding: 0 0 1.5em;
 
     header {
-      margin: 0 -3em;
 
       .featured-image {
+        margin: 0 -4.5em;
               
         & + h1 {
           position: absolute;
-          bottom: 1.5em;
-          left: 1.75em;
+          bottom: 2em;
+          left: .75em;
           color: white;
           padding: .1875em .75em;
           box-sizing: border-box;
