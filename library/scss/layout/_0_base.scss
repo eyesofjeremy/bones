@@ -29,6 +29,15 @@ body {
   @extend %crispType;
 }
 
+a {
+  transition: .2s all;
+}
+
+/* Wrapper styling for links that contain many items */
+.link_large {
+  text-decoration: none;
+}
+
 a.post-edit-link {
   color: #fff;
   font-weight: bold;
@@ -149,8 +158,21 @@ HEADER STYLES
   }
   
   .button {
-    color: #fff;
-    background: $button_color;
+    color: $gray_dark;
+  }
+  
+}
+
+a.button {
+  @extend .smallcaps;
+  color: $gray_dark;
+  background: $button_color;
+  text-decoration: none;
+  padding: .75em 2em;
+  
+  &:hover {
+    color: #000;
+    background: darken( $button_color, 3% );
   }
 }
 
