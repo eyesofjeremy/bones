@@ -215,6 +215,52 @@ POSTS & CONTENT STYLES
   }
 
 /*********************
+HOME STYLES
+*********************/
+
+.home {
+  
+  .hentry {
+    margin: 0;
+    padding: 0;
+
+    header {
+    
+      .featured-image + .page-title {
+        font-size: 3.25em;
+        line-height: 1;
+        bottom: auto;
+        top: .5em;
+        left: .66em;
+        text-indent: -1em;
+      }
+
+      .button {
+        position: absolute;
+        bottom: 4em;
+        left: 3em;
+        width: auto;
+        padding: 1.5em 3em;
+      }
+    }
+  }
+
+  .schedule, .promotions, .inspiration {
+    margin: 0 -3em;
+  }
+}
+
+.promotions {
+  display: flex;
+  justify-content: center;
+}
+
+.promotion {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 
