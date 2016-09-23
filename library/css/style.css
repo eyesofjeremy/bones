@@ -519,6 +519,144 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.smallcaps, h3, .h3, .quick-actions, a.button, .button, .hc_sched .hc-button, .hc_sched table th {
+  font-size: .75em;
+  letter-spacing: .05em;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  color: #1c86c7;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */ }
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: #166b9f; }
+  a:link, a:visited:link {
+    /*
+    this highlights links on iPhones/iPads.
+    so it basically works like the :hover selector
+    for mobile devices.
+    */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  text-rendering: optimizelegibility;
+  font-weight: 400;
+  /*
+  if you're going to use webfonts, be sure to check your weights
+  http://css-tricks.com/watch-your-font-weight/
+  */
+  /* removing text decoration from all headline links */ }
+  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+    text-decoration: none; }
+
+h1, .h1 {
+  font-size: 2em;
+  line-height: 1.333em;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+h2, .h2 {
+  font-size: 1.66em;
+  line-height: 1.4em;
+  margin-bottom: 0.375em;
+  color: #819051; }
+
+h3, .h3 {
+  font-weight: 700;
+  font-size: 1.25em; }
+
+h4, .h4 {
+  font-size: 1.1em;
+  color: #819051; }
+
+h5, .h5 {
+  font-size: 0.846em;
+  line-height: 2.09em;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+@media (min-width: 48em) {
+  h1, .h1 {
+    font-size: 2.5em;
+    line-height: 1.333em; }
+
+  h2, .h2 {
+    font-size: 1.75em;
+    line-height: 1.4em; } }
+p {
+  margin: 0 0 1.5em; }
+
+table {
+  width: 100%;
+  border: 1px solid #eaedf2;
+  margin-bottom: 1.5em; }
+  table caption {
+    margin: 0 0 7px;
+    font-size: 0.75em;
+    color: #9fa6b4;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+
+tr {
+  border-bottom: 1px solid #eaedf2; }
+  tr:nth-child(even) {
+    background-color: #f3f3f3; }
+
+td {
+  padding: 7px;
+  border-right: 1px solid #eaedf2; }
+  td:last-child {
+    border-right: 0; }
+
+th {
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #eaedf2;
+  border-right: 1px solid #eaedf2; }
+  th:last-child {
+    border-right: 0; }
+
+blockquote {
+  margin: 0 0 1.5em;
+  padding: 1.5em;
+  font-size: 1.625em;
+  line-height: 1.3;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #707070; }
+
+dd {
+  margin-left: 0;
+  font-size: 0.9em;
+  color: #787878;
+  margin-bottom: 1.5em; }
+
+img {
+  margin: 0 0 1.5em 0;
+  max-width: 100%;
+  height: auto; }
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto; }
+
+pre {
+  background: #000;
+  color: #f3f3f3;
+  font-size: 0.9em;
+  padding: 1.5em;
+  margin: 0 0 1.5em;
+  border-radius: 3px; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -1265,6 +1403,30 @@ body {
   color: #58595b;
   background-color: #fff; }
 
+a {
+  -webkit-transition: .2s all;
+  transition: .2s all; }
+
+/* Wrapper styling for links that contain many items */
+.link_large {
+  text-decoration: none; }
+
+a.post-edit-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: none;
+  background: #f60;
+  padding: .125em .5em; }
+  a.post-edit-link:hover {
+    color: #fff;
+    background: red; }
+  .promotion a.post-edit-link {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: .75em; }
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -1314,64 +1476,6 @@ LAYOUT & GRID STYLES
   max-width: 48em; }
 
 /*********************
-LINK STYLES
-*********************/
-a, a:visited {
-  color: #1c86c7;
-  /* on hover */
-  /* on click */
-  /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #166b9f; }
-  a:link, a:visited:link {
-    /*
-    this highlights links on iPhones/iPads.
-    so it basically works like the :hover selector
-    for mobile devices.
-    */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
-
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  text-rendering: optimizelegibility;
-  font-weight: 400;
-  /*
-  if you're going to use webfonts, be sure to check your weights
-  http://css-tricks.com/watch-your-font-weight/
-  */
-  /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
-    text-decoration: none; }
-
-h1, .h1 {
-  font-size: 2.5em;
-  line-height: 1.333em;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-h2, .h2 {
-  font-size: 1.75em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-h3, .h3 {
-  font-size: 1.125em; }
-
-h4, .h4 {
-  font-size: 1.1em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
-
-h5, .h5 {
-  font-size: 0.846em;
-  line-height: 2.09em;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
-
-/*********************
 HEADER STYLES
 *********************/
 .header {
@@ -1391,14 +1495,12 @@ HEADER STYLES
   top: 1em;
   left: 0;
   right: 0;
-  font-size: .75em;
-  letter-spacing: .05em;
-  font-weight: bold;
-  text-transform: uppercase; }
+  color: #999; }
   .quick-actions a {
     text-decoration: none;
     color: inherit;
-    padding: .75em 2em; }
+    padding: .75em 2em;
+    font-size: 1em; }
   .quick-actions .action {
     width: 49%;
     display: inline-block;
@@ -1408,8 +1510,16 @@ HEADER STYLES
   .quick-actions .tel .act {
     display: none; }
   .quick-actions .button {
-    color: #fff;
-    background: #cddc2c; }
+    color: #333; }
+
+a.button, .button, .hc_sched .hc-button {
+  color: #333;
+  background: #cddc2c;
+  text-decoration: none;
+  padding: .75em 2em; }
+  a.button:hover, .button:hover, .hc_sched .hc-button:hover {
+    color: #000;
+    background: #c6d523; }
 
 /*********************
 NAVIGATION STYLES
@@ -1497,71 +1607,11 @@ POSTS & CONTENT STYLES
 .byline {
   display: none; }
 
-/* entry content */
+/* entry content 
+    Note: Most of the basic stuff will be inside partials/typography 
+*/
 .entry-content {
-  padding: 1.5em 1.5em 0;
-  /*
-  image alignment on a screen this size may be
-  a bit difficult. It's set to start aligning
-  and floating images at the next breakpoint,
-  but it's up to you. Feel free to change it up.
-  */ }
-  .entry-content p {
-    margin: 0 0 1.5em; }
-  .entry-content table {
-    width: 100%;
-    border: 1px solid #eaedf2;
-    margin-bottom: 1.5em; }
-    .entry-content table caption {
-      margin: 0 0 7px;
-      font-size: 0.75em;
-      color: #9fa6b4;
-      text-transform: uppercase;
-      letter-spacing: 1px; }
-  .entry-content tr {
-    border-bottom: 1px solid #eaedf2; }
-    .entry-content tr:nth-child(even) {
-      background-color: #f8f9fa; }
-  .entry-content td {
-    padding: 7px;
-    border-right: 1px solid #eaedf2; }
-    .entry-content td:last-child {
-      border-right: 0; }
-  .entry-content th {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eaedf2;
-    border-right: 1px solid #eaedf2; }
-    .entry-content th:last-child {
-      border-right: 0; }
-  .entry-content blockquote {
-    margin: 0 0 1.5em 0.75em;
-    padding: 0 0 0 0.75em;
-    border-left: 3px solid #2980b9;
-    font-style: italic;
-    color: #9fa6b4; }
-  .entry-content dd {
-    margin-left: 0;
-    font-size: 0.9em;
-    color: #787878;
-    margin-bottom: 1.5em; }
-  .entry-content img {
-    margin: 0 0 1.5em 0;
-    max-width: 100%;
-    height: auto; }
-  .entry-content .size-auto,
-  .entry-content .size-full,
-  .entry-content .size-large,
-  .entry-content .size-medium,
-  .entry-content .size-thumbnail {
-    max-width: 100%;
-    height: auto; }
-  .entry-content pre {
-    background: #000;
-    color: #f8f9fa;
-    font-size: 0.9em;
-    padding: 1.5em;
-    margin: 0 0 1.5em;
-    border-radius: 3px; }
+  padding: 1.5em 1.5em 0; }
 
 /* end .entry-content */
 .wp-caption {
@@ -1584,6 +1634,186 @@ POSTS & CONTENT STYLES
 /* gallery caption styles */
 .tags {
   margin: 0; }
+
+.pilates-class h3 {
+  padding-top: 5px;
+  border-top: 1px solid #999; }
+
+.pricing li {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 1.5em; }
+
+.tips {
+  background: #f3f3f3;
+  margin: 0 -1em 1.5em;
+  padding: 1em 1em 1px; }
+  .tips h4 {
+    background: #999;
+    color: #fff;
+    font-size: 1.5em;
+    padding: .33em .66em;
+    margin: -.66em -.66em .33em; }
+
+.schedule {
+  position: relative;
+  z-index: 2; }
+
+.toggle {
+  visibility: hidden;
+  position: absolute; }
+
+.button {
+  width: 12em;
+  -webkit-transition: .2s all;
+  transition: .2s all; }
+  .button span {
+    display: inline-block; }
+  .toggle:checked + .button span {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    overflow: hidden; }
+  .toggle:checked + .button:after {
+    content: 'Close'; }
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0.0; } }
+
+@keyframes blinker {
+  50% {
+    opacity: 0.0; } }
+.hc_sched {
+  position: relative;
+  color: #819051;
+  margin: 1em -1.5em;
+  padding: 0 1.5em;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  opacity: 0; }
+  .hc_sched:before {
+    content: '- loading -';
+    -webkit-animation: blinker 1s linear infinite;
+            animation: blinker 1s linear infinite;
+    position: absolute;
+    top: 1.5em;
+    left: 50%;
+    width: 10em;
+    margin-left: -5em; }
+  .toggle:checked ~ .hc_sched {
+    padding: .5em 1.5em;
+    border: solid #cddc2c;
+    border-width: .25em 0;
+    max-height: 800px;
+    overflow: auto;
+    opacity: 1; }
+    .toggle:checked ~ .hc_sched, .toggle:checked ~ .hc_sched .schedule {
+      background: #f3f9b7; }
+  .hc_sched:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .hc_sched .header {
+    background: none; }
+  .hc_sched .action_icon img {
+    margin: 0; }
+  .hc_sched h1 {
+    font-size: 1em;
+    font-weight: bold;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .hc_sched select, .hc_sched .checkboxes {
+    display: inline-block;
+    margin-right: 1.5em; }
+  .hc_sched .hc-button {
+    display: inline-block;
+    margin-right: 1.5em; }
+  .hc_sched table tr, .hc_sched table th {
+    background: none !important; }
+  .hc_sched table th {
+    text-align: left; }
+  .hc_sched table th, .hc_sched table td {
+    border: none;
+    padding: .25em .5em; }
+  .hc_sched table .schedule_header {
+    border: solid #fff;
+    border-width: 2px 0 0; }
+  .hc_sched table .hc_class {
+    border: solid #fff;
+    border-width: 0 0 2px; }
+
+.promotion {
+  max-width: 24em;
+  background: #eee;
+  border-top: 0.5em solid #1c86c7;
+  padding: 0 0 1.5em;
+  text-align: center;
+  margin: 3em auto;
+  position: relative; }
+  .promotion h3 {
+    margin-top: 0;
+    color: #333; }
+  .promotion .content {
+    font-size: 1.125em;
+    line-height: 1.66;
+    padding: 0 1.5em 1.5em;
+    color: #707070; }
+    .promotion .content:before {
+      content: '';
+      display: block;
+      margin: 0 auto .75em;
+      width: 5.5em;
+      border-top: 2px solid #1c86c7; }
+
+/*********************
+HOME STYLES
+*********************/
+.home .hentry header {
+  padding-bottom: 0; }
+  .home .hentry header .featured-image + .page-title {
+    color: #333;
+    border: none;
+    margin: 0; }
+  .home .hentry header img {
+    margin: 0; }
+  .home .hentry header .button {
+    font-size: .875em; }
+.home .schedule {
+  background: #1c86c7;
+  position: relative;
+  overflow: hidden;
+  padding: 2em 0;
+  text-align: center; }
+  .home .schedule:before, .home .schedule:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -1.5em;
+    right: -1.5em;
+    height: 1.5em; }
+  .home .schedule:before {
+    top: 0;
+    box-shadow: inset 0 0.75em 0.75em rgba(0, 0, 0, 0.6); }
+  .home .schedule:after {
+    bottom: 0;
+    box-shadow: inset 0 -0.75em 0.75em rgba(0, 0, 0, 0.6); }
+  .home .schedule .button {
+    font-size: 1.125em;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2em 5em;
+    display: inline-block;
+    width: auto; }
+
+.inspiration {
+  text-align: center;
+  padding: 1.5em;
+  color: #fff;
+  background: #1c86c7 url("../images/grip-bar-blue.jpg") no-repeat 50% top; }
+  .inspiration blockquote {
+    color: #fff;
+    margin: 0; }
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -1644,7 +1874,7 @@ COMMENT STYLES
 #comments-title {
   padding: 0.75em;
   margin: 0;
-  border-top: 1px solid #f8f9fa;
+  border-top: 1px solid #f3f3f3;
   /* number of comments span */ }
 
 .commentlist {
@@ -1656,7 +1886,7 @@ COMMENT STYLES
   clear: both;
   overflow: hidden;
   padding: 1.5em;
-  border-bottom: 1px solid #f8f9fa;
+  border-bottom: 1px solid #f3f3f3;
   /* vcard */
   /* end .commentlist .vcard */
   /* end children */
@@ -1700,7 +1930,7 @@ COMMENT STYLES
   .comment.odd {
     background-color: #fff; }
   .comment.even {
-    background: #f8f9fa; }
+    background: #f3f3f3; }
 
 /* comment meta */
 /* comment content */
@@ -1728,7 +1958,7 @@ COMMENT FORM STYLES
 ******************************************************************/
 .comment-respond {
   padding: 1.5em;
-  border-top: 1px solid #f8f9fa; }
+  border-top: 1px solid #f3f3f3; }
 
 #reply-title {
   margin: 0; }
@@ -1745,7 +1975,7 @@ COMMENT FORM STYLES
 
 .form-allowed-tags {
   padding: 1.5em;
-  background-color: #f8f9fa;
+  background-color: #f3f3f3;
   font-size: 0.9em; }
 
 /* comment submit button */
@@ -1883,6 +2113,21 @@ view.
       clear: both; }
 
   /* end .entry-content */
+  .pilates-class h3 img {
+    float: right;
+    max-width: 50%;
+    margin: -6px 0 1.5em 1.5em;
+    padding-left: 2em;
+    background: #fff; }
+
+  .tips {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.5em 1.5em 1px; }
+    .tips h4 {
+      padding: .5em 1em;
+      margin: -1em -1em .5em; }
+
   /*********************
   FOOTER STYLES
   *********************/
@@ -1997,17 +2242,75 @@ view.
 
   .hentry {
     margin-bottom: 1.5em;
-    padding: 1.5em 0; }
-    .hentry header {
-      margin: 0 -3em; }
+    padding: 0 0 1.5em; }
+    .hentry header .featured-image {
+      margin: 0 -4.5em; }
       .hentry header .featured-image + h1 {
         position: absolute;
-        bottom: 1.5em;
-        left: 1.75em;
+        bottom: 2em;
+        left: .75em;
         color: white;
         padding: .1875em .75em;
         box-sizing: border-box;
         min-width: 40%; }
+
+  .pricing li {
+    margin-right: 3em; }
+
+  .tips {
+    padding: 2em 1.5em 1px 7em;
+    position: relative; }
+    .tips h4 {
+      position: absolute;
+      margin: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4em;
+      text-align: center; }
+
+  .hc_sched {
+    margin-left: -4.5em;
+    margin-right: -4.5em;
+    padding: 0 4.5em; }
+    .toggle:checked ~ .hc_sched {
+      padding: .5em 4.5em; }
+
+  /*********************
+  HOME STYLES
+  *********************/
+  .home .hentry {
+    margin: 0;
+    padding: 0; }
+    .home .hentry header .featured-image + .page-title {
+      font-size: 3.25em;
+      line-height: 1;
+      bottom: auto;
+      top: .5em;
+      left: .66em;
+      text-indent: -1em; }
+    .home .hentry header .button {
+      position: absolute;
+      bottom: 4em;
+      left: 3em;
+      width: auto;
+      padding: 1.5em 3em; }
+  .home .schedule, .home .promotions, .home .inspiration {
+    margin: 0 -3em; }
+
+  .promotions {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
+  .promotion {
+    margin-left: 1.5em;
+    margin-right: 1.5em; }
 
   /*********************
   SIDEBARS & ASIDES
