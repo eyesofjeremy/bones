@@ -9,5 +9,11 @@ design. Shift the media queries to fit your evil scheme.
 
 ******************************************************************/
 
-.wrap {
+.nav {
+	
+	.header & {
+	  display: flex;
+	  justify-content: space-between;
+	}
 }
+
