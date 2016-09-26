@@ -150,10 +150,12 @@ HEADER STYLES
     width: 49%;
     display: inline-block;
     box-sizing: border-box;
-    padding: 1em;
-    text-align: center;
+    padding: 1em 1.5em;
   }
   
+  .book {
+    text-align: right;
+  }
   .tel .act {
     display: none;
   }
@@ -189,10 +191,42 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
+.header {
+
+	nav {
+	  transition: .3s all;
+	  max-height: 0;
+	  overflow: hidden;
+	  border-style: solid;
+	  border-color: transparent;
+	  border-width: 2px 0;
+	}
+
+  .toggle:checked ~ nav {
+    max-height: 600px;
+    overflow: auto;
+    border-color: $csp_blue;
+  }
+	
+	.menu_toggle {
+	  color: #fff;
+	  background: $csp_blue;
+    @extend .button;
+    display: inline-block;
+    position: absolute;
+    top: 8.5em;
+    right: 2em;
+    
+    html & {
+      width: auto; // offset width set for buttons
+    }
+	}
+}
+
 .nav {
 	border-bottom: 0;
 	margin: 0;
-
+	
 	li {
 
 		a {

@@ -53,6 +53,20 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+.header {
+
+	nav {
+	  border: none;
+	  max-height: none;
+	}
+	
+	.toggle, .menu_toggle {
+	  display: none;
+	}
+
+}
+
+
 .nav {
 	border: 0;
 	
