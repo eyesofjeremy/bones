@@ -3,20 +3,28 @@
 --------------------------------------------------------------*/
 @import "../layout/_0_base";
 
+@media( min-width: $page_xs ) {
+  @import "../layout/_1_page-xsmall";
+}
+
 @media( min-width: $page_s ) {
-  @import "../layout/_1_page-small";
+  @import "../layout/_2_page-small";
 }
 
 @media( min-width: $page_m ) {
-  @import "../layout/_2_page-medium";
+  @import "../layout/_3_page-medium";
 }
 
 @media( min-width: $page_l ) {
-  @import "../layout/_3_page-large";
+  @import "../layout/_4_page-large";
 }
 
 @media( min-width: $page_xl ) {
-  @import "../layout/_4_page-xlarge";
+  @import "../layout/_5_page-xlarge";
+}
+
+@media( min-width: $page_xxl ) {
+  @import "../layout/_6_page-xxlarge";
 }
 
 body.debug:before {
