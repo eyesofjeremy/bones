@@ -257,7 +257,9 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a {
+		  color: $csp_blue_light;
+		}
 
 	}  /* end current highlighters */
 

@@ -20,6 +20,7 @@ http://0to255.com/
 $csp_citron:        #cddc2c;
 $csp_citron_dark:   #909a21;
 $csp_blue:          #1c86c7;
+$csp_blue_light:    #94bdd6;
 $csp_green_soft:    #819051;
 
 $gray_cool:         #58595b;
@@ -50,7 +51,7 @@ $green:             #7dd667;
 $blue:              #2980b9;
 
 $link_color:        $csp_blue;
-$link-hover:        darken($link_color, 9%);
+$link_hover:        darken($link_color, 15%);
 
 $heading_color:     $csp_green_soft;
 
