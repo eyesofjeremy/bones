@@ -150,7 +150,7 @@ HEADER STYLES
     width: 49%;
     display: inline-block;
     box-sizing: border-box;
-    padding: 1em 1.5em;
+    padding: 1em;
   }
   
   .book {
@@ -212,10 +212,9 @@ and more scalable.
 	  color: #fff;
 	  background: $csp_blue;
     @extend .button;
-    display: inline-block;
-    position: absolute;
-    top: 8.5em;
-    right: 2em;
+    display: block;
+    text-align: center;
+    margin: 0 1em;
     
     html & {
       width: auto; // offset width set for buttons
