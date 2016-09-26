@@ -700,6 +700,10 @@ HOME STYLES
   color: #fff;
   background: $csp_blue url('../images/grip-bar-blue.jpg') no-repeat 50% top;
   
+  &:last-child {
+    margin-bottom: -1.5em;
+  }
+  
   blockquote {
     color: #fff;
     margin: 0;
