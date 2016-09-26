@@ -519,7 +519,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.smallcaps, h3, .h3, .quick-actions, a.button, .button, .hc_sched .hc-button, .tips h4, .hc_sched table th {
+.smallcaps, h3, .h3, .quick-actions, a.button, .button, .header .menu_toggle, .hc_sched .hc-button, .tips h4, .hc_sched table th {
   font-size: .75em;
   letter-spacing: .05em;
   font-weight: bold;
@@ -1515,19 +1515,20 @@ HEADER STYLES
     width: 49%;
     display: inline-block;
     box-sizing: border-box;
-    padding: 1em;
-    text-align: center; }
+    padding: 1em; }
+  .quick-actions .book {
+    text-align: right; }
   .quick-actions .tel .act {
     display: none; }
-  .quick-actions .button {
+  .quick-actions .button, .quick-actions .header .menu_toggle, .header .quick-actions .menu_toggle {
     color: #333; }
 
-a.button, .button, .hc_sched .hc-button {
+a.button, .button, .header .menu_toggle, .hc_sched .hc-button {
   color: #333;
   background: #cddc2c;
   text-decoration: none;
   padding: .75em 2em; }
-  a.button:hover, .button:hover, .hc_sched .hc-button:hover {
+  a.button:hover, .button:hover, .header .menu_toggle:hover, .hc_sched .hc-button:hover {
     color: #000;
     background: #c6d523; }
 
@@ -1541,6 +1542,27 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+.header nav {
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  max-height: 0;
+  overflow: hidden;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 2px 0; }
+.header .toggle:checked ~ nav {
+  max-height: 600px;
+  overflow: auto;
+  border-color: #1c86c7; }
+.header .menu_toggle {
+  color: #fff;
+  background: #1c86c7;
+  display: block;
+  text-align: center;
+  margin: 0 1em; }
+  html .header .menu_toggle {
+    width: auto; }
+
 .nav {
   border-bottom: 0;
   margin: 0;
@@ -1595,6 +1617,9 @@ POSTS & CONTENT STYLES
     .hentry header .featured-image img {
       display: block;
       max-width: 100%; }
+  .hentry header .link_large {
+    display: block;
+    padding-bottom: 2em; }
   .hentry footer p {
     margin: 0; }
 
@@ -1681,18 +1706,18 @@ POSTS & CONTENT STYLES
   visibility: hidden;
   position: absolute; }
 
-.button {
+.button, .header .menu_toggle {
   width: 12em;
   -webkit-transition: .2s all;
   transition: .2s all; }
-  .button span {
+  .button span, .header .menu_toggle span {
     display: inline-block; }
-  .toggle:checked + .button span {
+  .toggle:checked + .button span, .header .toggle:checked + .menu_toggle span {
     width: 0;
     height: 0;
     display: inline-block;
     overflow: hidden; }
-  .toggle:checked + .button:after {
+  .toggle:checked + .button:after, .header .toggle:checked + .menu_toggle:after {
     content: 'Close'; }
 
 @-webkit-keyframes blinker {
@@ -1796,7 +1821,7 @@ HOME STYLES
     margin: 0; }
   .home .hentry header img {
     margin: 0; }
-  .home .hentry header .button {
+  .home .hentry header .button, .home .hentry header .header .menu_toggle, .header .home .hentry header .menu_toggle {
     font-size: .875em; }
 .home .schedule {
   background: #1c86c7;
@@ -1817,7 +1842,7 @@ HOME STYLES
   .home .schedule:after {
     bottom: 0;
     box-shadow: inset 0 -0.75em 0.75em rgba(0, 0, 0, 0.6); }
-  .home .schedule .button {
+  .home .schedule .button, .home .schedule .header .menu_toggle, .header .home .schedule .menu_toggle {
     font-size: 1.125em;
     background: rgba(255, 255, 255, 0.8);
     padding: 2em 5em;
@@ -1829,6 +1854,8 @@ HOME STYLES
   padding: 1.5em;
   color: #fff;
   background: #1c86c7 url("../images/grip-bar-blue.jpg") no-repeat 50% top; }
+  .inspiration:last-child {
+    margin-bottom: -1.5em; }
   .inspiration blockquote {
     color: #fff;
     margin: 0; }
@@ -2061,6 +2088,16 @@ view.
 .copyright {
   padding: 1.5em; }
 
+@media (min-width: 20em) {
+  .logo {
+    margin-right: 6.5em; }
+
+  .header .menu_toggle {
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    top: 7em;
+    right: 1.33em; } }
 @media (min-width: 32em) {
   /******************************************************************
   Site Name:
@@ -2085,7 +2122,8 @@ view.
     left: auto;
     text-align: right; }
     .quick-actions .action {
-      width: auto; }
+      width: auto;
+      padding-right: 1.5em; }
     .quick-actions .tel .act {
       display: inline;
       margin-right: -1.5em; }
@@ -2197,6 +2235,12 @@ view.
   /*********************
   NAVIGATION STYLES
   *********************/
+  .header nav {
+    border: none;
+    max-height: none; }
+  .header .toggle, .header .menu_toggle {
+    display: none; }
+
   .nav {
     border: 0;
     /* end .menu ul li */
@@ -2273,6 +2317,8 @@ view.
         padding: .1875em .75em;
         box-sizing: border-box;
         min-width: 40%; }
+    .hentry header .link_large {
+      padding-bottom: 0; }
 
   .pricing li {
     margin-right: 3em; }
@@ -2316,7 +2362,7 @@ view.
       top: .5em;
       left: .66em;
       text-indent: -1em; }
-    .home .hentry header .button {
+    .home .hentry header .button, .home .hentry header .header .menu_toggle, .header .home .hentry header .menu_toggle {
       position: absolute;
       bottom: 4em;
       left: 3em;

@@ -439,6 +439,12 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+.header nav {
+  border: none;
+  max-height: none; }
+.header .toggle, .header .menu_toggle {
+  display: none; }
+
 .nav {
   border: 0;
   /* end .menu ul li */
@@ -515,6 +521,8 @@ POSTS & CONTENT STYLES
       padding: .1875em .75em;
       box-sizing: border-box;
       min-width: 40%; }
+  .hentry header .link_large {
+    padding-bottom: 0; }
 
 .pricing li {
   margin-right: 3em; }
