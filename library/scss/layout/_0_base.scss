@@ -410,14 +410,21 @@ POSTS & CONTENT STYLES
   .tips {
     background: $gray_light;
     margin: 0 -1em 1.5em;
-    padding: 1em 1em 1px;
+    padding: 0 1em 1px 3em;
   
     h4 {
       background: $gray_med;
       color: #fff;
-      font-size: 1.5em;
-      padding: .33em .66em;
-      margin: -.66em -.66em .33em;
+      @extend .smallcaps;
+      font-size: 1em;
+      padding: .5em 1em .5em 3em;
+      margin: 0 -1em .5em -3em;
+      
+      img {
+        width: 24px;
+        float: left;
+        margin-left: -34px;
+      }
     }
   }
   

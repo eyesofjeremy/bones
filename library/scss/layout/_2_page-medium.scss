@@ -192,6 +192,7 @@ POSTS & CONTENT STYLES
   .tips {
     padding: 2em 1.5em 1px 7em;
     position: relative;
+    min-height: 6.5em;
   
     h4 {
       position: absolute;
@@ -199,8 +200,16 @@ POSTS & CONTENT STYLES
       top: 0;
       left: 0;
       bottom: 0;
-      width: 4em;
+      padding: .75em 0 0;
+      width: 6em;
       text-align: center;
+      
+      img {
+        float: none;
+        width: 38px;
+        display: block;
+        margin: 2px auto;
+      }
     }
   }
 
