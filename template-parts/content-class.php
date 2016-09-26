@@ -13,7 +13,7 @@
 
     <?php if( get_field('tips') ) { ?>
       <div class="tips">
-        <h4>Tips<i class="dashicons dashicons-yes"></i></h4>
+        <h4>Tips<img src="<?php bloginfo('template_directory'); ?>/library/images/check.png" alt=""></h4>
         <?php echo get_field('tips'); ?>
       </div>
     <?php } # endif ?>
