@@ -21,7 +21,9 @@
     
     <div class="schedule">
        <?php 
-        $widget = get_field('class_schedule'); 
+        $widget = get_field('class_schedule');
+        
+        if( $widget ) {
         $widget_id = $widget[0]->ID;
         $show_widget = 'show_' . $widget_id;
       ?>
@@ -32,6 +34,8 @@
       <div class="hc_sched">
         <?php echo get_post_meta( $widget_id, 'csp_hc_widget_code', true); ?>
       </div>
+      
+      <?php } # endif ?>
 
     </div>
           
