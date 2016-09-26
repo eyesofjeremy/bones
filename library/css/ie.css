@@ -114,7 +114,7 @@ a, a:visited {
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #166b9f; }
+    color: #135984; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -445,7 +445,7 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */ }
   .header .nav {
-    padding-left: 4.375em; }
+    padding-left: 4.125em; }
   .nav ul {
     margin-top: 0; }
   .nav li {
@@ -613,6 +613,16 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+.footer .logo, .footer .widget {
+  float: left; }
+.footer .widget {
+  margin-top: 1.5em; }
+  .footer .widget p {
+    margin: 0 0 1em; }
+
+.copyright {
+  clear: both; }
+
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -631,6 +641,10 @@ This typically targets devices larger than a tablet, but it's your
 design. Shift the media queries to fit your evil scheme.
 
 ******************************************************************/
+.header .nav {
+  display: flex;
+  justify-content: space-between; }
+
 /*
 you can call the larger styles if you want, but there's really no need
 */

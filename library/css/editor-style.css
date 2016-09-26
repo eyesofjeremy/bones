@@ -583,7 +583,7 @@ body#tinymce.wp-editor {
     /* on click */
     /* mobile tap color */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #166b9f; }
+      color: #135984; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       /*
       this highlights links on iPhones/iPads.
