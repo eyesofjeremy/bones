@@ -668,7 +668,7 @@ body#tinymce.wp-editor {
     color: #787878;
     margin-bottom: 1.5em; }
   body#tinymce.wp-editor img {
-    margin: 0 0 1.5em 0;
+    border: none;
     max-width: 100%;
     height: auto; }
   body#tinymce.wp-editor .size-auto,
@@ -685,6 +685,12 @@ body#tinymce.wp-editor {
     padding: 1.5em;
     margin: 0 0 1.5em;
     border-radius: 3px; }
+  body#tinymce.wp-editor ul {
+    list-style-type: disc; }
+  body#tinymce.wp-editor ol {
+    list-style-type: decimal; }
+  body#tinymce.wp-editor ol, body#tinymce.wp-editor ul {
+    padding-left: 1.5em; }
   @media only screen and (min-width: 481px) {
     body#tinymce.wp-editor {
       /* at this larger size, we can start to align images */ }

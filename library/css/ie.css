@@ -217,7 +217,7 @@ dd {
   margin-bottom: 1.5em; }
 
 img {
-  margin: 0 0 1.5em 0;
+  border: none;
   max-width: 100%;
   height: auto; }
 
@@ -236,6 +236,15 @@ pre {
   padding: 1.5em;
   margin: 0 0 1.5em;
   border-radius: 3px; }
+
+ul {
+  list-style-type: disc; }
+
+ol {
+  list-style-type: decimal; }
+
+ol, ul {
+  padding-left: 1.5em; }
 
 /******************************************************************
 Site Name:
@@ -378,10 +387,9 @@ POSTS & CONTENT STYLES
 .tips {
   margin-left: 0;
   margin-right: 0;
-  padding: 1.5em 1.5em 1px; }
+  padding-right: 1.5em; }
   .tips h4 {
-    padding: .5em 1em;
-    margin: -1em -1em .5em; }
+    margin-right: -1.5em; }
 
 /*********************
 FOOTER STYLES
@@ -513,15 +521,22 @@ POSTS & CONTENT STYLES
 
 .tips {
   padding: 2em 1.5em 1px 7em;
-  position: relative; }
+  position: relative;
+  min-height: 6.5em; }
   .tips h4 {
     position: absolute;
     margin: 0;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 4em;
+    padding: .75em 0 0;
+    width: 6em;
     text-align: center; }
+    .tips h4 img {
+      float: none;
+      width: 38px;
+      display: block;
+      margin: 2px auto; }
 
 .hc_sched {
   margin-left: -4.5em;
