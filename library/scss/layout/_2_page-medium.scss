@@ -400,6 +400,25 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+
+.footer {
+  .logo, .widget {
+    float: left;
+  }
+  
+  .widget {
+    margin-top: 1.5em;
+  
+    p {
+      margin: 0 0 1em;
+    }
+  }
+}
+
+.copyright {
+  clear: both;
+}
+
 .footer-links {
 	ul {
 		li {
