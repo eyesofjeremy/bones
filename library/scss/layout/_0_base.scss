@@ -603,7 +603,7 @@ POSTS & CONTENT STYLES
   }
 
   .promotion {
-    max-width: 24em;
+    max-width: 18em;
     background: #eee;
     border-top: .5em solid $csp_blue;
     padding: 0 0 1.5em;
@@ -612,13 +612,11 @@ POSTS & CONTENT STYLES
     position: relative;
     
     h3 {
-      margin-top: 0;
+      font-size: 1em;
       color: $gray_dark;
     }
     
     .content {
-      font-size: 1.125em;
-      line-height: 1.66;
       padding: 0 1.5em 1.5em;
       color: $gray_med_text;
       
@@ -628,6 +626,20 @@ POSTS & CONTENT STYLES
         margin: 0 auto .75em;
         width: 5.5em;
         border-top: 2px solid $csp_blue;
+      }
+    }
+    
+    .list-2 & { // special sizing if only two promotions running
+      max-width: 24em;
+    
+      h3 {
+        font-size: 1.25em;
+        margin-top: 0;
+      }
+    
+      .content {
+        font-size: 1.125em;
+        line-height: 1.66;
       }
     }
   }

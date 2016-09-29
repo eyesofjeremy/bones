@@ -1,5 +1,3 @@
-<section class="promotions entry-content cf">
-
 <?php 
 
   $page_id = get_the_ID();
@@ -21,15 +19,20 @@
     );
 
     $projects = new WP_Query( $args );
-  
+  ?>
+
+<section class="promotions list-<?php echo $projects->post_count; ?> entry-content cf">
+
+<?php
+
     while ( $projects->have_posts() ) : $projects->the_post();
 
       get_template_part( 'template-parts/content', 'promotion' );
 
     endwhile; // End of the loop.
     $post = $temp_query; // retrieve main query
-  } // end if
 ?>
 
-</section> <?php // end promotions ?>
+</section>
 
+<?php } // end if promotions listed ?>
