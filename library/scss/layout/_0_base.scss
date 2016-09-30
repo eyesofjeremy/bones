@@ -316,7 +316,7 @@ POSTS & CONTENT STYLES
 			}
 			
 			header {
-			  .featured-image {
+			  .featured-image, .featured-video-plus {
 			    margin: -1.5em -1.5em 0;
 			    
 			    img {
@@ -331,6 +331,10 @@ POSTS & CONTENT STYLES
 			  }
 			}
 
+			.featured-video-plus ~ .page-title {
+			  display: none;
+			}
+			
 			footer {
 
 				p {
@@ -602,6 +606,12 @@ POSTS & CONTENT STYLES
     }
   }
 
+  .promotions {
+    h2 {
+      text-align: center;
+    }
+  }
+
   .promotion {
     max-width: 18em;
     background: #eee;
@@ -711,10 +721,6 @@ HOME STYLES
   padding: 1.5em;
   color: #fff;
   background: $csp_blue url('../images/grip-bar-blue.jpg') no-repeat 50% top;
-  
-  &:last-child {
-    margin-bottom: -1.5em;
-  }
   
   blockquote {
     color: #fff;

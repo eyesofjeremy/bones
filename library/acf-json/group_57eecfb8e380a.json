@@ -1,0 +1,106 @@
+{
+    "key": "group_57eecfb8e380a",
+    "title": "Pilates Class Details",
+    "fields": [
+        {
+            "key": "field_57e1a9b96ab2f",
+            "label": "Subhead",
+            "name": "subhead",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57e1a9d66ab30",
+            "label": "Class Pricing",
+            "name": "class_pricing",
+            "type": "wysiwyg",
+            "instructions": "Write pricing details as a bulleted list here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all"
+        },
+        {
+            "key": "field_57e1aa536ab31",
+            "label": "Tips",
+            "name": "tips",
+            "type": "wysiwyg",
+            "instructions": "If you'd like to add a useful tip for this class, write it in here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all"
+        },
+        {
+            "key": "field_57e1aab96ab33",
+            "label": "Class Schedule",
+            "name": "class_schedule",
+            "type": "relationship",
+            "instructions": "Choose the appropriate HealCode Widget to show the schedule for this class.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "object",
+            "post_type": [
+                "csp_hc_widget"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "result_elements": "",
+            "max": 1,
+            "min": 0,
+            "elements": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "pilates_class"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1475274617
+}

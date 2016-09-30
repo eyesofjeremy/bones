@@ -1,0 +1,279 @@
+{
+    "key": "group_57eecfe0df21d",
+    "title": "Page Extras",
+    "fields": [
+        {
+            "key": "field_57eecfee76785",
+            "label": "flexible_content",
+            "name": "flexible_content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Row of Content",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "57eecffd7fc78",
+                    "name": "testimonial",
+                    "label": "Testimonial",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57eed04876786",
+                            "label": "Blockquote",
+                            "name": "blockquote",
+                            "type": "textarea",
+                            "instructions": "What wonderful thing was said, that you would like to tell us? If you would like quote marks, include them.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "wpautop"
+                        },
+                        {
+                            "key": "field_57eed0e976787",
+                            "label": "Attribution",
+                            "name": "attribution",
+                            "type": "text",
+                            "instructions": "Says who? Who said this marvelous thing?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "\u2014",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57eed18876789",
+                    "name": "list_promotions",
+                    "label": "List of Promotions",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57eed1a67678a",
+                            "label": "Heading",
+                            "name": "promo_heading",
+                            "type": "text",
+                            "instructions": "If you'd like to show a heading before your promotions list, you can add one here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_57eed1da7678b",
+                            "label": "Promotions",
+                            "name": "promotions_listed",
+                            "type": "relationship",
+                            "instructions": "Pick up to three promotions you would like shown on this page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "promotion"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": 3,
+                            "return_format": "object"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57eee11916f67",
+                    "name": "hero_button",
+                    "label": "Large Button Link",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57eee13816f68",
+                            "label": "Link Text",
+                            "name": "button_text",
+                            "type": "textarea",
+                            "instructions": "Add text for your button here. This should be active and descriptive.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "wpautop"
+                        },
+                        {
+                            "key": "field_57eee17716f69",
+                            "label": "Link Address",
+                            "name": "button_url",
+                            "type": "link_picker",
+                            "instructions": "Where would you like this button to link?",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57eee06316f65",
+                    "name": "content",
+                    "label": "Misc. Content",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_57eee06f16f66",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "Add content. Knock yourself out!",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": "2"
+                },
+                {
+                    "key": "57eee9e415c90",
+                    "name": "reusable_content",
+                    "label": "Reusable Content",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_57eee9f615c91",
+                            "label": "Note:",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Use this to add the same content to many pages. Create a Content Block first, then you can add it here.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_57eeea3315c92",
+                            "label": "Content Block",
+                            "name": "content_block",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "content_block"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "object"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "content_block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1475275379
+}

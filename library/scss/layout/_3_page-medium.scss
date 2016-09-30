@@ -181,7 +181,7 @@ POSTS & CONTENT STYLES
 
     header {
 
-      .featured-image {
+      .featured-image, .featured-video-plus {
         margin: 0 -4.5em;
               
         & + h1 {
@@ -271,13 +271,13 @@ HOME STYLES
       }
     }
   }
-
-  .schedule, .promotions, .inspiration {
-    margin: 0 -3em;
-  }
 }
 
-.promotions {
+.schedule, .promotions, .inspiration {
+  margin: 0 -3em;
+}
+
+.promotions .listing {
   display: flex;
   justify-content: center;
 }

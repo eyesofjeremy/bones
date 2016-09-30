@@ -1,0 +1,144 @@
+{
+    "key": "group_57eecfb8ec7ab",
+    "title": "Promotion Details",
+    "fields": [
+        {
+            "key": "field_57e2f2ded1c3a__trashed",
+            "label": "Note",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Note: The title above won't show up on your promotion. Use it for internal organization.",
+            "esc_html": 0,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_57e2f2763daa4__trashed",
+            "label": "Banner Image",
+            "name": "promo_img",
+            "type": "image",
+            "instructions": "Give us a nice image for this promotion!",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "small",
+            "library": "all",
+            "return_format": "url",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_57e2f1783daa0__trashed",
+            "label": "Heading",
+            "name": "promo_heading",
+            "type": "text",
+            "instructions": "Keep it super-quick and clear.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57e2f1b23daa1__trashed",
+            "label": "Text",
+            "name": "promo_text",
+            "type": "textarea",
+            "instructions": "Whatcha got for us today? Sell it, but again, be brief!",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_57e2f1ee3daa2__trashed",
+            "label": "Button Text",
+            "name": "promo_button_text",
+            "type": "text",
+            "instructions": "\"Book Now\" or \"Learn More\". Be very brief. Avoid \"Click here\". Make this an actual action the user should take.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57e2f2433daa3__trashed",
+            "label": "Promo URL",
+            "name": "promo_url",
+            "type": "text",
+            "instructions": "Enter the full URL of the page you want someone to go to. You need to include \"http:\/\/\" at the beginning, or your link probably won't work!",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "promotion"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1475274882
+}
