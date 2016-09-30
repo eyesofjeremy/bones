@@ -35,20 +35,10 @@ get_header(); ?>
 								<section class="schedule entry-content cf">
 								<a class="button" href="#">[ Schedule coming - discuss functionality ]</a>
 								</section>
-
-                <?php get_template_part('template-parts/archive', 'promotions'); ?>
-
-								<figure class="inspiration quote entry-content cf">
 								
-								  <blockquote>
-								    "If your spine is inflexibly stiff at 30,<br>
-								    you are old.<br>
-  								  If it is completely flexible at 60,<br>
-  								  you are young."
-								  </blockquote>
-								  <figcaption>— Joseph Pilates</figcaption>
-								  
-								</figure>
+								<?php the_content(); ?>
+
+        				<?php get_template_part( 'template-parts/display', 'flexible-content' ); ?>
 
 							</article>
 
