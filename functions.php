@@ -263,11 +263,15 @@ function bones_featured_image() {
     $img_srcset = wp_get_attachment_image_srcset( $thumbnail_id, 'featured-l' );
   
   
-    echo '<figure class="featured-image">
+    $html = '<figure class="featured-image">
     <img src="' . esc_url( $img_src ) . '"
        srcset="' . esc_attr( $img_srcset ) . '"
        alt="' . $alt . '">
     </figure>';
+    
+    $html = apply_filters( 'post_thumbnail_html', $html, $post->ID, $thumbnail_id, $size = 'large', $attr = array() );
+
+    echo $html;
   }
 }
 
