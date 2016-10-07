@@ -97,3 +97,14 @@ Mixins for typography
   font-feature-settings: "kern";
   font-kerning: normal;
 }
+
+.caps {
+  letter-spacing: .05em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.smallcaps {
+  font-size: .75em;
+  @extend .caps;
+}
