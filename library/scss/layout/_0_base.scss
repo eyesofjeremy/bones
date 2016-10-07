@@ -21,10 +21,10 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $body-font;
+	font-family: $body_font;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text-color;
+	color: $text_color;
 	background-color: $gray;
   @extend %crispType;
 }
@@ -90,7 +90,7 @@ a, a:visited {
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $link-hover;
+		color: $link_hover;
 	}
 
 	/* on click */
@@ -287,7 +287,7 @@ POSTS & CONTENT STYLES
 
 			footer {
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
+				border-top: 1px solid $gray_light;
 
 				p {
 					margin: 0;
@@ -323,7 +323,7 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.byline {
-			color: $meta-gray;
+			color: $meta_color;
 			font-style: italic;
 			margin: 0;
 
@@ -367,7 +367,7 @@ POSTS & CONTENT STYLES
 				caption {
 					margin: 0 0 7px;
 					font-size: 0.75em;
-					color: $meta-gray;
+					color: $meta_color;
 					text-transform: uppercase;
 					letter-spacing: 1px;
 				}
@@ -377,7 +377,7 @@ POSTS & CONTENT STYLES
 				border-bottom: 1px solid $gray;
 
 				&:nth-child(even) {
-					background-color: $light-gray;
+					background-color: $gray_light;
 				}
 			}
 
@@ -391,7 +391,7 @@ POSTS & CONTENT STYLES
 			}
 
 			th {
-				background-color: $light-gray;
+				background-color: $gray_light;
 				border-bottom: 1px solid $gray;
 				border-right: 1px solid $gray;
 
@@ -405,7 +405,7 @@ POSTS & CONTENT STYLES
 				padding: 0 0 0 0.75em;
 				border-left: 3px solid $blue;
 				font-style: italic;
-				color: $meta-gray;
+				color: $meta_color;
 
 				&:before {}
 
@@ -449,7 +449,7 @@ POSTS & CONTENT STYLES
 
 			pre {
 				background: $black;
-				color: $light-gray;
+				color: $gray_light;
 				font-size: 0.9em;
 				padding: 1.5em;
 				margin: 0 0 1.5em;
@@ -557,11 +557,11 @@ PAGE NAVI STYLES
 
     .current{
     	cursor: default;
-    	color: $text-color;
+    	color: $text_color;
 
     	&:hover, &:focus {
     		background-color: $white;
-    		color: $text-color;
+    		color: $text_color;
     	}
     }
 
@@ -590,7 +590,7 @@ COMMENT STYLES
 #comments-title {
 	padding: 0.75em;
 	margin: 0;
-	border-top: 1px solid $light-gray;
+	border-top: 1px solid $gray_light;
 
 	/* number of comments span */
 	span {}
@@ -617,7 +617,7 @@ COMMENT STYLES
 	clear: both;
 	overflow: hidden;
 	padding: 1.5em;
-	border-bottom: 1px solid $light-gray;
+	border-bottom: 1px solid $gray_light;
 
 	.comment-author {
 		padding: 7px;
@@ -642,7 +642,7 @@ COMMENT STYLES
 			font-style: italic;
 
 			a {
-				color: $meta-gray;
+				color: $meta_color;
 				text-decoration: none;
 
 				&:hover {
@@ -711,7 +711,7 @@ COMMENT STYLES
 		background-color: $white;
 	}
 	&.even {
-		background: $light-gray;
+		background: $gray_light;
 	}
 	&.parent {}
 	&.comment {}
@@ -781,7 +781,7 @@ COMMENT FORM STYLES
 .comment-respond {
 	@extend .cf;
 	padding: 1.5em;
-	border-top: 1px solid $light-gray;
+	border-top: 1px solid $gray_light;
 }
 
 	#reply-title {
@@ -789,12 +789,12 @@ COMMENT FORM STYLES
 	}
 
 	.logged-in-as {
-		color: $meta-gray;
+		color: $meta_color;
 		font-style: italic;
 		margin: 0;
 
 		a {
-			color: $text-color;
+			color: $text_color;
 		}
 	}
 
@@ -804,7 +804,7 @@ COMMENT FORM STYLES
 
 	.form-allowed-tags {
 		padding: 1.5em;
-		background-color: $light-gray;
+		background-color: $gray_light;
 		font-size: 0.9em;
 	}
 
@@ -872,7 +872,7 @@ SIDEBARS & ASIDES
 		background-color: $white;
 		padding: 1.5em;
 		text-align: center;
-		border: 1px solid $border-color;
+		border: 1px solid $border_color;
 		border-radius: 2px;
 		margin-bottom: 1.5em;
 	}
@@ -884,7 +884,7 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	background-color: $black;
-	color: $light-gray;
+	color: $gray_light;
 }
 
 	/*

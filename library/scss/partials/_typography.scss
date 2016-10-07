@@ -49,9 +49,9 @@ I've edited it a bit, but it's a nice starting point.
 
 
 // font stacks
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans:              "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-$body-font:         $sans-serif;
+$body_font:         $sans;
 $heading_font:      $serif;
 
 /*

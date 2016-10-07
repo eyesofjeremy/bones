@@ -32,10 +32,10 @@ body#tinymce.wp-editor {
 	@import "partials/mixins";
 
 	width: 731px;
-	font-family: $body-font;
+	font-family: $body_font;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text-color;
+	color: $text_color;
   -webkit-font-smoothing: antialiased;
 
   /*********************
@@ -43,11 +43,11 @@ body#tinymce.wp-editor {
 	*********************/
 
 	a, a:visited {
-		color: $link-color;
+		color: $link_color;
 
 		/* on hover */
 		&:hover, &:focus {
-			color: $link-hover;
+			color: $link_hover;
 		}
 
 		/* on click */
@@ -114,7 +114,7 @@ body#tinymce.wp-editor {
 			caption {
 				margin: 0 0 7px;
 				font-size: 0.75em;
-				color: $meta-gray;
+				color: $meta_color;
 				text-transform: uppercase;
 				letter-spacing: 1px;
 			}
@@ -123,7 +123,7 @@ body#tinymce.wp-editor {
 		tr {
 			border-bottom: 1px solid $gray;
 			&:nth-child(even) {
-				background-color: $light-gray;
+				background-color: $gray_light;
 			}
 		}
 
@@ -137,7 +137,7 @@ body#tinymce.wp-editor {
 		}
 
 		th {
-			background-color: $light-gray;
+			background-color: $gray_light;
 			border-bottom: 1px solid $gray;
 			border-right: 1px solid $gray;
 
@@ -151,7 +151,7 @@ body#tinymce.wp-editor {
 			padding: 0 0 0 0.75em;
 			border-left: 3px solid $blue;
 			font-style: italic;
-			color: $meta-gray;
+			color: $meta_color;
 
 			&:before {}
 
@@ -181,7 +181,7 @@ body#tinymce.wp-editor {
 
 		pre {
 			background: $black;
-			color: $light-gray;
+			color: $gray_light;
 			font-size: 0.9em;
 			padding: 1.5em;
 			margin: 0 0 1.5em;
