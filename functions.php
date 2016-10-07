@@ -95,6 +95,16 @@ for the 600 x 150 image:
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
+
+You can also use update_option to
+CHANGE EXISTING IMAGE SIZES if you like, like-a dis:
+
+// Update Medium and Large Size images to fit our theme design
+update_option( 'medium_size_w', 576 );
+update_option( 'medium_size_h', 342 );
+
+update_option( 'large_size_w', 1080 );
+update_option( 'large_size_h', 640 );
 */
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
