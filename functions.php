@@ -252,10 +252,11 @@ function bones_comments( $comment, $args, $depth ) {
 function bones_featured_image() {
   global $post;
   $thumbnail_id = get_post_thumbnail_id( $post->ID );
-  $thumbnail_data = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
-  $alt = $thumbnail_data[0]->post_title;
-  
+
   if( $thumbnail_id ) {
+    $thumbnail_data = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+    $alt = $thumbnail_data[0]->post_title;
+  
     $image = wp_get_attachment_image_src( $thumbnail_id, 'post-thumbnail' );
   
     $img_src = wp_get_attachment_image_url( $thumbnail_id, 'featured-s' );
