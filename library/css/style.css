@@ -146,7 +146,6 @@ em,
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -156,8 +155,8 @@ hr {
 p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto; }
+  -ms-hyphens: auto;
+      hyphens: auto; }
 
 /*
  * Addresses margins set differently in IE6/7.
@@ -369,8 +368,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -411,8 +408,6 @@ table {
   border-spacing: 0; }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
@@ -514,13 +509,12 @@ p {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
   -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
   -ms-font-feature-settings: "liga", "dlig";
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig"; }
@@ -531,6 +525,135 @@ Mixins for typography
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.caps, .smallcaps {
+  letter-spacing: .05em;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.smallcaps {
+  font-size: .75em; }
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  text-rendering: optimizelegibility;
+  font-weight: 500; }
+  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+    text-decoration: none; }
+
+h1, .h1 {
+  font-size: 2.5em;
+  line-height: 1.333em; }
+
+h2, .h2 {
+  font-size: 1.75em;
+  line-height: 1.4em;
+  margin-bottom: 0.375em; }
+
+h3, .h3 {
+  font-size: 1.125em; }
+
+h4, .h4 {
+  font-size: 1.1em;
+  font-weight: 700; }
+
+h5, .h5 {
+  font-size: 0.846em;
+  line-height: 2.09em;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  color: #f01d4f;
+  /* on hover */
+  /* on click */ }
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: #d10e3c; }
+  a:link, a:visited:link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+/*********************
+GENERAL STYLES
+*********************/
+p {
+  margin: 0 0 1.5em; }
+
+table {
+  width: 100%;
+  border: 1px solid #eaedf2;
+  margin-bottom: 1.5em; }
+  table caption {
+    margin: 0 0 7px;
+    font-size: 0.75em;
+    color: #9fa6b4;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+
+tr {
+  border-bottom: 1px solid #eaedf2; }
+  tr:nth-child(even) {
+    background-color: #f8f9fa; }
+
+td {
+  padding: 7px;
+  border-right: 1px solid #eaedf2; }
+  td:last-child {
+    border-right: 0; }
+
+th {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eaedf2;
+  border-right: 1px solid #eaedf2; }
+  th:last-child {
+    border-right: 0; }
+
+blockquote {
+  margin: 0 0 1.5em 0.75em;
+  padding: 0 0 0 0.75em;
+  border-left: 3px solid #2980b9;
+  font-style: italic;
+  color: #9fa6b4; }
+
+dd {
+  margin-left: 0;
+  font-size: 0.9em;
+  color: #787878;
+  margin-bottom: 1.5em; }
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto; }
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto; }
+
+pre {
+  background: #323944;
+  color: #f8f9fa;
+  font-size: 0.9em;
+  padding: 1.5em;
+  margin: 0 0 1.5em;
+  border-radius: 3px; }
+
+ul {
+  list-style-type: disc; }
+
+ol {
+  list-style-type: decimal; }
+
+ol, ul {
+  padding-left: 1.5em; }
 
 /******************************************************************
 Site Name:
@@ -1278,6 +1401,18 @@ body {
   color: #5c6b80;
   background-color: #eaedf2; }
 
+a.post-edit-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: none;
+  font-size: .875rem;
+  background: #f60;
+  padding: .125em .5em; }
+  a.post-edit-link:hover {
+    color: #fff;
+    background: red; }
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -1320,74 +1455,26 @@ style a page via class
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.wrap {
-  width: 96%;
-  margin: 0 auto; }
-
-/*********************
-LINK STYLES
-*********************/
-a, a:visited {
-  color: #f01d4f;
-  /* on hover */
-  /* on click */
-  /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
-  a:link, a:visited:link {
-    /*
-    this highlights links on iPhones/iPads.
-    so it basically works like the :hover selector
-    for mobile devices.
-    */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
-
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  text-rendering: optimizelegibility;
-  font-weight: 500;
-  /*
-  if you're going to use webfonts, be sure to check your weights
-  http://css-tricks.com/watch-your-font-weight/
-  */
-  /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
-    text-decoration: none; }
-
-h1, .h1 {
-  font-size: 2.5em;
-  line-height: 1.333em; }
-
-h2, .h2 {
-  font-size: 1.75em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em; }
-
-h3, .h3 {
-  font-size: 1.125em; }
-
-h4, .h4 {
-  font-size: 1.1em;
-  font-weight: 700; }
-
-h5, .h5 {
-  font-size: 0.846em;
-  line-height: 2.09em;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
+.site {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  max-width: 48em; }
 
 /*********************
 HEADER STYLES
 *********************/
 .header {
-  background-color: #323944; }
+  position: relative;
+  background-color: #fff;
+  padding-top: 3em; }
+
+.logo {
+  display: inline-block;
+  padding: 1.375em 1.375em .5em; }
 
 #logo {
-  margin: 0.75em 0; }
-  #logo a {
-    color: #fff; }
+  margin: 0; }
 
 /*********************
 NAVIGATION STYLES
@@ -1415,7 +1502,7 @@ and more scalable.
     */ }
     .nav li a {
       display: block;
-      color: #fff;
+      color: #f01d4f;
       text-decoration: none;
       padding: 0.75em;
       /*
@@ -1436,13 +1523,15 @@ POSTS & CONTENT STYLES
   margin-top: 1.5em; }
 
 .hentry {
-  background-color: #fff;
-  border-radius: 3px;
-  margin-bottom: 1.5em;
-  border: 1px solid #ccc; }
-  .hentry header {
-    border-bottom: 1px solid #f8f9fa;
+  margin-bottom: 1.5em; }
+  .hentry header, .hentry footer {
+    position: relative;
     padding: 1.5em; }
+  .hentry header .featured-image {
+    margin: -1.5em -1.5em 0; }
+    .hentry header .featured-image img {
+      display: block;
+      max-width: 100%; }
   .hentry footer {
     padding: 1.5em;
     border-top: 1px solid #f8f9fa; }
@@ -1453,7 +1542,8 @@ POSTS & CONTENT STYLES
 .single-title,
 .page-title,
 .entry-title {
-  margin: 0; }
+  margin: 1em 0 0;
+  color: #7b8090; }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1472,71 +1562,8 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
-  /*
-  image alignment on a screen this size may be
-  a bit difficult. It's set to start aligning
-  and floating images at the next breakpoint,
-  but it's up to you. Feel free to change it up.
-  */ }
-  .entry-content p {
-    margin: 0 0 1.5em; }
-  .entry-content table {
-    width: 100%;
-    border: 1px solid #eaedf2;
-    margin-bottom: 1.5em; }
-    .entry-content table caption {
-      margin: 0 0 7px;
-      font-size: 0.75em;
-      color: #9fa6b4;
-      text-transform: uppercase;
-      letter-spacing: 1px; }
-  .entry-content tr {
-    border-bottom: 1px solid #eaedf2; }
-    .entry-content tr:nth-child(even) {
-      background-color: #f8f9fa; }
-  .entry-content td {
-    padding: 7px;
-    border-right: 1px solid #eaedf2; }
-    .entry-content td:last-child {
-      border-right: 0; }
-  .entry-content th {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eaedf2;
-    border-right: 1px solid #eaedf2; }
-    .entry-content th:last-child {
-      border-right: 0; }
-  .entry-content blockquote {
-    margin: 0 0 1.5em 0.75em;
-    padding: 0 0 0 0.75em;
-    border-left: 3px solid #2980b9;
-    font-style: italic;
-    color: #9fa6b4; }
-  .entry-content dd {
-    margin-left: 0;
-    font-size: 0.9em;
-    color: #787878;
-    margin-bottom: 1.5em; }
-  .entry-content img {
-    margin: 0 0 1.5em 0;
-    max-width: 100%;
-    height: auto; }
-  .entry-content .size-auto,
-  .entry-content .size-full,
-  .entry-content .size-large,
-  .entry-content .size-medium,
-  .entry-content .size-thumbnail {
-    max-width: 100%;
-    height: auto; }
-  .entry-content pre {
-    background: #323944;
-    color: #f8f9fa;
-    font-size: 0.9em;
-    padding: 1.5em;
-    margin: 0 0 1.5em;
-    border-radius: 3px; }
+  padding: 1.5em 1.5em 0; }
 
-/* end .entry-content */
 .wp-caption {
   max-width: 100%;
   background: #eee;
@@ -1743,8 +1770,10 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.widget ul li {
-  /* deep nesting */ }
+.widget {
+  margin: 1.5em 1.5em 0; }
+  .widget ul li {
+    /* deep nesting */ }
 
 .no-widgets {
   background-color: #fff;
@@ -1772,6 +1801,9 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+.copyright {
+  padding: 1.5em; }
+
 @media (min-width: 32em) {
   /******************************************************************
   Site Name:
@@ -1856,12 +1888,24 @@ view.
   /*********************
   LAYOUT & GRID STYLES
   *********************/
+  .site {
+    max-width: 60em;
+    box-shadow: 0 0 2.5em 1em rgba(0, 0, 0, 0.25); }
+
   .wrap {
-    width: 760px; }
+    padding: 0 3em; }
 
   /*********************
   HEADER STYLES
   *********************/
+  .header {
+    padding-top: 0; }
+
+  .logo {
+    margin-left: -3em;
+    padding-left: 3.5em;
+    padding-right: 3.5em; }
+
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1870,8 +1914,9 @@ view.
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */ }
+    .header .nav {
+      padding-left: 4.375em; }
     .nav ul {
-      background: #323944;
       margin-top: 0; }
     .nav li {
       float: left;
@@ -1886,9 +1931,6 @@ view.
         you can use hover styles here even though this size
         has the possibility of being a mobile device.
         */ }
-        .nav li a:hover, .nav li a:focus {
-          color: #fff;
-          text-decoration: underline; }
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
@@ -1925,6 +1967,18 @@ view.
 
   /* end .nav */
   /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  #content {
+    margin-top: 0; }
+
+  .hentry {
+    margin-bottom: 1.5em;
+    padding: 1.5em 0; }
+    .hentry header {
+      margin: 0 -3em; }
+
+  /*********************
   SIDEBARS & ASIDES
   *********************/
   .sidebar {
@@ -1935,8 +1989,7 @@ view.
     margin-bottom: 0.75em; }
 
   .widget {
-    padding: 0 10px;
-    margin: 2.2em 0; }
+    margin-top: 2.5em; }
     .widget ul li {
       margin-bottom: 0.75em;
       /* deep nesting */ }
@@ -1981,9 +2034,7 @@ view.
   This typically targets devices larger than a tablet, but it's your
   design. Shift the media queries to fit your evil scheme.
   
-  ******************************************************************/
-  .wrap {
-    width: 1040px; } }
+  ******************************************************************/ }
 @media (min-width: 78em) {
   /******************************************************************
   Site Name: 
@@ -2056,7 +2107,8 @@ be set to display none.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    filter: none !important;
+    -webkit-filter: none !important;
+            filter: none !important;
     -ms-filter: none !important; }
 
   a, a:visited {

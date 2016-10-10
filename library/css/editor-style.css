@@ -263,6 +263,15 @@ body#tinymce.wp-editor {
   Mixins for typography
   */
   /******************************************************************
+  H1, H2, H3, H4, H5 STYLES
+  ******************************************************************/
+  /*********************
+  LINK STYLES
+  *********************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /******************************************************************
   Site Name:
   Author:
   
@@ -358,12 +367,6 @@ body#tinymce.wp-editor {
   line-height: 1.5;
   color: #5c6b80;
   -webkit-font-smoothing: antialiased;
-  /*********************
-	LINK STYLES
-	*********************/
-  /******************************************************************
-  H1, H2, H3, H4, H5 STYLES
-  ******************************************************************/
   padding: 1.5em 1.5em 0;
   /*********************
   LARGER MOBILE DEVICES
@@ -581,14 +584,12 @@ body#tinymce.wp-editor {
     -ms-font-feature-settings: "liga", "dlig";
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig"; }
-  body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #f01d4f;
-    /* on hover */
-    /* on click */ }
-    body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #d10e3c; }
-    body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+  body#tinymce.wp-editor .caps, body#tinymce.wp-editor .smallcaps {
+    letter-spacing: .05em;
+    font-weight: bold;
+    text-transform: uppercase; }
+  body#tinymce.wp-editor .smallcaps {
+    font-size: .75em; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
     text-rendering: optimizelegibility;
     font-weight: 500; }
@@ -611,6 +612,14 @@ body#tinymce.wp-editor {
     line-height: 2.09em;
     text-transform: uppercase;
     letter-spacing: 2px; }
+  body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
+    color: #f01d4f;
+    /* on hover */
+    /* on click */ }
+    body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
+      color: #d10e3c; }
+    body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor p {
     margin: 0 0 1.5em; }
   body#tinymce.wp-editor table {
@@ -650,7 +659,7 @@ body#tinymce.wp-editor {
     color: #787878;
     margin-bottom: 1.5em; }
   body#tinymce.wp-editor img {
-    margin: 0 0 1.5em 0;
+    border: none;
     max-width: 100%;
     height: auto; }
   body#tinymce.wp-editor .size-auto,
@@ -667,6 +676,14 @@ body#tinymce.wp-editor {
     padding: 1.5em;
     margin: 0 0 1.5em;
     border-radius: 3px; }
+  body#tinymce.wp-editor ul {
+    list-style-type: disc; }
+  body#tinymce.wp-editor ol {
+    list-style-type: decimal; }
+  body#tinymce.wp-editor ol, body#tinymce.wp-editor ul {
+    padding-left: 1.5em; }
+  body#tinymce.wp-editor img {
+    margin-bottom: 1.5em; }
   @media only screen and (min-width: 481px) {
     body#tinymce.wp-editor {
       /* at this larger size, we can start to align images */ }
