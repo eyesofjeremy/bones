@@ -1,0 +1,74 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tab Styles
+
+Functionality to create tabs where you'd like.
+
+Hat tip to Stephen Morley. I was almost there, but this model helped:
+http://code.stephenmorley.org/html-and-css/tabbed-panels/
+
+******************************************************************/
+
+// Styling
+.tabbed {
+
+  label {
+    @extend .caps;
+    margin-right: 1em;
+    padding: .5em 1em;
+    background: $gray_light;
+    transition: .2s;
+  
+    &:hover {
+      background: darken( $gray_light, 8% );
+    }
+  }
+  
+  .toggle:checked + section label {
+    color: #fff;
+    background: $gray_dark;
+  } 
+
+   .tab-content {
+    margin-top: 3.5em; // affected by tab size.
+  }
+  
+
+}
+
+// Utility - probably leave this alone
+.tabbed {
+  
+  .toggle {
+  
+  }
+  
+  label {
+    float: left;
+  }
+  
+   .tab-content {
+    float: right;
+    width: 100%;
+    margin-left: -100%;
+    transition: .3s opacity;
+  }
+  
+  .toggle:not(:checked) + section .tab-content {
+    opacity: 0;
+    position: relative;
+  }
+  
+  .toggle:checked + section .tab-content {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
