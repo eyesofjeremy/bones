@@ -21,12 +21,21 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $body_font;
+	font-family: $body-font;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text_color;
-	background-color: $gray;
+	color: $text-color;
+	background-color: #fff;
   @extend %crispType;
+}
+
+a {
+  transition: .2s all;
+}
+
+/* Wrapper styling for links that contain many items */
+.link_large {
+  text-decoration: none;
 }
 
 a.post-edit-link {
@@ -41,6 +50,13 @@ a.post-edit-link {
   &:hover {
     color: #fff;
     background: red;
+  }
+  
+  .promotion & {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: .75em;
   }
 }
 
@@ -115,6 +131,54 @@ HEADER STYLES
 	  margin: 0;
 	}
 
+.quick-actions {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  right: 0;
+  @extend .smallcaps;
+  color: $gray_med;
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    padding: .75em 2em;
+    font-size: 1em;
+  }
+  
+  .action {
+    width: 49%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 1em;
+  }
+  
+  .book {
+    text-align: right;
+  }
+  .tel .act {
+    display: none;
+  }
+  
+  .button {
+    color: $gray_dark;
+  }
+  
+}
+
+a.button {
+  @extend .smallcaps;
+  color: $gray_dark;
+  background: $button_color;
+  text-decoration: none;
+  padding: .75em 2em;
+  
+  &:hover {
+    color: #000;
+    background: darken( $button_color, 3% );
+  }
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -127,16 +191,51 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
+.header {
+
+	nav {
+	  transition: .3s all;
+	  max-height: 0;
+	  overflow: hidden;
+	  border-style: solid;
+	  border-color: transparent;
+	  border-width: 2px 0;
+	}
+
+  .toggle:checked ~ nav {
+    max-height: 600px;
+    overflow: auto;
+    border-color: $csp_blue;
+  }
+	
+	.menu_toggle {
+	  color: #fff;
+	  background: $csp_blue;
+    @extend .button;
+    display: block;
+    text-align: center;
+    margin: 0 1em;
+    
+    html & {
+      width: auto; // offset width set for buttons
+    }
+	}
+}
+
 .nav {
 	border-bottom: 0;
 	margin: 0;
-
+	
 	li {
 
 		a {
 			display: block;
 			color: $link_color;
 			text-decoration: none;
+		  text-transform: uppercase;
+		  letter-spacing: .05em;
+		  font-size: .875em;
+		  font-weight: bold;
 			padding: 0.75em;
 
 			/*
@@ -191,7 +290,9 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a {
+		  color: $csp_blue_light;
+		}
 
 	}  /* end current highlighters */
 
@@ -215,7 +316,7 @@ POSTS & CONTENT STYLES
 			}
 			
 			header {
-			  .featured-image {
+			  .featured-image, .featured-video-plus {
 			    margin: -1.5em -1.5em 0;
 			    
 			    img {
@@ -223,11 +324,18 @@ POSTS & CONTENT STYLES
 			      max-width: 100%;
 			    }			  
 			  }
+			  
+			  .link_large {
+			    display: block;
+			    padding-bottom: 2em;
+			  }
 			}
 
+			.featured-video-plus ~ .page-title {
+			  display: none;
+			}
+			
 			footer {
-				padding: 1.5em;
-				border-top: 1px solid $gray_light;
 
 				p {
 					margin: 0;
@@ -240,6 +348,9 @@ POSTS & CONTENT STYLES
 		.page-title,
 		.entry-title {
 			margin: 1em 0 0;
+			border-style: solid;
+			border-width: 4px 0 1px;
+			padding: .1875em;
 			color: $heading_color;
 		}
 
@@ -263,17 +374,17 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.byline {
-			color: $meta_color;
-			font-style: italic;
-			margin: 0;
+			display: none;
 
 			time {}
 		}
 
-		/* entry content */
+		/* entry content 
+		    Note: Most of the basic stuff will be inside partials/typography 
+		*/
 		.entry-content {
 			padding: 1.5em 1.5em 0;
-		}
+		} /* end .entry-content */
 
 		.wp-caption {
 			max-width: 100%;
@@ -324,6 +435,400 @@ POSTS & CONTENT STYLES
 	.tags {
 		margin: 0;
 	}
+	
+
+  .pilates-class {
+    h3 {
+      padding-top: 5px;
+      border-top: 1px solid $gray_med;
+    }
+  }
+
+	.pricing {
+	  li {
+      display: inline-block;
+      font-weight: bold;
+      margin-right: 1.5em;
+    }
+  }
+  
+  .tips {
+    background: $gray_light;
+    margin: 0 -1em 1.5em;
+    padding: 0 1em 1px 3em;
+  
+    h4 {
+      background: $gray_med;
+      color: #fff;
+      @extend .smallcaps;
+      font-size: 1em;
+      padding: .5em 1em .5em 3em;
+      margin: 0 -1em .5em -3em;
+      
+      img {
+        width: 24px;
+        float: left;
+        margin-left: -34px;
+      }
+    }
+  }
+  
+  .schedule_listing {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .toggle {
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  .button {
+    @extend a.button;
+    width: 12em;
+    transition: .2s all;
+    
+    span {
+      display: inline-block;
+    }
+
+    .toggle:checked + & {
+    
+      span {
+        width: 0;
+        height: 0;
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      &:after {
+        content: 'Close';
+      }
+    }
+  }
+
+@keyframes blinker {  
+  50% { opacity: 0.0; }
+}
+  .hc_sched {
+    position: relative;
+    margin: 1em -1.5em;
+    padding: 0 1.5em;
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s all ease-in-out;
+    opacity: 0;
+    
+    .loading {
+      animation: blinker 1s linear infinite;
+      text-align: center;
+    }
+    
+    .toggle:checked ~ & {
+      padding: .5em 1.5em;
+      border: solid $csp_citron;
+      border-width: .25em 0;
+      max-height: 3000px;
+      overflow: auto;
+      opacity: 1;
+      background: #f4f4f4;
+    }
+    
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    
+    .header {
+      background: none;
+    }
+    
+    .action_icon {
+     
+      img {
+        margin: 0;
+      }
+    }
+    
+    h1 {
+      font-size: 1em;
+      font-weight: bold;
+      font-family: $body-font;
+    }
+    
+    select, .checkboxes {
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+    
+    .hc-button {
+      @extend a.button;
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+
+    table {
+      border: none;
+
+      tr, th {
+        background: none !important;
+      }
+
+      th {
+        text-align: left;
+        @extend .smallcaps;
+        font-size: 1.125em;
+        font-weight: normal;
+      }
+      
+      th, td {
+        border: none;
+        padding: 0;
+      }
+  
+      .schedule_listing_header {
+        border: solid #fff;
+        border-width: 2px 0 0;
+      }
+  
+      .hc_class {
+        border: solid #fff;
+        border-width: 0 0 2px;
+      }
+  
+    }
+  }
+  
+  .healcode {
+    .header {}
+      .filters {}
+    
+    .schedule_list {
+      list-style: none;
+      padding: 0;
+      margin: 0 -.25em;
+      
+      a {
+        color: inherit;
+      }
+    }
+    
+    li {
+      padding: .25em;
+      
+      &:hover {
+        background: #fff;
+      }
+    }
+    
+    .schedule_header {
+      @extend .caps;
+      margin: 2em 0 .5em;
+      padding-top: .5em;
+      border-top: 1px solid #fff;
+      
+      &:hover {
+        background: none;
+      }
+    }
+    
+    li.schedule_header {
+      font-weight: normal;
+    }
+    
+    .info_wrapper {}
+      .hc_time {}
+      .mbo_class {}
+      .trainer {}
+      .class_level {}
+      
+    .mbo_class a, .trainer a {
+      text-decoration: none;
+      cursor: text;
+      pointer-events: none;
+    }
+    
+    .hc_time, .mbo_class {
+      font-weight: bold;
+    }
+    
+    .signup {}
+      .hc_class_availability {}
+    
+  }
+
+  .promotions {
+    h2 {
+      text-align: center;
+    }
+  }
+
+  .promotion {
+    max-width: 18em;
+    background: #eee;
+    border-top: .5em solid $csp_blue;
+    padding: 0 0 1.5em;
+    text-align: center;
+    margin: 3em auto;
+    position: relative;
+    
+    h3 {
+      font-size: 1em;
+      color: $gray_dark;
+    }
+    
+    .content {
+      padding: 0 1.5em 1.5em;
+      color: $gray_med_text;
+      
+      &:before {
+        content: '';
+        display: block;
+        margin: 0 auto .75em;
+        width: 5.5em;
+        border-top: 2px solid $csp_blue;
+      }
+    }
+    
+    .list-2 & { // special sizing if only two promotions running
+      max-width: 24em;
+    
+      h3 {
+        font-size: 1.25em;
+        margin-top: 0;
+      }
+    
+      .content {
+        font-size: 1.125em;
+        line-height: 1.66;
+      }
+    }
+    
+    a[data-url] {
+      @extend .button;
+    }
+  }
+/*********************
+HOME STYLES
+*********************/
+
+.home {
+  
+  .hentry header {  
+    padding-bottom: 0;
+    
+    .featured-image {
+
+      & + .page-title {
+        color: $gray_dark;
+        border: none;
+        margin: 0;
+      }
+    }
+    
+    img {
+      margin: 0;
+    }
+
+    .button {
+      font-size: .875em;
+    }
+  }
+  
+  .schedule_listing {
+    background: $csp_blue url('../images/schedule-1080x384.jpg') no-repeat 50% top;
+    position: relative;
+    overflow: hidden;
+    padding: 2em 0;
+    text-align: center;
+    
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -1.5em;
+      right: -1.5em;
+      height: 1.5em;
+    }
+    
+    &:before {
+      top: 0;
+      box-shadow: inset 0 .75em .75em rgba( 0,0,0,0.6 );
+    }
+    
+    &:after {
+      bottom: 0;
+      box-shadow: inset 0 -.75em .75em rgba( 0,0,0,0.6 );
+    }
+    
+    .button {
+      font-size: 1.125em;
+      background: rgba( 255,255,255,0.8 );
+      padding: 1.25em 4em;
+      display: inline-block;
+      width: auto;
+    }
+    
+    .hc_sched {
+      text-align: left;
+      margin: 1em 1em -1em;
+      background: rgba( 255,255,255,0.8 );
+      border: none;
+    }
+    
+    .toggle:checked ~ .hc_sched {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.inspiration {
+  text-align: center;
+  padding: 1.5em;
+  color: #fff;
+  background: $csp_blue url('../images/grip-bar-blue.jpg') no-repeat 50% top;
+  
+  blockquote {
+    color: #fff;
+    margin: 0;
+  }
+}
+
+.hero-button {
+  position: relative;
+  margin: 1em 0;
+
+  a {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    font-size: 1.125em;
+    text-align: center;  
+  }
+
+  &[class~="has-image"] {
+    
+    img {
+      display: block;
+    }
+    
+    a {
+      padding: 0;
+      color: #fff;
+      font-size: 2em;
+      font-family: $heading_font;
+    }
+  
+    span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin-top: -1em;
+    }
+  }
+}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -374,11 +879,11 @@ PAGE NAVI STYLES
 
     .current{
     	cursor: default;
-    	color: $text_color;
+    	color: $text-color;
 
     	&:hover, &:focus {
     		background-color: $white;
-    		color: $text_color;
+    		color: $text-color;
     	}
     }
 
@@ -459,7 +964,7 @@ COMMENT STYLES
 			font-style: italic;
 
 			a {
-				color: $meta_color;
+				color: $meta-gray;
 				text-decoration: none;
 
 				&:hover {
@@ -606,12 +1111,12 @@ COMMENT FORM STYLES
 	}
 
 	.logged-in-as {
-		color: $meta_color;
+		color: $meta-gray;
 		font-style: italic;
 		margin: 0;
 
 		a {
-			color: $text_color;
+			color: $text-color;
 		}
 	}
 
@@ -664,7 +1169,7 @@ SIDEBARS & ASIDES
 	.widgettitle {}
 
 	.widget {
-	  margin: 1.5em 1.5em 0; // same as content padding
+	  margin: 1.5em auto 0; // same as content padding
 
 		ul {
 
@@ -689,7 +1194,7 @@ SIDEBARS & ASIDES
 		background-color: $white;
 		padding: 1.5em;
 		text-align: center;
-		border: 1px solid $border_color;
+		border: 1px solid $border-color;
 		border-radius: 2px;
 		margin-bottom: 1.5em;
 	}
@@ -700,8 +1205,26 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $gray_light;
+	background-color: $gray_cool;
+	color: #fff;
+	text-align: center;
+	font-size: .875em;
+	
+	.widget {
+	  max-width: 28em;
+	}
+	
+	h4 {
+	  color: $gray_med;
+	  font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .05em;
+	}
+	
+	a, a:hover {
+	  color: #fff;
+	}
 }
 
 	/*
@@ -723,6 +1246,40 @@ FOOTER STYLES
 
 	} /* end .footer-links */
 
+  .signup {
+  
+    input {
+      margin-bottom: 0;
+    }
+    
+    .gfield_label {
+      position: relative;
+      top: 2px;
+    }
+  
+    .cc_Go {
+      margin-top: 1.5em;
+    }
+
+    .button {
+      border: none;
+      font-size: 1em;
+      width: 100%;
+      display: block;
+      color: #fff;
+      background: $csp_blue;
+      
+      &:active {
+        background: darken( $csp_blue, 10% );
+      }
+    }
+  
+    .cc_safesubscribe {
+      font-size: .75em;
+      color: #ccc;
+      text-decoration: none;    
+    }
+  }
 
 	.copyright {
 	  padding: 1.5em;
