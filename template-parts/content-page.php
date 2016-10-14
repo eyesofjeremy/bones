@@ -38,8 +38,9 @@
 									?>
 								</section> <?php // end article section ?>
 
+<?php /* add a footer if you want
 								<footer class="article-footer cf">
 
 								</footer>
-
+*/ ?>
 							</article>
