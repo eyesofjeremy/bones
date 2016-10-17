@@ -32,6 +32,11 @@
         get_template_part('template-parts/content', 'hero-button');
         break;
 
+      // MISC CONTENT
+      case ( 'content' ):
+        get_template_part('template-parts/content', 'misc');
+        break;
+
       // GLOBAL CONTENT BLOCK - will loop back through here!
       case ( 'global' ):
         get_template_part('template-parts/content', 'global');
