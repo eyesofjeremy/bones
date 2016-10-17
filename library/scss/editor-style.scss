@@ -31,17 +31,17 @@ body#tinymce.wp-editor {
 	// import mixins
 	@import "partials/mixins";
 
-	width: 731px;
-	font-family: $body_font;
+	font-family: $body-font;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text_color;
-  -webkit-font-smoothing: antialiased;
-	padding: 1.5em 1.5em 0;
+	color: $text-color;
+	@extend %crispType;
+	padding: .75em;
 
   img {
     margin-bottom: 1.5em;
   }
+
 
 		/*********************
 		LARGER MOBILE DEVICES
