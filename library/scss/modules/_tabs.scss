@@ -9,6 +9,12 @@ Functionality to create tabs where you'd like.
 Hat tip to Stephen Morley. I was almost there, but this model helped:
 http://code.stephenmorley.org/html-and-css/tabbed-panels/
 
+Hold on there! Looks like we are doing this with flexbox! Once we
+get tabs which wrap to more than a line, we run into problems 
+not easily fixed.
+
+Started w/ http://codepen.io/vulpesigni/pen/yyZYNy
+
 ******************************************************************/
 
 // Styling
@@ -16,59 +22,62 @@ http://code.stephenmorley.org/html-and-css/tabbed-panels/
 
   label {
     @extend .caps;
-    margin-right: 1em;
-    padding: .5em 1em;
+    font-size: .8125em;
+    margin: 0 .75em .5em 0;
+    padding: .5em .75em;
     background: $gray_light;
     transition: .2s;
   
     &:hover {
       background: darken( $gray_light, 8% );
     }
+    
+    .tab-content {
+      padding: 1em .75em;
+    }
   }
   
-  .toggle:checked + section label {
+  .toggle:checked + label {
     color: #fff;
     background: $gray_dark;
   } 
-
-   .tab-content {
-    margin-top: 3.5em; // affected by tab size.
-  }
-  
-
 }
 
 // Utility - probably leave this alone
 .tabbed {
   
-  .toggle {
-  
-  }
+  .toggle {}
   
   label {
-    float: left;
-  }
-  
-   .tab-content {
-    float: right;
-    width: 100%;
-    margin-left: -100%;
-    transition: .3s opacity;
-  }
-  
-  .toggle:not(:checked) + section .tab-content {
-    opacity: 0;
+    display: block;
     position: relative;
   }
+
+  .tab-content {}
   
-  .toggle:checked + section .tab-content {
-    opacity: 1;
-    z-index: 1;
+  .toggle:not(:checked) + label + .tab-content {
+    display: none;
+  }
+  
+  .toggle:checked + label + .tab-content {
+    display: block;
   }
 
   &:after {
     content: '';
     display: table;
     clear: both;
+  }
+}
+
+@media( min-width: $page_s ) {
+
+  .tabbed {
+    display: flex;
+    flex-wrap: wrap;
+
+    .tab-content {
+      order: 1;
+    }
   }
 }

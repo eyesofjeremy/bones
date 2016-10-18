@@ -6,6 +6,7 @@
  *
  * To use, set up the following inside a loop on the template page where you'll
  * use this pattern.
+ * The container div should have the class .tabbed
  * Note: The first item is static; the rest should come from the loop's data
 
       $tab = array(
@@ -22,10 +23,8 @@
 ?>
 
 <input type="radio" name="<?php echo $tab['group']; ?>" id="<?php echo $tab['id']; ?>" class="toggle" <?php echo $checked; ?>>
-<section>
 <label for= "<?php echo $tab['id']; ?>"><?php echo $tab['label']; ?></label>
 <div class="tab-content"><?php echo $tab['content']; ?></div>
-</section>
 
 <?php
   $show_first_tab = false; // the rest of the tabs will not be checked
