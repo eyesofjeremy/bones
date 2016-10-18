@@ -287,7 +287,7 @@
                         }
                     ],
                     "min": "",
-                    "max": "2"
+                    "max": ""
                 },
                 {
                     "key": "57eee9e415c90",
@@ -388,5 +388,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": ""
+    "description": "",
+    "modified": 1476812408
 }
