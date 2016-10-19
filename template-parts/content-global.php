@@ -19,6 +19,8 @@
     get_template_part( 'template-parts/display', 'flexible-content' );
 
   endwhile; // End of the loop. 
+	
+	edit_post_link( 'Edit global content' );
 			
   $post = $temp_query; // retrieve main query
 ?>
