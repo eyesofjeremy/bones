@@ -278,6 +278,22 @@ function bones_featured_image() {
   }
 }
 
+/*
+Let's add a class to the body tag which gives us a page-specific CSS hook
+http://www.wpbeginner.com/wp-themes/how-to-add-page-slug-in-body-class-of-your-wordpress-themes/
+*/
+
+function bones_add_slug_body_class( $classes ) {
+  
+  global $post;
+  
+  if ( isset( $post ) ) {
+    $classes[] = $post->post_type . '-' . $post->post_name;
+  }
+
+  return $classes;
+}
+add_filter( 'body_class', 'bones_add_slug_body_class' );
 
 /*
 This is a modification of a function found in the
