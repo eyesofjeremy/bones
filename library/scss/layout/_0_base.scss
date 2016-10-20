@@ -436,8 +436,8 @@ POSTS & CONTENT STYLES
 		margin: 0;
 	}
 	
-
   .pilates-class {
+    margin: 1.5em 0;
     h3 {
       padding-top: 5px;
       border-top: 1px solid $gray_med;
@@ -800,6 +800,7 @@ HOME STYLES
   margin: 1em 0;
 
   a {
+    @extend a.button;
     display: block;
     width: auto;
     margin: 0 auto;
@@ -807,17 +808,28 @@ HOME STYLES
     text-align: center;  
   }
 
+  img {
+    display: block;
+    opacity: 0.85;
+    transition: .3s;
+    backface-visibility: hidden; /* deal w/ Chrome jumpiness on transforms http://stackoverflow.com/a/16833496/156645 */
+  }
+  
+  a:hover img {
+    opacity: 1;
+  }  
+
   &[class~="has-image"] {
-    
-    img {
-      display: block;
-    }
+    padding: 0;
     
     a {
       padding: 0;
       color: #fff;
+      background: $csp_blue;
       font-size: 2em;
       font-family: $heading_font;
+      font-weight: normal;
+      text-transform: none;
     }
   
     span {
@@ -825,7 +837,9 @@ HOME STYLES
       position: absolute;
       top: 50%;
       width: 100%;
-      margin-top: -1em;
+      line-height: 1.5;
+      margin-top: -.75em;
+      text-shadow: 0 0 .5em rgba( darken( $csp_blue, 15% ), 0.75 );
     }
   }
 }
