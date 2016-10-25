@@ -19,7 +19,7 @@ include('site-option-shortcodes.php');
 
 function qcinfo_add_admin_menu(  ) { 
 
-	add_options_page( 'Contact Info', 'Contact Info', 'manage_options', 'contact-info', 'qcinfo_options_page' );
+	add_options_page( 'Contact Info', 'Contact Info', 'manage_categories', 'contact-info', 'qcinfo_options_page' );
 
 }
 
