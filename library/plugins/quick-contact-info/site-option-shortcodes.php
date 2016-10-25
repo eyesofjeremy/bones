@@ -43,7 +43,8 @@ add_shortcode( 'phone', 'qcinfo_phone' );
 function qcinfo_address( $atts ) {
 
 	$options = get_option( 'qcinfo_settings' );
-	return $options['address'];
+  $text = apply_filters( 'the_content', $options['address'] );
+  return $text;
 }
 add_shortcode( 'address', 'qcinfo_address' );
 

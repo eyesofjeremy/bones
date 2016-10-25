@@ -4,8 +4,15 @@ Plugin Name: Quick Contact Info
 Plugin URI: http://jeremycarlson.com/
 Description: Set up contact info to be accessible from anywhere in your site.
 Author: Jeremy Carlson
-Version: 0.2
+Version: 0.3
 Author URI: http://www.jeremycarlson.com
+*/
+
+/*
+
+  CHANGELOG
+  v0.3  Make settings page available to editors, and filter address through the_content
+
 */
 
 add_action( 'admin_menu', 'qcinfo_add_admin_menu' );
