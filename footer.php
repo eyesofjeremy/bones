@@ -26,6 +26,15 @@
 
 		</div>
 
+    <?php
+    // Allow us to inspect queries.
+    if ( current_user_can('manage_options') && isset( $_GET['showqueries'] ) ) {
+      echo "<pre>";
+      print_r($wpdb->queries);
+      echo "</pre>";
+    }
+    ?>
+
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>
 
