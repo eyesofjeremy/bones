@@ -146,6 +146,7 @@ em,
  * Address differences between Firefox and other browsers.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -155,8 +156,8 @@ hr {
 p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto; }
+  -moz-hyphens: auto;
+  hyphens: auto; }
 
 /*
  * Addresses margins set differently in IE6/7.
@@ -368,6 +369,8 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -408,6 +411,8 @@ table {
   border-spacing: 0; }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
@@ -508,16 +513,16 @@ p {
   -ms-word-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig"; }
+  hyphenate-lines: 3; }
+
+@media (min-width: 48em) {
+  p {
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none; } }
 
 /*
 Mixins for typography
@@ -526,12 +531,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.caps, .smallcaps {
+.caps, .smallcaps, .quick-actions, a.button, .button, .header .menu_toggle, .promotion a[data-url], .hc_sched .hc-button, .hero-button a, .tips h4, .hc_sched table th, .tabbed label, .healcode .schedule_header {
   letter-spacing: .05em;
   font-weight: bold;
   text-transform: uppercase; }
 
-.smallcaps {
+.smallcaps, .quick-actions, a.button, .button, .header .menu_toggle, .promotion a[data-url], .hc_sched .hc-button, .hero-button a, .tips h4, .hc_sched table th {
   font-size: .75em; }
 
 /******************************************************************
@@ -652,7 +657,8 @@ ul {
 ol {
   list-style-type: decimal; }
 
-ol, ul {
+ol,
+ul {
   padding-left: 1.5em; }
 
 /******************************************************************
@@ -786,31 +792,27 @@ them however you see fit.
     padding-right: 0.75em;
     width: 100%;
     padding-right: 0; }
-
   .m-1of2 {
     float: left;
     padding-right: 0.75em;
     width: 50%; }
-
   .m-1of3 {
     float: left;
     padding-right: 0.75em;
     width: 33.33%; }
-
   .m-2of3 {
     float: left;
     padding-right: 0.75em;
     width: 66.66%; }
-
   .m-1of4 {
     float: left;
     padding-right: 0.75em;
     width: 25%; }
-
   .m-3of4 {
     float: left;
     padding-right: 0.75em;
     width: 75%; } }
+
 /* Portrait tablet to landscape */
 @media (min-width: 48em) and (max-width: 59.99em) {
   .t-all {
@@ -818,51 +820,43 @@ them however you see fit.
     padding-right: 0.75em;
     width: 100%;
     padding-right: 0; }
-
   .t-1of2 {
     float: left;
     padding-right: 0.75em;
     width: 50%; }
-
   .t-1of3 {
     float: left;
     padding-right: 0.75em;
     width: 33.33%; }
-
   .t-2of3 {
     float: left;
     padding-right: 0.75em;
     width: 66.66%; }
-
   .t-1of4 {
     float: left;
     padding-right: 0.75em;
     width: 25%; }
-
   .t-3of4 {
     float: left;
     padding-right: 0.75em;
     width: 75%; }
-
   .t-1of5 {
     float: left;
     padding-right: 0.75em;
     width: 20%; }
-
   .t-2of5 {
     float: left;
     padding-right: 0.75em;
     width: 40%; }
-
   .t-3of5 {
     float: left;
     padding-right: 0.75em;
     width: 60%; }
-
   .t-4of5 {
     float: left;
     padding-right: 0.75em;
     width: 80%; } }
+
 /* Landscape to small desktop */
 @media (min-width: 60em) {
   .d-all {
@@ -870,111 +864,91 @@ them however you see fit.
     padding-right: 0.75em;
     width: 100%;
     padding-right: 0; }
-
   .d-1of2 {
     float: left;
     padding-right: 0.75em;
     width: 50%; }
-
   .d-1of3 {
     float: left;
     padding-right: 0.75em;
     width: 33.33%; }
-
   .d-2of3 {
     float: left;
     padding-right: 0.75em;
     width: 66.66%; }
-
   .d-1of4 {
     float: left;
     padding-right: 0.75em;
     width: 25%; }
-
   .d-3of4 {
     float: left;
     padding-right: 0.75em;
     width: 75%; }
-
   .d-1of5 {
     float: left;
     padding-right: 0.75em;
     width: 20%; }
-
   .d-2of5 {
     float: left;
     padding-right: 0.75em;
     width: 40%; }
-
   .d-3of5 {
     float: left;
     padding-right: 0.75em;
     width: 60%; }
-
   .d-4of5 {
     float: left;
     padding-right: 0.75em;
     width: 80%; }
-
   .d-1of6 {
     float: left;
     padding-right: 0.75em;
     width: 16.6666666667%; }
-
   .d-1of7 {
     float: left;
     padding-right: 0.75em;
     width: 14.2857142857%; }
-
   .d-2of7 {
     float: left;
     padding-right: 0.75em;
     width: 28.5714286%; }
-
   .d-3of7 {
     float: left;
     padding-right: 0.75em;
     width: 42.8571429%; }
-
   .d-4of7 {
     float: left;
     padding-right: 0.75em;
     width: 57.1428572%; }
-
   .d-5of7 {
     float: left;
     padding-right: 0.75em;
     width: 71.4285715%; }
-
   .d-6of7 {
     float: left;
     padding-right: 0.75em;
     width: 85.7142857%; }
-
   .d-1of8 {
     float: left;
     padding-right: 0.75em;
     width: 12.5%; }
-
   .d-1of9 {
     float: left;
     padding-right: 0.75em;
     width: 11.1111111111%; }
-
   .d-1of10 {
     float: left;
     padding-right: 0.75em;
     width: 10%; }
-
   .d-1of11 {
     float: left;
     padding-right: 0.75em;
     width: 9.09090909091%; }
-
   .d-1of12 {
     float: left;
     padding-right: 0.75em;
     width: 8.33%; } }
+
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1361,6 +1335,61 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tab Styles
+
+Functionality to create tabs where you'd like.
+
+Hat tip to Stephen Morley. I was almost there, but this model helped:
+http://code.stephenmorley.org/html-and-css/tabbed-panels/
+
+Hold on there! Looks like we are doing this with flexbox! Once we
+get tabs which wrap to more than a line, we run into problems 
+not easily fixed.
+
+Started w/ http://codepen.io/vulpesigni/pen/yyZYNy
+
+******************************************************************/
+.tabbed label {
+  font-size: .8125em;
+  margin: 0 .75em .5em 0;
+  padding: .5em .75em;
+  background: #f8f9fa;
+  transition: .2s; }
+  .tabbed label:hover {
+    background: #e0e5e9; }
+  .tabbed label .tab-content {
+    padding: 1em .75em; }
+
+.tabbed .toggle:checked + label {
+  color: #fff;
+  background: #444; }
+
+.tabbed label {
+  display: block;
+  position: relative; }
+
+.tabbed .toggle:not(:checked) + label + .tab-content {
+  display: none; }
+
+.tabbed .toggle:checked + label + .tab-content {
+  display: block; }
+
+.tabbed:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+@media (min-width: 32em) {
+  .tabbed {
+    display: flex;
+    flex-wrap: wrap; }
+    .tabbed .tab-content {
+      order: 1; } }
+
 /*********************
 MEDIA QUERIES
 These are organized with em-based breakpoints. The breakpoints can be
@@ -1399,7 +1428,14 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #eaedf2; }
+  background-color: #fff; }
+
+a {
+  transition: .2s all; }
+
+/* Wrapper styling for links that contain many items */
+.link_large {
+  text-decoration: none; }
 
 a.post-edit-link {
   color: #fff;
@@ -1412,6 +1448,11 @@ a.post-edit-link {
   a.post-edit-link:hover {
     color: #fff;
     background: red; }
+  .promotion a.post-edit-link {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: .75em; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -1476,6 +1517,38 @@ HEADER STYLES
 #logo {
   margin: 0; }
 
+.quick-actions {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  right: 0;
+  color: #777; }
+  .quick-actions a {
+    text-decoration: none;
+    color: inherit;
+    padding: .75em 2em;
+    font-size: 1em; }
+  .quick-actions .action {
+    width: 49%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 1em; }
+  .quick-actions .book {
+    text-align: right; }
+  .quick-actions .tel .act {
+    display: none; }
+  .quick-actions .button, .quick-actions .header .menu_toggle, .header .quick-actions .menu_toggle, .quick-actions .promotion a[data-url], .promotion .quick-actions a[data-url] {
+    color: #444; }
+
+a.button, .button, .header .menu_toggle, .promotion a[data-url], .hc_sched .hc-button, .hero-button a {
+  color: #444;
+  background: #2980b9;
+  text-decoration: none;
+  padding: .75em 2em; }
+  a.button:hover, .button:hover, .header .menu_toggle:hover, .promotion a[data-url]:hover, .hc_sched .hc-button:hover, .hero-button a:hover {
+    color: #000;
+    background: #2677ac; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -1486,6 +1559,28 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+.header nav {
+  transition: .3s all;
+  max-height: 0;
+  overflow: hidden;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 2px 0; }
+
+.header .toggle:checked ~ nav {
+  max-height: 600px;
+  overflow: auto;
+  border-color: #2980b9; }
+
+.header .menu_toggle {
+  color: #fff;
+  background: #2980b9;
+  display: block;
+  text-align: center;
+  margin: 0 1em; }
+  html .header .menu_toggle {
+    width: auto; }
+
 .nav {
   border-bottom: 0;
   margin: 0;
@@ -1494,26 +1589,34 @@ and more scalable.
   /* end current highlighters */ }
   .nav li {
     /*
-    so you really have to rethink your dropdowns for mobile.
-    you don't want to have it expand too much because the
-    screen is so small. How you manage your menu should
-    depend on the project. Here's some great info on it:
-    http://www.alistapart.com/articles/organizing-mobile/
-    */ }
+		so you really have to rethink your dropdowns for mobile.
+		you don't want to have it expand too much because the
+		screen is so small. How you manage your menu should
+		depend on the project. Here's some great info on it:
+		http://www.alistapart.com/articles/organizing-mobile/
+		*/ }
     .nav li a {
       display: block;
       color: #f01d4f;
       text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      font-size: .875em;
+      font-weight: bold;
       padding: 0.75em;
       /*
-      remember this is for mobile ONLY, so there's no need
-      to even declare hover styles here, you can do it in
-      the style.scss file where it's relevant. We want to
-      keep this file as small as possible!
-      */ }
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/ }
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }
+  .nav li.current-menu-item a,
+  .nav li.current_page_item a,
+  .nav li.current_page_ancestor a {
+    color: #359ce0; }
 
 /* end .nav */
 /*********************
@@ -1527,22 +1630,27 @@ POSTS & CONTENT STYLES
   .hentry header, .hentry footer {
     position: relative;
     padding: 1.5em; }
-  .hentry header .featured-image {
+  .hentry header .featured-image, .hentry header .featured-video-plus {
     margin: -1.5em -1.5em 0; }
-    .hentry header .featured-image img {
+    .hentry header .featured-image img, .hentry header .featured-video-plus img {
       display: block;
       max-width: 100%; }
-  .hentry footer {
-    padding: 1.5em;
-    border-top: 1px solid #f8f9fa; }
-    .hentry footer p {
-      margin: 0; }
+  .hentry header .link_large {
+    display: block;
+    padding-bottom: 2em; }
+  .hentry .featured-video-plus ~ .page-title {
+    display: none; }
+  .hentry footer p {
+    margin: 0; }
 
 /* end .hentry */
 .single-title,
 .page-title,
 .entry-title {
   margin: 1em 0 0;
+  border-style: solid;
+  border-width: 4px 0 1px;
+  padding: .1875em;
   color: #7b8090; }
 
 /* want to style individual post classes? Booya! */
@@ -1556,14 +1664,15 @@ POSTS & CONTENT STYLES
 /* style by tag (i.e. tag-news) */
 /* post meta */
 .byline {
-  color: #9fa6b4;
-  font-style: italic;
-  margin: 0; }
+  display: none; }
 
-/* entry content */
+/* entry content 
+		    Note: Most of the basic stuff will be inside partials/typography 
+		*/
 .entry-content {
   padding: 1.5em 1.5em 0; }
 
+/* end .entry-content */
 .wp-caption {
   max-width: 100%;
   background: #eee;
@@ -1584,6 +1693,266 @@ POSTS & CONTENT STYLES
 /* gallery caption styles */
 .tags {
   margin: 0; }
+
+.pilates-class {
+  margin: 1.5em 0; }
+  .pilates-class h3 {
+    padding-top: 5px;
+    border-top: 1px solid #777; }
+
+.pricing li {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 1.5em; }
+
+.tips {
+  background: #f8f9fa;
+  margin: 0 -1em 1.5em;
+  padding: 0 1em 1px 3em; }
+  .tips h4 {
+    background: #777;
+    color: #fff;
+    font-size: 1em;
+    padding: .5em 1em .5em 3em;
+    margin: 0 -1em .5em -3em; }
+    .tips h4 img {
+      width: 24px;
+      float: left;
+      margin-left: -34px; }
+
+.schedule_listing {
+  position: relative;
+  z-index: 2; }
+
+.toggle {
+  visibility: hidden;
+  position: absolute; }
+
+.button, .header .menu_toggle, .promotion a[data-url] {
+  width: 12em;
+  transition: .2s all; }
+  .button span, .header .menu_toggle span, .promotion a[data-url] span {
+    display: inline-block; }
+  .toggle:checked + .button span, .header .toggle:checked + .menu_toggle span, .promotion .toggle:checked + a[data-url] span {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    overflow: hidden; }
+  .toggle:checked + .button:after, .header .toggle:checked + .menu_toggle:after, .promotion .toggle:checked + a[data-url]:after {
+    content: 'Close'; }
+
+@keyframes blinker {
+  50% {
+    opacity: 0.0; } }
+
+.hc_sched {
+  position: relative;
+  margin: 1em -1.5em;
+  padding: 0 1.5em;
+  max-height: 0;
+  overflow: hidden;
+  transition: .3s all ease-in-out;
+  opacity: 0; }
+  .hc_sched .loading {
+    animation: blinker 1s linear infinite;
+    text-align: center; }
+  .toggle:checked ~ .hc_sched {
+    padding: .5em 1.5em;
+    border: solid #f01d4f;
+    border-width: .25em 0;
+    max-height: 3000px;
+    overflow: auto;
+    opacity: 1;
+    background: #f4f4f4; }
+  .hc_sched:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .hc_sched .header {
+    background: none; }
+  .hc_sched .action_icon img {
+    margin: 0; }
+  .hc_sched h1 {
+    font-size: 1em;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .hc_sched select, .hc_sched .checkboxes {
+    display: inline-block;
+    margin-right: 1.5em; }
+  .hc_sched .hc-button {
+    display: inline-block;
+    margin-right: 1.5em; }
+  .hc_sched table {
+    border: none; }
+    .hc_sched table tr, .hc_sched table th {
+      background: none !important; }
+    .hc_sched table th {
+      text-align: left;
+      font-size: 1.125em;
+      font-weight: normal; }
+    .hc_sched table th, .hc_sched table td {
+      border: none;
+      padding: 0; }
+    .hc_sched table .schedule_listing_header {
+      border: solid #fff;
+      border-width: 2px 0 0; }
+    .hc_sched table .hc_class {
+      border: solid #fff;
+      border-width: 0 0 2px; }
+
+.healcode .schedule_list {
+  list-style: none;
+  padding: 0;
+  margin: 0 -.25em; }
+  .healcode .schedule_list a {
+    color: inherit; }
+
+.healcode li {
+  padding: .25em; }
+  .healcode li:hover {
+    background: #fff; }
+
+.healcode .schedule_header {
+  margin: 2em 0 .5em;
+  padding-top: .5em;
+  border-top: 1px solid #fff; }
+  .healcode .schedule_header:hover {
+    background: none; }
+
+.healcode li.schedule_header {
+  font-weight: normal; }
+
+.healcode .mbo_class a, .healcode .trainer a {
+  text-decoration: none;
+  cursor: text;
+  pointer-events: none; }
+
+.healcode .hc_time, .healcode .mbo_class {
+  font-weight: bold; }
+
+.promotions h2 {
+  text-align: center; }
+
+.promotion {
+  max-width: 18em;
+  background: #eee;
+  border-top: 0.5em solid #2980b9;
+  padding: 0 0 1.5em;
+  text-align: center;
+  margin: 3em auto;
+  position: relative; }
+  .promotion h3 {
+    font-size: 1em;
+    color: #444; }
+  .promotion .content {
+    padding: 0 1.5em 1.5em;
+    color: #777; }
+    .promotion .content:before {
+      content: '';
+      display: block;
+      margin: 0 auto .75em;
+      width: 5.5em;
+      border-top: 2px solid #2980b9; }
+  .list-2 .promotion {
+    max-width: 24em; }
+    .list-2 .promotion h3 {
+      font-size: 1.25em;
+      margin-top: 0; }
+    .list-2 .promotion .content {
+      font-size: 1.125em;
+      line-height: 1.66; }
+
+/*********************
+HOME STYLES
+*********************/
+.home .hentry header {
+  padding-bottom: 0; }
+  .home .hentry header .featured-image + .page-title {
+    color: #444;
+    border: none;
+    margin: 0; }
+  .home .hentry header img {
+    margin: 0; }
+  .home .hentry header .button, .home .hentry header .header .menu_toggle, .header .home .hentry header .menu_toggle, .home .hentry header .promotion a[data-url], .promotion .home .hentry header a[data-url] {
+    font-size: .875em; }
+
+.home .schedule_listing {
+  background: #2980b9 url("../images/schedule-1080x384.jpg") no-repeat 50% top;
+  position: relative;
+  overflow: hidden;
+  padding: 2em 0;
+  text-align: center; }
+  .home .schedule_listing:before, .home .schedule_listing:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -1.5em;
+    right: -1.5em;
+    height: 1.5em; }
+  .home .schedule_listing:before {
+    top: 0;
+    box-shadow: inset 0 0.75em 0.75em rgba(0, 0, 0, 0.6); }
+  .home .schedule_listing:after {
+    bottom: 0;
+    box-shadow: inset 0 -0.75em 0.75em rgba(0, 0, 0, 0.6); }
+  .home .schedule_listing .button, .home .schedule_listing .header .menu_toggle, .header .home .schedule_listing .menu_toggle, .home .schedule_listing .promotion a[data-url], .promotion .home .schedule_listing a[data-url] {
+    font-size: 1.125em;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.25em 4em;
+    display: inline-block;
+    width: auto; }
+  .home .schedule_listing .hc_sched {
+    text-align: left;
+    margin: 1em 1em -1em;
+    background: rgba(255, 255, 255, 0.8);
+    border: none; }
+  .home .schedule_listing .toggle:checked ~ .hc_sched {
+    margin-bottom: 1em; }
+
+.inspiration {
+  text-align: center;
+  padding: 1.5em;
+  color: #fff;
+  background: #2980b9 url("../images/grip-bar-blue.jpg") no-repeat 50% top; }
+  .inspiration blockquote {
+    color: #fff;
+    margin: 0; }
+
+.hero-button {
+  position: relative;
+  margin: 1em 0; }
+  .hero-button a {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    font-size: 1.125em;
+    text-align: center; }
+  .hero-button img {
+    display: block;
+    opacity: 0.85;
+    transition: .3s;
+    backface-visibility: hidden;
+    /* deal w/ Chrome jumpiness on transforms http://stackoverflow.com/a/16833496/156645 */ }
+  .hero-button a:hover img {
+    opacity: 1; }
+  .hero-button[class~="has-image"] {
+    padding: 0; }
+    .hero-button[class~="has-image"] a {
+      padding: 0;
+      color: #fff;
+      background: #2980b9;
+      font-size: 2em;
+      font-family: "Georgia", Cambria, Times New Roman, Times, serif;
+      font-weight: normal;
+      text-transform: none; }
+    .hero-button[class~="has-image"] span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      line-height: 1.5;
+      margin-top: -.75em;
+      text-shadow: 0 0 0.5em rgba(27, 85, 122, 0.75); }
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -1633,6 +2002,7 @@ PAGE NAVI STYLES
 /* fallback previous & next links */
 .wp-prev-next .prev-link {
   float: left; }
+
 .wp-prev-next .next-link {
   float: right; }
 
@@ -1771,12 +2141,11 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 .widget {
-  margin: 1.5em 1.5em 0; }
+  margin: 1.5em auto 0; }
   .widget ul li {
     /* deep nesting */ }
 
 .no-widgets {
-  background-color: #fff;
   padding: 1.5em;
   text-align: center;
   border: 1px solid #ccc;
@@ -1788,42 +2157,79 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #323944;
-  color: #f8f9fa; }
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  font-size: .875em; }
+  .footer .widget {
+    max-width: 28em; }
+  .footer h4 {
+    color: #777;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .05em; }
+  .footer a, .footer a:hover {
+    color: #fff; }
 
 /*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/
+	if you checked out the link above:
+	http://www.alistapart.com/articles/organizing-mobile/
+	you'll want to style the footer nav
+	a bit more in-depth. Remember to keep
+	it simple because you'll have to
+	override these styles for the desktop
+	view.
+	*/
 /* end .footer-links */
+.signup input {
+  margin-bottom: 0; }
+
+.signup .gfield_label {
+  position: relative;
+  top: 2px; }
+
+.signup .cc_Go {
+  margin-top: 1.5em; }
+
+.signup .button, .signup .header .menu_toggle, .header .signup .menu_toggle, .signup .promotion a[data-url], .promotion .signup a[data-url] {
+  border: none;
+  font-size: 1em;
+  width: 100%;
+  display: block;
+  color: #fff;
+  background: #2980b9; }
+  .signup .button:active, .signup .header .menu_toggle:active, .header .signup .menu_toggle:active, .signup .promotion a[data-url]:active, .promotion .signup a[data-url]:active {
+    background: #20638f; }
+
+.signup .cc_safesubscribe {
+  font-size: .75em;
+  color: #ccc;
+  text-decoration: none; }
+
 .copyright {
   padding: 1.5em; }
 
 @media (min-width: 32em) {
   /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Small Stylesheet
-  
-  Think of this as your smartphone-focused stylesheet. Target devices
-  with a certain minimum width.
-  
-  ******************************************************************/
+Site Name:
+Author:
+
+Stylesheet: Small Stylesheet
+
+Think of this as your smartphone-focused stylesheet. Target devices
+with a certain minimum width.
+
+******************************************************************/
   /*
-  IMPORTANT NOTE ABOUT SASS 3.3 & UP
-  You can't use @extend within media queries
-  anymore, so just be aware that if you drop
-  them in here, they won't work.
-  */
+IMPORTANT NOTE ABOUT SASS 3.3 & UP
+You can't use @extend within media queries
+anymore, so just be aware that if you drop
+them in here, they won't work.
+*/
   /*********************
-  NAVIGATION STYLES
-  *********************/
+NAVIGATION STYLES
+*********************/
   /* .menu is clearfixed inside mixins.scss */
   .menu {
     /* end .menu ul */ }
@@ -1833,18 +2239,17 @@ view.
       /* end current highlighters */ }
       .menu ul li {
         /*
-        plan your menus and drop-downs wisely.
-        */ }
+				plan your menus and drop-downs wisely.
+				*/ }
         .menu ul li a {
           /*
-          you can use hover styles here even though this size
-          has the possibility of being a mobile device.
-          */ }
-
+					you can use hover styles here even though this size
+					has the possibility of being a mobile device.
+					*/ }
   /* end .menu */
   /*********************
-  POSTS & CONTENT STYLES
-  *********************/
+POSTS & CONTENT STYLES
+*********************/
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */ }
@@ -1861,76 +2266,79 @@ view.
       margin-left: auto;
       display: block;
       clear: both; }
-
   /* end .entry-content */
   /*********************
-  FOOTER STYLES
-  *********************/
+FOOTER STYLES
+*********************/
   /*
-  check your menus here. do they look good?
-  do they need tweaking?
-  */
+check your menus here. do they look good?
+do they need tweaking?
+*/
   /* end .footer-links */ }
+
 @media (min-width: 48em) {
   /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Tablet & Small Desktop Stylesheet
-  
-  Assuming your media queries are about right for tablets, you can
-  assume that we're getting fairly complex with our design about now.
-  
-  ******************************************************************/
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Assuming your media queries are about right for tablets, you can
+assume that we're getting fairly complex with our design about now.
+
+******************************************************************/
   /*********************
-  GENERAL STYLES
-  *********************/
+GENERAL STYLES
+*********************/
   /*********************
-  LAYOUT & GRID STYLES
-  *********************/
+LAYOUT & GRID STYLES
+*********************/
   .site {
     max-width: 60em;
     box-shadow: 0 0 2.5em 1em rgba(0, 0, 0, 0.25); }
-
   .wrap {
     padding: 0 3em; }
-
   /*********************
-  HEADER STYLES
-  *********************/
+HEADER STYLES
+*********************/
   .header {
     padding-top: 0; }
-
   .logo {
     margin-left: -3em;
     padding-left: 3.5em;
     padding-right: 3.5em; }
-
+  .quick-actions {
+    right: 3em; }
   /*********************
-  NAVIGATION STYLES
-  *********************/
+NAVIGATION STYLES
+*********************/
+  .header nav {
+    border: none;
+    max-height: none; }
+  .header .toggle, .header .menu_toggle {
+    display: none; }
   .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */ }
     .header .nav {
-      padding-left: 4.375em; }
+      padding-left: 4.125em; }
     .nav ul {
       margin-top: 0; }
     .nav li {
       float: left;
       position: relative;
       /*
-      plan your menus and drop-downs wisely.
-      */
+		plan your menus and drop-downs wisely.
+		*/
       /* showing sub-menus */ }
       .nav li a {
         border-bottom: 0;
         /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/ }
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
@@ -1943,10 +2351,10 @@ view.
         .nav li ul.sub-menu li,
         .nav li ul.children li {
           /*
-          if you need to go deeper, go nuts
-          just remember deeper menus suck
-          for usability. k, bai.
-          */ }
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/ }
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
             padding-left: 10px;
@@ -1964,30 +2372,103 @@ view.
       .nav li:hover > ul {
         top: auto;
         visibility: visible; }
-
   /* end .nav */
   /*********************
-  POSTS & CONTENT STYLES
-  *********************/
+POSTS & CONTENT STYLES
+*********************/
   #content {
     margin-top: 0; }
-
   .hentry {
     margin-bottom: 1.5em;
-    padding: 1.5em 0; }
-    .hentry header {
-      margin: 0 -3em; }
-
+    padding: 0 0 1.5em; }
+    .hentry header .featured-image, .hentry header .featured-video-plus {
+      margin: 0 -4.5em; }
+      .hentry header .featured-image + h1, .hentry header .featured-video-plus + h1 {
+        position: absolute;
+        bottom: 2em;
+        left: .75em;
+        color: white;
+        padding: .1875em .75em;
+        box-sizing: border-box;
+        min-width: 40%; }
+    .hentry header .link_large {
+      padding-bottom: 0; }
+  .light-featured-image header .featured-image + h1 {
+    color: #444; }
+  .pricing li {
+    margin-right: 3em; }
+  .tips {
+    padding: 2em 1.5em 1px 7em;
+    position: relative;
+    min-height: 6.5em; }
+    .tips h4 {
+      position: absolute;
+      margin: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding: .75em 0 0;
+      width: 6em;
+      text-align: center; }
+      .tips h4 img {
+        float: none;
+        width: 38px;
+        display: block;
+        margin: 2px auto; }
+  .hc_sched {
+    margin-left: -4.5em;
+    margin-right: -4.5em;
+    padding: 0 4.5em; }
+    .toggle:checked ~ .hc_sched {
+      padding: .5em 4.5em; }
   /*********************
-  SIDEBARS & ASIDES
-  *********************/
+HOME STYLES
+*********************/
+  .home .hentry {
+    margin: 0;
+    padding: 0; }
+    .home .hentry header .featured-image + .page-title {
+      font-size: 3.25em;
+      line-height: 1;
+      bottom: auto;
+      top: .5em;
+      left: .66em;
+      text-indent: -1em; }
+    .home .hentry header .button, .home .hentry header .header .menu_toggle, .header .home .hentry header .menu_toggle, .home .hentry header .promotion a[data-url], .promotion .home .hentry header a[data-url] {
+      position: absolute;
+      bottom: 4em;
+      left: 3em;
+      width: auto;
+      padding: 1.5em 3em; }
+  .schedule_listing, .promotions, .inspiration {
+    margin: 0 -3em; }
+  .pilates-class .schedule_listing {
+    margin: 0; }
+  .healcode li {
+    display: flex;
+    justify-content: space-between; }
+  .healcode .info_wrapper {
+    flex: 1; }
+  .healcode .hc_time {
+    width: 12em; }
+  .healcode .mbo_class, .healcode .trainer {
+    width: 20em; }
+  .healcode .trainer, .healcode .class_level {
+    width: 10em; }
+  .promotions .listing {
+    display: flex;
+    justify-content: center; }
+  .promotion {
+    margin-left: 1.5em;
+    margin-right: 1.5em; }
+  /*********************
+SIDEBARS & ASIDES
+*********************/
   .sidebar {
     margin-top: 2.2em; }
-
   .widgettitle {
     border-bottom: 2px solid #444;
     margin-bottom: 0.75em; }
-
   .widget {
     margin-top: 2.5em; }
     .widget ul li {
@@ -1996,7 +2477,6 @@ view.
       .widget ul li ul {
         margin-top: 0.75em;
         padding-left: 1em; }
-
   /* links widget */
   /* meta widget */
   /* pages widget */
@@ -2009,43 +2489,53 @@ view.
   /* search widget */
   /* text widget */
   /*********************
-  FOOTER STYLES
-  *********************/
+FOOTER STYLES
+*********************/
   /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+  .footer {
+    text-align: left; }
+    .footer .logo, .footer .widgets {
+      float: left; }
+    .footer .widget p {
+      margin: 0 0 1em; }
+  .copyright {
+    clear: both; }
   .footer-links ul li {
     /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */ }
-
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/ }
   /* end .footer-links */ }
+
 @media (min-width: 60em) {
   /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Large size
-  
-  This typically targets devices larger than a tablet, but it's your
-  design. Shift the media queries to fit your evil scheme.
-  
-  ******************************************************************/ }
+Site Name:
+Author:
+
+Stylesheet: Large size
+
+This typically targets devices larger than a tablet, but it's your
+design. Shift the media queries to fit your evil scheme.
+
+******************************************************************/ }
+
 @media (min-width: 78em) {
   /******************************************************************
-  Site Name: 
-  Author: 
-  
-  Stylesheet: Super Large Monitor Stylesheet
-  
-  You can add some advanced styles here if you like. This kicks in
-  on larger screens.
-  
-  ******************************************************************/ }
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/ }
+
 body.debug:before {
   content: 'no mq';
   position: fixed;
@@ -2093,24 +2583,22 @@ be set to display none.
 *********************/
 @media print {
   /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Print Stylesheet
-  
-  This is the print stylesheet. There's probably not a lot
-  of reasons to edit this stylesheet. If you want to
-  though, go for it.
-  
-  ******************************************************************/
+Site Name:
+Author:
+
+Stylesheet: Print Stylesheet
+
+This is the print stylesheet. There's probably not a lot
+of reasons to edit this stylesheet. If you want to
+though, go for it.
+
+******************************************************************/
   * {
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
-            filter: none !important;
+    filter: none !important;
     -ms-filter: none !important; }
-
   a, a:visited {
     color: #444 !important;
     text-decoration: underline; }
@@ -2118,35 +2606,27 @@ be set to display none.
       content: " (" attr(href) ")"; }
     a abbr[title]:after, a:visited abbr[title]:after {
       content: " (" attr(title) ")"; }
-
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: ""; }
-
   pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
-
   thead {
     display: table-header-group; }
-
   tr, img {
     page-break-inside: avoid; }
-
   img {
     max-width: 100% !important; }
-
   @page {
     margin: 0.5cm; }
   p, h2, h3 {
     orphans: 3;
     widows: 3; }
-
   h2,
   h3 {
     page-break-after: avoid; }
-
   .sidebar,
   .page-navigation,
   .wp-prev-next,
