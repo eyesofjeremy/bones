@@ -268,7 +268,101 @@ and more scalable.
 
 	}  /* end current highlighters */
 
-} /* end .nav */
+
+  /* Begin styling for toggle menus */
+  
+  a {
+    display: block;
+    padding: .66em 1em;
+    margin: 0 -1em;
+  }
+
+  ul a {
+    text-transform: none;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+
+  & .menu-item-has-children > a, & .toggle {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .menu-item-has-children > a {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 3.5em;
+    margin-right: -3.5em;
+  }
+
+  .toggle {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #222;
+    position: relative;
+    visibility: visible;
+    margin-left: 1.5em;
+    
+    span {
+      display: block;
+      width: .5em;
+      height: .5em;
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-color: #fff;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -.3125em;
+      transition: .2s;
+    }
+  }
+  
+  .cb {
+    position: absolute;
+    z-index: -1;
+    visibility: hidden;
+  }
+  
+  .children {
+    clear: both;
+    
+    a {
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 0;
+      overflow: hidden;
+      transition: .2s;
+      
+      &:focus {
+        padding-top: .66em;
+        padding-bottom: .66em;
+        line-height: 1.4;
+      }
+    }
+  }
+  
+  .cb:checked, .checked {
+    
+    & + .toggle {
+      
+      span {
+        transform: rotate(-135deg);
+        margin-top: -.25em;
+      }
+    }
+    
+    & ~ .children {
+
+      a {
+        padding-top: .66em;
+        padding-bottom: .66em;
+        line-height: 1.4;
+      }
+    }
+  }
+ } /* end .nav */
 
 
 /*********************

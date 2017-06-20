@@ -14,6 +14,9 @@ require_once( 'library/bones.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
+// LOAD WALKER CLASS
+require_once( 'library/classes/toggle_walker_menu.php' );
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
