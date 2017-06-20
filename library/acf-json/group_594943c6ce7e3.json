@@ -1,0 +1,64 @@
+{
+    "key": "group_594943c6ce7e3",
+    "title": "Landing Page",
+    "fields": [
+        {
+            "key": "field_594943e3d8fef",
+            "label": "Additional Content",
+            "name": "page_more_content",
+            "type": "wysiwyg",
+            "instructions": "Use this for Calendar posting, etc. This will become a separate section from the main content above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_59494436d8ff0",
+            "label": "Blog Post Category",
+            "name": "page_blog_category",
+            "type": "taxonomy",
+            "instructions": "Check which categories of blog posts to show on this page. Note: if there are no posts found, this section will be blank.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "checkbox",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-landing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1497990504
+}
