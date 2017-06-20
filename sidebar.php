@@ -4,11 +4,11 @@
 
 						<?php dynamic_sidebar( 'sidebar1' ); ?>
 
-					<?php else : ?>
+					<?php elseif ( current_user_can('edit_theme_options') ) : ?>
 
 						<?php
 							/*
-							 * This content shows up if there are no widgets defined in the backend.
+							 * This content shows up for admins if there are no widgets defined in the backend.
 							*/
 						?>
 
