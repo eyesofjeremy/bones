@@ -112,6 +112,10 @@ LAYOUT & GRID STYLES
 	max-width: $page_m; // change in queries for larger width site
 }
 
+[id^="inner"] {
+  padding: 0 1.5em;
+}
+
 /*********************
 HEADER STYLES
 *********************/
@@ -277,7 +281,7 @@ POSTS & CONTENT STYLES
 
 			header, footer {
 			  position: relative;
-				padding: 1.5em;
+				padding: 1.5em 0;
 			}
 			
 			header {
@@ -315,7 +319,7 @@ POSTS & CONTENT STYLES
 			margin: 1em 0 0;
 			border-style: solid;
 			border-width: 4px 0 1px;
-			padding: .1875em;
+			padding: .1875em 0;
 			color: $heading_color;
 		}
 
@@ -348,7 +352,7 @@ POSTS & CONTENT STYLES
 		    Note: Most of the basic stuff will be inside partials/typography 
 		*/
 		.entry-content {
-			padding: 1.5em 1.5em 0;
+			padding: 1.5em auto 0;
 		} /* end .entry-content */
 
 		.wp-caption {
