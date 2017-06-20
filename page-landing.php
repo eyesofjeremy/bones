@@ -19,14 +19,8 @@
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 								<header class="article-header">
-
+								  <?php bones_featured_image(); ?>
 									<h1 class="page-title"><?php the_title(); ?></h1>
-
-									<p class="byline vcard">
-										<?php printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-									</p>
-
-
 								</header>
 
 								<section class="entry-content cf" itemprop="articleBody">
@@ -36,14 +30,21 @@
 									?>
 								</section>
 
-
-								<footer class="article-footer">
-
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-								</footer>
-
-								<?php comments_template(); ?>
+								<?php
+								  // Show additional content if we have it.
+								  // Call custom field directly from $post
+								  // More goodness if needed:
+					        // https://developer.wordpress.org/reference/functions/get_post_meta/#comment-1894
+								  $more_content = $post->page_more_content;
+								  
+								  if( ! empty( $more_content ) ):
+                ?>
+								<section class="entry-content cf more-content" itemprop="articleBody">
+									<?php
+										echo $more_content;
+									?>
+								</section>
+								<?php endif; ?>
 
 							</article>
 
@@ -57,13 +58,39 @@
 												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the page-landing.php template.', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 
 							<?php endif; ?>
 
 						</main>
+
+						<?php					
+              // Show blog posts if set for this landing page, and they exist.
+            
+              $args = array(
+                'posts_per_page'   => -1,
+                'category'         => implode( ',', $post->page_blog_category )
+              );
+            
+              $posts = new WP_Query( $args );
+            
+              if ($posts->have_posts()):
+						?>
+						
+				<div id="sidebar-posts" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
+
+						<?php while ($posts->have_posts()) : $posts->the_post();
+						    echo '<a href="'.get_permalink().'">';
+                echo get_the_post_thumbnail($post->ID, 'category-thumb');
+                the_title( '<h6>', '</h6>' );
+                echo '</a>';
+            endwhile;
+            ?>
+
+				</div>
+            <?php endif; # posts loop ?>
 
 						<?php get_sidebar(); ?>
 
