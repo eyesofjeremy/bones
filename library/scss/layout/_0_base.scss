@@ -205,12 +205,12 @@ and more scalable.
   .toggle:checked ~ nav {
     max-height: 600px;
     overflow: auto;
-    border-color: $csp_blue;
+    border-color: $blue;
   }
 	
 	.menu_toggle {
 	  color: #fff;
-	  background: $csp_blue;
+	  background: $blue;
     @extend .button;
     display: block;
     text-align: center;
@@ -291,7 +291,7 @@ and more scalable.
 	li.current_page_ancestor {
 
 		a {
-		  color: $csp_blue_light;
+		  color: $blue_light;
 		}
 
 	}  /* end current highlighters */
@@ -526,7 +526,7 @@ POSTS & CONTENT STYLES
     
     .toggle:checked ~ & {
       padding: .5em 1.5em;
-      border: solid $csp_citron;
+      border: solid $bones_pink;
       border-width: .25em 0;
       max-height: 3000px;
       overflow: auto;
@@ -667,7 +667,7 @@ POSTS & CONTENT STYLES
   .promotion {
     max-width: 18em;
     background: #eee;
-    border-top: .5em solid $csp_blue;
+    border-top: .5em solid $blue;
     padding: 0 0 1.5em;
     text-align: center;
     margin: 3em auto;
@@ -680,14 +680,14 @@ POSTS & CONTENT STYLES
     
     .content {
       padding: 0 1.5em 1.5em;
-      color: $gray_med_text;
+      color: $gray_med;
       
       &:before {
         content: '';
         display: block;
         margin: 0 auto .75em;
         width: 5.5em;
-        border-top: 2px solid $csp_blue;
+        border-top: 2px solid $blue;
       }
     }
     
@@ -737,7 +737,7 @@ HOME STYLES
   }
   
   .schedule_listing {
-    background: $csp_blue url('../images/schedule-1080x384.jpg') no-repeat 50% top;
+    background: $blue url('../images/schedule-1080x384.jpg') no-repeat 50% top;
     position: relative;
     overflow: hidden;
     padding: 2em 0;
@@ -787,7 +787,7 @@ HOME STYLES
   text-align: center;
   padding: 1.5em;
   color: #fff;
-  background: $csp_blue url('../images/grip-bar-blue.jpg') no-repeat 50% top;
+  background: $blue url('../images/grip-bar-blue.jpg') no-repeat 50% top;
   
   blockquote {
     color: #fff;
@@ -825,7 +825,7 @@ HOME STYLES
     a {
       padding: 0;
       color: #fff;
-      background: $csp_blue;
+      background: $blue;
       font-size: 2em;
       font-family: $heading_font;
       font-weight: normal;
@@ -839,7 +839,7 @@ HOME STYLES
       width: 100%;
       line-height: 1.5;
       margin-top: -.75em;
-      text-shadow: 0 0 .5em rgba( darken( $csp_blue, 15% ), 0.75 );
+      text-shadow: 0 0 .5em rgba( darken( $blue, 15% ), 0.75 );
     }
   }
 }
@@ -978,7 +978,7 @@ COMMENT STYLES
 			font-style: italic;
 
 			a {
-				color: $meta-gray;
+				color: $meta_color;
 				text-decoration: none;
 
 				&:hover {
@@ -1125,7 +1125,7 @@ COMMENT FORM STYLES
 	}
 
 	.logged-in-as {
-		color: $meta-gray;
+		color: $meta_color;
 		font-style: italic;
 		margin: 0;
 
@@ -1219,7 +1219,7 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $gray_cool;
+	background-color: $gray_dark;
 	color: #fff;
 	text-align: center;
 	font-size: .875em;
@@ -1281,10 +1281,10 @@ FOOTER STYLES
       width: 100%;
       display: block;
       color: #fff;
-      background: $csp_blue;
+      background: $blue;
       
       &:active {
-        background: darken( $csp_blue, 10% );
+        background: darken( $blue, 10% );
       }
     }
   
