@@ -27,9 +27,11 @@ $white:             #fff;
 
 $gray_light:        #f8f9fa;
 $gray:              #eaedf2;
+$gray_med:          #777;
 $text_color:        #5c6b80;
 $heading_color:     #7b8090;
 $meta_color:        #9fa6b4;
+$gray_dark:         #444;
 
 $tan:               #eceee5;
 
@@ -37,9 +39,12 @@ $green:             #7dd667;
 
 $bones_pink:        #f01d4f;
 $blue:              #2980b9;
+$blue_light:        saturate( lighten( $blue, 10% ), 10%);
 
 $link_color:        $bones_pink;
 $link_hover:        darken($link_color, 9%);
+
+$button_color:      $blue;
 
 $border_color:      #ccc;
 $disabled_color:    #cfcfcf;
