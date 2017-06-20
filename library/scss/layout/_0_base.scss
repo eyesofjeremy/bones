@@ -174,16 +174,19 @@ and more scalable.
   .toggle:checked ~ nav {
     max-height: 600px;
     overflow: auto;
-    border-color: $blue;
+    border-color: $bones_pink;
   }
 	
 	.menu_toggle {
 	  color: #fff;
-	  background: $blue;
     @extend .button;
     display: block;
     text-align: center;
     margin: 0 1em;
+    
+    &, &:hover {
+      background: $bones_pink;
+    }
     
     html & {
       width: auto; // offset width set for buttons

@@ -53,7 +53,8 @@
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
-
+			
+          <input type="checkbox" id="menu_toggle" name="menu_toggle" class="cb toggle"></input><label class="menu_toggle" for="menu_toggle"><span>Menu</span><i class="menu_icon"></i></label>
 
 					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<?php wp_nav_menu(array(
