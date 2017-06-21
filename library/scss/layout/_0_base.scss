@@ -112,7 +112,7 @@ LAYOUT & GRID STYLES
 	max-width: $page_m; // change in queries for larger width site
 }
 
-[id^="inner"] {
+.wrap {
   padding: 0 1.5em;
 }
 
