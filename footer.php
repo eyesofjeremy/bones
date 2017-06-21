@@ -23,18 +23,24 @@
 					<?php endif; ?>
 
 				</div>
+
+          <?php // if you'd like the navigation always visible, just comment out the following toggle code
+          // <input type="checkbox" id="menu_toggle" name="menu_toggle" class="cb toggle"></input><label class="menu_toggle" for="menu_toggle"><span>Menu</span><i class="menu_icon"></i></label>
+          ?>
+
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
               'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
               'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
               'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
-              'menu_class' => 'nav footer-nav cf',            // adding custom nav class
+              'menu_class' => 'nav footer-nav cf',               // adding custom nav class. Add 'toggles' if using walker below
               'theme_location' => 'footer-links',             // where it's located in the theme
               'before' => '',                                 // before the menu
               'after' => '',                                  // after the menu
               'link_before' => '',                            // before each link
               'link_after' => '',                             // after each link
               'depth' => 0,                                   // limit the depth of the nav
+               // 'walker' => new toggle_Walker_Menu,             // Show checkboxes to toggle submenus
               'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
 						)); ?>
 					</nav>

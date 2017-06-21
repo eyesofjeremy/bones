@@ -153,7 +153,7 @@ NAVIGATION STYLES
 *********************/
 
 /*
-all navs have a .nav class applied via
+all nav menus have a .nav class applied via
 the wp_menu function; this is so we can
 easily write one group of styles for
 the navs on the site so our css is cleaner
@@ -164,12 +164,17 @@ and more scalable.
 
 	nav {
 	  transition: .3s all;
-	  max-height: 0;
-	  overflow: hidden;
 	  border-style: solid;
-	  border-color: transparent;
+    border-color: $bones_pink;
 	  border-width: 2px 0;
 	}
+
+  /* if nav comes after a toggle we will hide it unless that toggle is checked */
+  .toggle ~ nav {
+    max-height: 0;
+	  border-color: transparent;
+    overflow: hidden;
+  }
 
   .toggle:checked ~ nav {
     max-height: 600px;
@@ -182,7 +187,6 @@ and more scalable.
     @extend .button;
     display: block;
     text-align: center;
-    margin: 0 1em;
     
     &, &:hover {
       background: $bones_pink;
@@ -191,6 +195,13 @@ and more scalable.
     html & {
       width: auto; // offset width set for buttons
     }
+	}
+}
+
+nav {
+	ol, ul {
+	  margin: 0;
+	  padding: 0;
 	}
 }
 
@@ -238,7 +249,9 @@ and more scalable.
 			li {
 
 				a {
-					padding-left: 30px;
+				  text-transform: none;
+					padding-left: 1.5em;
+					padding-right: 1.5em;
 
 					&:hover,
 					&:focus {}
@@ -267,21 +280,10 @@ and more scalable.
 		}
 
 	}  /* end current highlighters */
+} /* end .nav */
 
-
-  /* Begin styling for toggle menus */
-  
-  a {
-    display: block;
-    padding: .66em 1em;
-    margin: 0 -1em;
-  }
-
-  ul a {
-    text-transform: none;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-  }
+.toggles {
+  /* Begin styling for menus using internal toggles */
 
   & .menu-item-has-children > a, & .toggle {
     display: inline-block;
@@ -298,10 +300,9 @@ and more scalable.
   .toggle {
     width: 2em;
     height: 2em;
-    border: 1px solid #222;
+    border: 1px solid $bones_pink;
     position: relative;
     visibility: visible;
-    margin-left: 1.5em;
     
     span {
       display: block;
@@ -309,7 +310,7 @@ and more scalable.
       height: .5em;
       border-width: 0 2px 2px 0;
       border-style: solid;
-      border-color: #fff;
+      border-color: $bones_pink;
       transform: rotate(45deg);
       position: absolute;
       top: 50%;
@@ -362,7 +363,7 @@ and more scalable.
       }
     }
   }
- } /* end .nav */
+ } /* end .toggles */
 
 
 /*********************

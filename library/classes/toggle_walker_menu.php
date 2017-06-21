@@ -7,6 +7,7 @@
  * @author Jeremy Carlson
  *
  * To use, add 'walker' => new toggle_Walker_Menu to your array of arguments for wp_nav_menu()
+ * Also may need to add .toggles to your nav menu class
  */
 
 class toggle_Walker_Menu extends Walker {
