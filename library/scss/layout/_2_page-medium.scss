@@ -186,7 +186,8 @@ POSTS & CONTENT STYLES
     header {
 
       .featured-image, .featured-video-plus {
-        margin: 0 -4.5em;
+        margin-left: -3em;
+        margin-right: -3em;
               
         & + h1 {
           position: absolute;
