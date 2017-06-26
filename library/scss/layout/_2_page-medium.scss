@@ -55,15 +55,15 @@ NAVIGATION STYLES
 
 .header {
 
-	nav {
+	.nav, .menu_toggle ~ nav {
 	  border: none;
 	  max-height: none;
+	  overflow: visible;
 	}
 	
 	.menu_toggle {
 	  display: none;
 	}
-
 }
 
 
