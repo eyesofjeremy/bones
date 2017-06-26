@@ -9,5 +9,9 @@ design. Shift the media queries to fit your evil scheme.
 
 ******************************************************************/
 
+.d-toggles {
+  @import "../modules/toggles";
+}
+
 .wrap {
 }
