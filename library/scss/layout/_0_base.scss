@@ -132,7 +132,7 @@ HEADER STYLES
 .header {
   position: relative;
 	background-color: #fff;
-  padding-top: 3em;
+  padding-top: 1.5em;
 }
 
   .logo {
@@ -213,6 +213,7 @@ and more scalable.
 	.menu_toggle {
 	  color: #fff;
     @extend .button;
+    padding: .75em 1em;
     display: block;
     text-align: center;
     
@@ -263,51 +264,55 @@ nav {
 		&:first-child {}
 
 		&:last-child {}
+	} /* end .menu li */		
 
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-		ul.sub-menu,
-		ul.children {
+  /*
+  so you really have to rethink your dropdowns for mobile.
+  you don't want to have it expand too much because the
+  screen is so small. How you manage your menu should
+  depend on the project. Here's some great info on it:
+  http://www.alistapart.com/articles/organizing-mobile/
+  */
+  ul.sub-menu,
+  ul.children {
 
-			li {
+    li {
+      padding: 0 .75em;
 
-				a {
-				  text-transform: none;
-					padding-left: 1.5em;
-					padding-right: 1.5em;
+      a {
+        text-transform: none;
 
-					&:hover,
-					&:focus {}
+        &:hover,
+        &:focus {}
 
-					&:link {}
+        &:link {}
 
-				}
+      }
 
-				&:first-child {}
+      &:first-child {}
 
-				&:last-child {}
+      &:last-child {}
 
-			}
-
-		}
-
-	} /* end .menu li */
+    }
+  } /* end .sub-menu/children */
 
 	/* highlight current page */
 	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
+	li.current_page_item {
 
-		a {
+		& > a {
 		  color: $blue_light;
 		}
 
 	}  /* end current highlighters */
+
+	/* highlight current parent page */
+	li.current_page_ancestor {
+
+		& > a {
+		}
+
+	}  /* end current parent */
 } /* end .nav */
 
 .toggles {
