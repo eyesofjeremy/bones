@@ -325,8 +325,16 @@ nav {
   @import "../modules/toggles";
 }
 
+/* bleed to edge of page */
+.nav-bleed {
+  margin: 1em -1.5em;
+  background: gainsboro;
+  padding: 0 .75em;
   
+  .toggle:not(:checked) ~ & {
+    background: none;
   }
+}
 
 /*********************
 POSTS & CONTENT STYLES

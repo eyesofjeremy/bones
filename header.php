@@ -57,7 +57,7 @@
           <?php // if you'd like the navigation always visible, just comment out the following toggle code ?>
           <input type="checkbox" id="menu_toggle" name="menu_toggle" class="cb toggle"></input><label class="menu_toggle" for="menu_toggle"><span>Menu</span><i class="menu_icon"></i></label>
 
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav role="navigation" class="nav-bleed" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <?php wp_nav_menu(array(
                'container' => false,                           // remove nav container
                'container_class' => 'menu cf',                 // class of container (should you choose to use it)
