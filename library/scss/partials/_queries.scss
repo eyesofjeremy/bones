@@ -7,6 +7,10 @@
   @import "../layout/_1_page-small";
 }
 
+@media( min-width: $page_ms ) {
+  @import "../layout/_1_page-smallmed";
+}
+
 @media( min-width: $page_m ) {
   @import "../layout/_2_page-medium";
 }

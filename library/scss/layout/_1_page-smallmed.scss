@@ -1,0 +1,58 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Small-Med Stylesheet
+
+Larger smartphone devices and smaller tablets may hit this
+point.
+
+******************************************************************/
+
+.header {
+  .nav {
+    display: flex;
+  
+    ul.sub-menu,
+    ul.children {
+
+      li {
+        padding: 0;
+      }
+    }
+  }
+  .toggles {
+    
+    .menu-item-has-children {
+    
+      & > a {
+        width: auto;
+      }
+    }
+  }
+}
+
+.footer {
+  .nav {
+
+    * {
+      display: inline !important;
+    }
+  
+    .sub-menu,
+    .children {
+      border: none;
+      position: relative;
+      visibility: visible;
+      z-index: 1;
+    
+      li {
+        a {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+
