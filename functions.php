@@ -308,6 +308,22 @@ function bones_add_slug_body_class( $classes ) {
 add_filter( 'body_class', 'bones_add_slug_body_class' );
 
 /*
+For checking CSS, append ?css=debug to a URL
+*/
+
+function bones_debug_body_class( $classes ) {
+  
+  global $post;
+  
+  if ( isset( $post ) && isset( $_GET['css'] ) && $_GET['css'] == 'debug' ) {
+    $classes[] = 'debug';
+  }
+
+  return $classes;
+}
+add_filter( 'body_class', 'bones_debug_body_class' );
+
+/*
 This is a modification of a function found in the
 twentythirteen theme where we can declare some
 external fonts. If you're using Google Fonts, you
