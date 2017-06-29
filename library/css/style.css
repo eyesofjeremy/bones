@@ -1428,7 +1428,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #fff; }
+  background-color: #eaedf2; }
 
 a {
   transition: .2s all; }
@@ -2043,7 +2043,7 @@ FOOTER STYLES
 .footer {
   clear: both;
   background-color: #444;
-  color: #fff;
+  color: #eaedf2;
   text-align: center;
   font-size: .875em; }
   .footer .widget {
@@ -2054,8 +2054,10 @@ FOOTER STYLES
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: .05em; }
-  .footer a, .footer a:hover {
-    color: #fff; }
+  .footer a, .footer nav li a {
+    color: #eaedf2; }
+    .footer a:hover, .footer nav li a:hover {
+      color: #fff; }
 
 /*
 	if you checked out the link above:
@@ -2093,7 +2095,7 @@ FOOTER STYLES
   text-decoration: none; }
 
 .copyright {
-  padding: 1.5em; }
+  padding: 1.5em 0; }
 
 @media (min-width: 32em) {
   /******************************************************************
@@ -2181,17 +2183,27 @@ point.
       padding: 0; }
   .header .toggles .menu-item-has-children > a {
     width: auto; }
-  .footer .nav * {
-    display: inline !important; }
-  .footer .nav .sub-menu,
-  .footer .nav .children {
-    border: none;
-    position: relative;
-    visibility: visible;
-    z-index: 1; }
-    .footer .nav .sub-menu li a,
-    .footer .nav .children li a {
-      border: none; } }
+  .footer .nav {
+    margin: .5em -.75em; }
+    .footer .nav a {
+      display: inline !important; }
+    .footer .nav > li {
+      padding: .33em 0; }
+    .footer .nav .sub-menu,
+    .footer .nav .children {
+      position: relative;
+      z-index: 1; }
+      .footer .nav .sub-menu:before,
+      .footer .nav .children:before {
+        content: '>'; }
+      .footer .nav .sub-menu li a,
+      .footer .nav .children li a {
+        border: none;
+        padding: 0; }
+      .footer .nav .sub-menu, .footer .nav .sub-menu li,
+      .footer .nav .children,
+      .footer .nav .children li {
+        display: inline; } }
 
 @media (min-width: 48em) {
   /******************************************************************
@@ -2242,12 +2254,9 @@ NAVIGATION STYLES
   */
     /* highlight current page */
     /* end current highlighters */ }
-    .header .nav {
-      padding-left: 4.125em; }
     .nav ul {
       margin-top: 0; }
     .nav li {
-      float: left;
       position: relative;
       /* showing sub-menus */ }
       .nav li a {
@@ -2259,15 +2268,18 @@ NAVIGATION STYLES
 			*/ }
       .nav li:hover > ul {
         top: auto;
-        visibility: visible; }
+        visibility: visible;
+        opacity: 1; }
     .nav .sub-menu,
     .nav .children {
       margin-top: 0;
-      border: 1px solid #ccc;
+      background: #f8f9fa;
       border-top: 0;
       position: absolute;
       visibility: hidden;
       z-index: 8999;
+      opacity: 0;
+      transition: .2s opacity;
       /* highlight sub-menu current page */ }
       .nav .sub-menu li,
       .nav .children li {
@@ -2432,6 +2444,11 @@ mobile. Make sure to double check these!
 */
   .footer {
     text-align: left; }
+    .footer .nav .sub-menu,
+    .footer .nav .children {
+      opacity: 1;
+      visibility: visible;
+      background: none; }
     .footer .logo, .footer .widgets {
       float: left; }
     .footer .widget p {
