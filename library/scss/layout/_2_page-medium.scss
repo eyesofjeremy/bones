@@ -55,34 +55,31 @@ NAVIGATION STYLES
 
 .header {
 
-	nav {
+	.nav, .menu_toggle ~ nav {
 	  border: none;
 	  max-height: none;
+	  overflow: visible;
 	}
 	
-	.toggle, .menu_toggle {
+	.menu_toggle {
 	  display: none;
 	}
-
 }
 
 
 .nav {
 	border: 0;
 	
-	.header & {
-	  padding-left: 4.125em;
-	}
-
 	ul {
 		margin-top:0;
 	}
+
 	li {
-		float: left;
 		position: relative;
 
 		a {
 			border-bottom: 0;
+			margin: 0;
 
 			/*
 			you can use hover styles here even though this size
@@ -95,68 +92,70 @@ NAVIGATION STYLES
 		&:first-child {}
 		&:last-child {}
 
-		/*
-		plan your menus and drop-downs wisely.
-		*/
-		ul.sub-menu,
-		ul.children {
-			margin-top: 0;
-			border: 1px solid #ccc;
-			border-top: 0;
-			position: absolute;
-			visibility: hidden;
-			z-index: 8999;
-
-			li {
-
-				a {
-					padding-left: 10px;
-					border-right: 0;
-					display: block;
-					width: 180px;
-					border-bottom: 1px solid #ccc;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-				}
-
-				&:first-child {}
-
-				&:last-child {
-
-					a {
-						border-bottom: 0;
-					}
-				}
-
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-				ul {
-					top:0;
-					left:100%;
-				}
-			}
-
-			/* highlight sub-menu current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}
-		}
-
 		/* showing sub-menus */
 		&:hover > ul {
 			top: auto;
 			visibility:visible;
+      opacity: 1;
 		}
+	}
 
-	} /* end .menu ul li */
+  /*
+  plan your menus and drop-downs wisely.
+  */
+  .sub-menu,
+  .children {
+    margin-top: 0;
+    background: $gray_light;
+    border-top: 0;
+    position: absolute;
+    visibility: hidden;
+    z-index: 8999;
+    opacity: 0;
+    transition: .2s opacity;
+
+    li {
+
+      a {
+        padding-left: 10px;
+        border-right: 0;
+        display: block;
+        width: 180px;
+        border-bottom: 1px solid #ccc;
+
+        &:hover,
+        &:focus {}
+
+        &:link {}
+      }
+
+      &:first-child {}
+
+      &:last-child {
+
+        a {
+          border-bottom: 0;
+        }
+      }
+
+      /*
+      if you need to go deeper, go nuts
+      just remember deeper menus suck
+      for usability. k, bai.
+      */
+      ul {
+        top:0;
+        left:100%;
+      }
+    }
+
+    /* highlight sub-menu current page */
+    li.current-menu-item,
+    li.current_page_item,
+    li.current_page_ancestor {
+      a {}
+    }
+  }
 
 	/* highlight current page */
 	li.current-menu-item,
@@ -166,6 +165,10 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+.t-toggles {
+  @import "../modules/toggles";
+}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -182,7 +185,8 @@ POSTS & CONTENT STYLES
     header {
 
       .featured-image, .featured-video-plus {
-        margin: 0 -4.5em;
+        margin-left: -3em;
+        margin-right: -3em;
               
         & + h1 {
           position: absolute;
@@ -255,78 +259,6 @@ POSTS & CONTENT STYLES
 /*********************
 HOME STYLES
 *********************/
-
-.home {
-  
-  .hentry {
-    margin: 0;
-    padding: 0;
-
-    header {
-    
-      .featured-image + .page-title {
-        font-size: 3.25em;
-        line-height: 1;
-        bottom: auto;
-        top: .5em;
-        left: .66em;
-        text-indent: -1em;
-      }
-
-      .button {
-        position: absolute;
-        bottom: 4em;
-        left: 3em;
-        width: auto;
-        padding: 1.5em 3em;
-      }
-    }
-  }
-}
-
-.schedule_listing, .promotions, .inspiration {
-  margin: 0 -3em;
-}
-
-.pilates-class .schedule_listing {
-  margin: 0;
-}
-
-  .healcode {    
-    .schedule_list{
-    }
-    
-    li {
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    .info_wrapper {
-      flex: 1;
-    }
-
-    .hc_time {
-      width: 12em;
-    }
-
-    .mbo_class, .trainer {
-      width: 20em;
-    }
-
-    .trainer, .class_level {
-      width: 10em;
-    }
-  }
-    
-.promotions .listing {
-  display: flex;
-  justify-content: center;
-}
-
-.promotion {
-  margin-left: 1.5em;
-  margin-right: 1.5em;
-}
 
 /*********************
 SIDEBARS & ASIDES
@@ -462,6 +394,15 @@ mobile. Make sure to double check these!
 
 .footer {
   text-align: left;
+  
+  .nav {
+    .sub-menu,
+    .children {
+      opacity: 1;
+      visibility: visible;
+      background: none;
+    }
+  }
   
   .logo, .widgets {
     float: left;

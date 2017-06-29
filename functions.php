@@ -14,6 +14,9 @@ require_once( 'library/bones.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
+// LOAD WALKER CLASS
+require_once( 'library/classes/toggle_walker_menu.php' );
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
@@ -303,6 +306,22 @@ function bones_add_slug_body_class( $classes ) {
   return $classes;
 }
 add_filter( 'body_class', 'bones_add_slug_body_class' );
+
+/*
+For checking CSS, append ?css=debug to a URL
+*/
+
+function bones_debug_body_class( $classes ) {
+  
+  global $post;
+  
+  if ( isset( $post ) && isset( $_GET['css'] ) && $_GET['css'] == 'debug' ) {
+    $classes[] = 'debug';
+  }
+
+  return $classes;
+}
+add_filter( 'body_class', 'bones_debug_body_class' );
 
 /*
 This is a modification of a function found in the

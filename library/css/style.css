@@ -531,12 +531,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.caps, .smallcaps, .quick-actions, a.button, .button, .header .menu_toggle, .promotion a[data-url], .hc_sched .hc-button, .hero-button a, .tips h4, .hc_sched table th, .tabbed label, .healcode .schedule_header {
+.caps, .smallcaps, a.button, .button, .header .menu_toggle, .hero-button a, .tabbed label {
   letter-spacing: .05em;
   font-weight: bold;
   text-transform: uppercase; }
 
-.smallcaps, .quick-actions, a.button, .button, .header .menu_toggle, .promotion a[data-url], .hc_sched .hc-button, .hero-button a, .tips h4, .hc_sched table th {
+.smallcaps, a.button, .button, .header .menu_toggle, .hero-button a {
   font-size: .75em; }
 
 /******************************************************************
@@ -1428,7 +1428,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #fff; }
+  background-color: #eaedf2; }
 
 a {
   transition: .2s all; }
@@ -1500,7 +1500,18 @@ LAYOUT & GRID STYLES
   width: 100%;
   margin: 0 auto;
   background: #fff;
-  max-width: 48em; }
+  max-width: 48em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh; }
+
+#content {
+  flex: 1;
+  /* expand this element to fill window */ }
+
+.wrap {
+  padding: 0 1.5em; }
 
 /*********************
 HEADER STYLES
@@ -1508,7 +1519,7 @@ HEADER STYLES
 .header {
   position: relative;
   background-color: #fff;
-  padding-top: 3em; }
+  padding-top: 1.5em; }
 
 .logo {
   display: inline-block;
@@ -1517,35 +1528,12 @@ HEADER STYLES
 #logo {
   margin: 0; }
 
-.quick-actions {
-  position: absolute;
-  top: 1em;
-  left: 0;
-  right: 0;
-  color: #777; }
-  .quick-actions a {
-    text-decoration: none;
-    color: inherit;
-    padding: .75em 2em;
-    font-size: 1em; }
-  .quick-actions .action {
-    width: 49%;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 1em; }
-  .quick-actions .book {
-    text-align: right; }
-  .quick-actions .tel .act {
-    display: none; }
-  .quick-actions .button, .quick-actions .header .menu_toggle, .header .quick-actions .menu_toggle, .quick-actions .promotion a[data-url], .promotion .quick-actions a[data-url] {
-    color: #444; }
-
-a.button, .button, .header .menu_toggle, .promotion a[data-url], .hc_sched .hc-button, .hero-button a {
+a.button, .button, .header .menu_toggle, .hero-button a {
   color: #444;
   background: #2980b9;
   text-decoration: none;
   padding: .75em 2em; }
-  a.button:hover, .button:hover, .header .menu_toggle:hover, .promotion a[data-url]:hover, .hc_sched .hc-button:hover, .hero-button a:hover {
+  a.button:hover, .button:hover, .header .menu_toggle:hover, .hero-button a:hover {
     color: #000;
     background: #2677ac; }
 
@@ -1553,72 +1541,158 @@ a.button, .button, .header .menu_toggle, .promotion a[data-url], .hc_sched .hc-b
 NAVIGATION STYLES
 *********************/
 /*
-all navs have a .nav class applied via
+all nav menus have a .nav class applied via
 the wp_menu function; this is so we can
 easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-.header nav {
-  transition: .3s all;
-  max-height: 0;
-  overflow: hidden;
-  border-style: solid;
-  border-color: transparent;
-  border-width: 2px 0; }
+.header {
+  /* if nav comes after a toggle we will hide it unless that toggle is checked */ }
+  .header .wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
+    .header .wrap #logo {
+      flex: 1 auto; }
+    .header .wrap .menu_toggle {
+      flex: 0 1 auto;
+      min-width: 6em; }
+    .header .wrap nav {
+      flex: 1 100%; }
+  .header nav {
+    transition: .3s all;
+    border-style: solid;
+    border-color: #f01d4f;
+    border-width: 2px 0; }
+  .header .toggle ~ nav {
+    max-height: 0;
+    border-color: transparent;
+    overflow: hidden; }
+  .header .toggle:checked ~ nav {
+    max-height: 600px;
+    overflow: auto;
+    border-color: #f01d4f; }
+  .header .menu_toggle {
+    color: #fff;
+    padding: .75em 1em;
+    display: block;
+    text-align: center; }
+    .header .menu_toggle, .header .menu_toggle:hover {
+      background: #f01d4f; }
+    html .header .menu_toggle {
+      width: auto; }
 
-.header .toggle:checked ~ nav {
-  max-height: 600px;
-  overflow: auto;
-  border-color: #2980b9; }
+nav ol, nav ul {
+  margin: 0;
+  padding: 0; }
 
-.header .menu_toggle {
-  color: #fff;
-  background: #2980b9;
-  display: block;
-  text-align: center;
-  margin: 0 1em; }
-  html .header .menu_toggle {
-    width: auto; }
+nav .cb, nav .toggle {
+  display: none; }
 
 .nav {
   border-bottom: 0;
   margin: 0;
   /* end .menu li */
+  /*
+  so you really have to rethink your dropdowns for mobile.
+  you don't want to have it expand too much because the
+  screen is so small. How you manage your menu should
+  depend on the project. Here's some great info on it:
+  http://www.alistapart.com/articles/organizing-mobile/
+  */
+  /* end .sub-menu/children */
   /* highlight current page */
-  /* end current highlighters */ }
-  .nav li {
+  /* end current highlighters */
+  /* highlight current parent page */
+  /* end current parent */ }
+  .nav li a {
+    display: block;
+    color: #f01d4f;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-size: .875em;
+    font-weight: bold;
+    padding: 0.75em;
     /*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/ }
-    .nav li a {
-      display: block;
-      color: #f01d4f;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      font-size: .875em;
-      font-weight: bold;
-      padding: 0.75em;
-      /*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
 			the style.scss file where it's relevant. We want to
 			keep this file as small as possible!
 			*/ }
-    .nav li ul.sub-menu li a,
-    .nav li ul.children li a {
-      padding-left: 30px; }
-  .nav li.current-menu-item a,
-  .nav li.current_page_item a,
-  .nav li.current_page_ancestor a {
+  .nav ul.sub-menu li,
+  .nav ul.children li {
+    padding: 0 .75em; }
+    .nav ul.sub-menu li a,
+    .nav ul.children li a {
+      text-transform: none; }
+  .nav li.current-menu-item > a,
+  .nav li.current_page_item > a {
     color: #359ce0; }
 
 /* end .nav */
+.toggles {
+  /* Begin styling for menus using internal toggles */ }
+  .toggles .menu-item-has-children > a, .toggles .toggle {
+    display: inline-block;
+    vertical-align: middle; }
+  .toggles .menu-item-has-children > a {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 3.5em;
+    margin-right: -3.5em; }
+  .toggles .toggle {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #f01d4f;
+    position: relative;
+    visibility: visible; }
+    .toggles .toggle span {
+      display: block;
+      width: .5em;
+      height: .5em;
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-color: #f01d4f;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -.3125em;
+      transition: .2s; }
+  .toggles .cb {
+    position: absolute;
+    z-index: -1;
+    visibility: hidden; }
+  .toggles .children {
+    clear: both; }
+    .toggles .children a {
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 0;
+      overflow: hidden;
+      transition: .2s; }
+      .toggles .children a:focus {
+        padding-top: .66em;
+        padding-bottom: .66em;
+        line-height: 1.4; }
+  .toggles .cb:checked + .toggle span, .toggles .checked + .toggle span {
+    transform: rotate(-135deg);
+    margin-top: -.25em; }
+  .toggles .cb:checked ~ .children a, .toggles .checked ~ .children a {
+    padding-top: .66em;
+    padding-bottom: .66em;
+    line-height: 1.4; }
+
+/* bleed to edge of page */
+.nav-bleed {
+  margin: 1em -1.5em;
+  background: gainsboro;
+  padding: 0 .75em; }
+  .toggle:not(:checked) ~ .nav-bleed {
+    background: none; }
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -1629,7 +1703,7 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.5em; }
   .hentry header, .hentry footer {
     position: relative;
-    padding: 1.5em; }
+    padding: 1.5em 0; }
   .hentry header .featured-image, .hentry header .featured-video-plus {
     margin: -1.5em -1.5em 0; }
     .hentry header .featured-image img, .hentry header .featured-video-plus img {
@@ -1650,7 +1724,7 @@ POSTS & CONTENT STYLES
   margin: 1em 0 0;
   border-style: solid;
   border-width: 4px 0 1px;
-  padding: .1875em;
+  padding: .1875em 0;
   color: #7b8090; }
 
 /* want to style individual post classes? Booya! */
@@ -1670,7 +1744,7 @@ POSTS & CONTENT STYLES
 		    Note: Most of the basic stuff will be inside partials/typography 
 		*/
 .entry-content {
-  padding: 1.5em 1.5em 0; }
+  padding: 1.5em auto 0; }
 
 /* end .entry-content */
 .wp-caption {
@@ -1694,229 +1768,40 @@ POSTS & CONTENT STYLES
 .tags {
   margin: 0; }
 
-.pilates-class {
-  margin: 1.5em 0; }
-  .pilates-class h3 {
-    padding-top: 5px;
-    border-top: 1px solid #777; }
-
-.pricing li {
-  display: inline-block;
-  font-weight: bold;
-  margin-right: 1.5em; }
-
-.tips {
-  background: #f8f9fa;
-  margin: 0 -1em 1.5em;
-  padding: 0 1em 1px 3em; }
-  .tips h4 {
-    background: #777;
-    color: #fff;
-    font-size: 1em;
-    padding: .5em 1em .5em 3em;
-    margin: 0 -1em .5em -3em; }
-    .tips h4 img {
-      width: 24px;
-      float: left;
-      margin-left: -34px; }
-
-.schedule_listing {
-  position: relative;
-  z-index: 2; }
-
 .toggle {
   visibility: hidden;
   position: absolute; }
 
-.button, .header .menu_toggle, .promotion a[data-url] {
+.button, .header .menu_toggle {
   width: 12em;
   transition: .2s all; }
-  .button span, .header .menu_toggle span, .promotion a[data-url] span {
+  .button span, .header .menu_toggle span {
     display: inline-block; }
-  .toggle:checked + .button span, .header .toggle:checked + .menu_toggle span, .promotion .toggle:checked + a[data-url] span {
+  .toggle:checked + .button span, .header .toggle:checked + .menu_toggle span {
     width: 0;
     height: 0;
     display: inline-block;
     overflow: hidden; }
-  .toggle:checked + .button:after, .header .toggle:checked + .menu_toggle:after, .promotion .toggle:checked + a[data-url]:after {
+  .toggle:checked + .button:after, .header .toggle:checked + .menu_toggle:after {
     content: 'Close'; }
 
 @keyframes blinker {
   50% {
     opacity: 0.0; } }
 
-.hc_sched {
-  position: relative;
-  margin: 1em -1.5em;
-  padding: 0 1.5em;
-  max-height: 0;
-  overflow: hidden;
-  transition: .3s all ease-in-out;
-  opacity: 0; }
-  .hc_sched .loading {
-    animation: blinker 1s linear infinite;
-    text-align: center; }
-  .toggle:checked ~ .hc_sched {
-    padding: .5em 1.5em;
-    border: solid #f01d4f;
-    border-width: .25em 0;
-    max-height: 3000px;
-    overflow: auto;
-    opacity: 1;
-    background: #f4f4f4; }
-  .hc_sched:after {
-    content: '';
-    display: table;
-    clear: both; }
-  .hc_sched .header {
-    background: none; }
-  .hc_sched .action_icon img {
-    margin: 0; }
-  .hc_sched h1 {
-    font-size: 1em;
-    font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .hc_sched select, .hc_sched .checkboxes {
-    display: inline-block;
-    margin-right: 1.5em; }
-  .hc_sched .hc-button {
-    display: inline-block;
-    margin-right: 1.5em; }
-  .hc_sched table {
-    border: none; }
-    .hc_sched table tr, .hc_sched table th {
-      background: none !important; }
-    .hc_sched table th {
-      text-align: left;
-      font-size: 1.125em;
-      font-weight: normal; }
-    .hc_sched table th, .hc_sched table td {
-      border: none;
-      padding: 0; }
-    .hc_sched table .schedule_listing_header {
-      border: solid #fff;
-      border-width: 2px 0 0; }
-    .hc_sched table .hc_class {
-      border: solid #fff;
-      border-width: 0 0 2px; }
-
-.healcode .schedule_list {
-  list-style: none;
-  padding: 0;
-  margin: 0 -.25em; }
-  .healcode .schedule_list a {
-    color: inherit; }
-
-.healcode li {
-  padding: .25em; }
-  .healcode li:hover {
-    background: #fff; }
-
-.healcode .schedule_header {
-  margin: 2em 0 .5em;
-  padding-top: .5em;
-  border-top: 1px solid #fff; }
-  .healcode .schedule_header:hover {
-    background: none; }
-
-.healcode li.schedule_header {
-  font-weight: normal; }
-
-.healcode .mbo_class a, .healcode .trainer a {
-  text-decoration: none;
-  cursor: text;
-  pointer-events: none; }
-
-.healcode .hc_time, .healcode .mbo_class {
-  font-weight: bold; }
-
-.promotions h2 {
+.loading {
+  animation: blinker 1s linear infinite;
   text-align: center; }
-
-.promotion {
-  max-width: 18em;
-  background: #eee;
-  border-top: 0.5em solid #2980b9;
-  padding: 0 0 1.5em;
-  text-align: center;
-  margin: 3em auto;
-  position: relative; }
-  .promotion h3 {
-    font-size: 1em;
-    color: #444; }
-  .promotion .content {
-    padding: 0 1.5em 1.5em;
-    color: #777; }
-    .promotion .content:before {
-      content: '';
-      display: block;
-      margin: 0 auto .75em;
-      width: 5.5em;
-      border-top: 2px solid #2980b9; }
-  .list-2 .promotion {
-    max-width: 24em; }
-    .list-2 .promotion h3 {
-      font-size: 1.25em;
-      margin-top: 0; }
-    .list-2 .promotion .content {
-      font-size: 1.125em;
-      line-height: 1.66; }
 
 /*********************
 HOME STYLES
 *********************/
 .home .hentry header {
   padding-bottom: 0; }
-  .home .hentry header .featured-image + .page-title {
-    color: #444;
-    border: none;
-    margin: 0; }
   .home .hentry header img {
     margin: 0; }
-  .home .hentry header .button, .home .hentry header .header .menu_toggle, .header .home .hentry header .menu_toggle, .home .hentry header .promotion a[data-url], .promotion .home .hentry header a[data-url] {
+  .home .hentry header .button, .home .hentry header .header .menu_toggle, .header .home .hentry header .menu_toggle {
     font-size: .875em; }
-
-.home .schedule_listing {
-  background: #2980b9 url("../images/schedule-1080x384.jpg") no-repeat 50% top;
-  position: relative;
-  overflow: hidden;
-  padding: 2em 0;
-  text-align: center; }
-  .home .schedule_listing:before, .home .schedule_listing:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -1.5em;
-    right: -1.5em;
-    height: 1.5em; }
-  .home .schedule_listing:before {
-    top: 0;
-    box-shadow: inset 0 0.75em 0.75em rgba(0, 0, 0, 0.6); }
-  .home .schedule_listing:after {
-    bottom: 0;
-    box-shadow: inset 0 -0.75em 0.75em rgba(0, 0, 0, 0.6); }
-  .home .schedule_listing .button, .home .schedule_listing .header .menu_toggle, .header .home .schedule_listing .menu_toggle, .home .schedule_listing .promotion a[data-url], .promotion .home .schedule_listing a[data-url] {
-    font-size: 1.125em;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 1.25em 4em;
-    display: inline-block;
-    width: auto; }
-  .home .schedule_listing .hc_sched {
-    text-align: left;
-    margin: 1em 1em -1em;
-    background: rgba(255, 255, 255, 0.8);
-    border: none; }
-  .home .schedule_listing .toggle:checked ~ .hc_sched {
-    margin-bottom: 1em; }
-
-.inspiration {
-  text-align: center;
-  padding: 1.5em;
-  color: #fff;
-  background: #2980b9 url("../images/grip-bar-blue.jpg") no-repeat 50% top; }
-  .inspiration blockquote {
-    color: #fff;
-    margin: 0; }
 
 .hero-button {
   position: relative;
@@ -2158,7 +2043,7 @@ FOOTER STYLES
 .footer {
   clear: both;
   background-color: #444;
-  color: #fff;
+  color: #eaedf2;
   text-align: center;
   font-size: .875em; }
   .footer .widget {
@@ -2169,8 +2054,10 @@ FOOTER STYLES
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: .05em; }
-  .footer a, .footer a:hover {
-    color: #fff; }
+  .footer a, .footer nav li a {
+    color: #eaedf2; }
+    .footer a:hover, .footer nav li a:hover {
+      color: #fff; }
 
 /*
 	if you checked out the link above:
@@ -2192,14 +2079,14 @@ FOOTER STYLES
 .signup .cc_Go {
   margin-top: 1.5em; }
 
-.signup .button, .signup .header .menu_toggle, .header .signup .menu_toggle, .signup .promotion a[data-url], .promotion .signup a[data-url] {
+.signup .button, .signup .header .menu_toggle, .header .signup .menu_toggle {
   border: none;
   font-size: 1em;
   width: 100%;
   display: block;
   color: #fff;
   background: #2980b9; }
-  .signup .button:active, .signup .header .menu_toggle:active, .header .signup .menu_toggle:active, .signup .promotion a[data-url]:active, .promotion .signup a[data-url]:active {
+  .signup .button:active, .signup .header .menu_toggle:active, .header .signup .menu_toggle:active {
     background: #20638f; }
 
 .signup .cc_safesubscribe {
@@ -2208,7 +2095,7 @@ FOOTER STYLES
   text-decoration: none; }
 
 .copyright {
-  padding: 1.5em; }
+  padding: 1.5em 0; }
 
 @media (min-width: 32em) {
   /******************************************************************
@@ -2230,6 +2117,8 @@ them in here, they won't work.
   /*********************
 NAVIGATION STYLES
 *********************/
+  .header .wrap {
+    justify-content: space-between; }
   /* .menu is clearfixed inside mixins.scss */
   .menu {
     /* end .menu ul */ }
@@ -2276,6 +2165,46 @@ do they need tweaking?
 */
   /* end .footer-links */ }
 
+@media (min-width: 40em) {
+  /******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Small-Med Stylesheet
+
+Larger smartphone devices and smaller tablets may hit this
+point.
+
+******************************************************************/
+  .header .nav {
+    display: flex; }
+    .header .nav ul.sub-menu li,
+    .header .nav ul.children li {
+      padding: 0; }
+  .header .toggles .menu-item-has-children > a {
+    width: auto; }
+  .footer .nav {
+    margin: .5em -.75em; }
+    .footer .nav a {
+      display: inline !important; }
+    .footer .nav > li {
+      padding: .33em 0; }
+    .footer .nav .sub-menu,
+    .footer .nav .children {
+      position: relative;
+      z-index: 1; }
+      .footer .nav .sub-menu:before,
+      .footer .nav .children:before {
+        content: '>'; }
+      .footer .nav .sub-menu li a,
+      .footer .nav .children li a {
+        border: none;
+        padding: 0; }
+      .footer .nav .sub-menu, .footer .nav .sub-menu li,
+      .footer .nav .children,
+      .footer .nav .children li {
+        display: inline; } }
+
 @media (min-width: 48em) {
   /******************************************************************
 Site Name:
@@ -2312,67 +2241,120 @@ HEADER STYLES
   /*********************
 NAVIGATION STYLES
 *********************/
-  .header nav {
+  .header .nav, .header .menu_toggle ~ nav {
     border: none;
-    max-height: none; }
-  .header .toggle, .header .menu_toggle {
+    max-height: none;
+    overflow: visible; }
+  .header .menu_toggle {
     display: none; }
   .nav {
     border: 0;
-    /* end .menu ul li */
+    /*
+  plan your menus and drop-downs wisely.
+  */
     /* highlight current page */
     /* end current highlighters */ }
-    .header .nav {
-      padding-left: 4.125em; }
     .nav ul {
       margin-top: 0; }
     .nav li {
-      float: left;
       position: relative;
-      /*
-		plan your menus and drop-downs wisely.
-		*/
       /* showing sub-menus */ }
       .nav li a {
         border-bottom: 0;
+        margin: 0;
         /*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/ }
-      .nav li ul.sub-menu,
-      .nav li ul.children {
-        margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
-        position: absolute;
-        visibility: hidden;
-        z-index: 8999;
-        /* highlight sub-menu current page */ }
-        .nav li ul.sub-menu li,
-        .nav li ul.children li {
-          /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/ }
-          .nav li ul.sub-menu li a,
-          .nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
-          .nav li ul.sub-menu li ul,
-          .nav li ul.children li ul {
-            top: 0;
-            left: 100%; }
       .nav li:hover > ul {
         top: auto;
-        visibility: visible; }
+        visibility: visible;
+        opacity: 1; }
+    .nav .sub-menu,
+    .nav .children {
+      margin-top: 0;
+      background: #f8f9fa;
+      border-top: 0;
+      position: absolute;
+      visibility: hidden;
+      z-index: 8999;
+      opacity: 0;
+      transition: .2s opacity;
+      /* highlight sub-menu current page */ }
+      .nav .sub-menu li,
+      .nav .children li {
+        /*
+      if you need to go deeper, go nuts
+      just remember deeper menus suck
+      for usability. k, bai.
+      */ }
+        .nav .sub-menu li a,
+        .nav .children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 180px;
+          border-bottom: 1px solid #ccc; }
+        .nav .sub-menu li:last-child a,
+        .nav .children li:last-child a {
+          border-bottom: 0; }
+        .nav .sub-menu li ul,
+        .nav .children li ul {
+          top: 0;
+          left: 100%; }
   /* end .nav */
+  .t-toggles {
+    /* Begin styling for menus using internal toggles */ }
+    .t-toggles .menu-item-has-children > a, .t-toggles .toggle {
+      display: inline-block;
+      vertical-align: middle; }
+    .t-toggles .menu-item-has-children > a {
+      width: 100%;
+      box-sizing: border-box;
+      padding-right: 3.5em;
+      margin-right: -3.5em; }
+    .t-toggles .toggle {
+      width: 2em;
+      height: 2em;
+      border: 1px solid #f01d4f;
+      position: relative;
+      visibility: visible; }
+      .t-toggles .toggle span {
+        display: block;
+        width: .5em;
+        height: .5em;
+        border-width: 0 2px 2px 0;
+        border-style: solid;
+        border-color: #f01d4f;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -.3125em;
+        transition: .2s; }
+    .t-toggles .cb {
+      position: absolute;
+      z-index: -1;
+      visibility: hidden; }
+    .t-toggles .children {
+      clear: both; }
+      .t-toggles .children a {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 0;
+        overflow: hidden;
+        transition: .2s; }
+        .t-toggles .children a:focus {
+          padding-top: .66em;
+          padding-bottom: .66em;
+          line-height: 1.4; }
+    .t-toggles .cb:checked + .toggle span, .t-toggles .checked + .toggle span {
+      transform: rotate(-135deg);
+      margin-top: -.25em; }
+    .t-toggles .cb:checked ~ .children a, .t-toggles .checked ~ .children a {
+      padding-top: .66em;
+      padding-bottom: .66em;
+      line-height: 1.4; }
   /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -2382,7 +2364,8 @@ POSTS & CONTENT STYLES
     margin-bottom: 1.5em;
     padding: 0 0 1.5em; }
     .hentry header .featured-image, .hentry header .featured-video-plus {
-      margin: 0 -4.5em; }
+      margin-left: -3em;
+      margin-right: -3em; }
       .hentry header .featured-image + h1, .hentry header .featured-video-plus + h1 {
         position: absolute;
         bottom: 2em;
@@ -2424,43 +2407,6 @@ POSTS & CONTENT STYLES
   /*********************
 HOME STYLES
 *********************/
-  .home .hentry {
-    margin: 0;
-    padding: 0; }
-    .home .hentry header .featured-image + .page-title {
-      font-size: 3.25em;
-      line-height: 1;
-      bottom: auto;
-      top: .5em;
-      left: .66em;
-      text-indent: -1em; }
-    .home .hentry header .button, .home .hentry header .header .menu_toggle, .header .home .hentry header .menu_toggle, .home .hentry header .promotion a[data-url], .promotion .home .hentry header a[data-url] {
-      position: absolute;
-      bottom: 4em;
-      left: 3em;
-      width: auto;
-      padding: 1.5em 3em; }
-  .schedule_listing, .promotions, .inspiration {
-    margin: 0 -3em; }
-  .pilates-class .schedule_listing {
-    margin: 0; }
-  .healcode li {
-    display: flex;
-    justify-content: space-between; }
-  .healcode .info_wrapper {
-    flex: 1; }
-  .healcode .hc_time {
-    width: 12em; }
-  .healcode .mbo_class, .healcode .trainer {
-    width: 20em; }
-  .healcode .trainer, .healcode .class_level {
-    width: 10em; }
-  .promotions .listing {
-    display: flex;
-    justify-content: center; }
-  .promotion {
-    margin-left: 1.5em;
-    margin-right: 1.5em; }
   /*********************
 SIDEBARS & ASIDES
 *********************/
@@ -2498,6 +2444,11 @@ mobile. Make sure to double check these!
 */
   .footer {
     text-align: left; }
+    .footer .nav .sub-menu,
+    .footer .nav .children {
+      opacity: 1;
+      visibility: visible;
+      background: none; }
     .footer .logo, .footer .widgets {
       float: left; }
     .footer .widget p {
@@ -2522,7 +2473,59 @@ Stylesheet: Large size
 This typically targets devices larger than a tablet, but it's your
 design. Shift the media queries to fit your evil scheme.
 
-******************************************************************/ }
+******************************************************************/
+  .d-toggles {
+    /* Begin styling for menus using internal toggles */ }
+    .d-toggles .menu-item-has-children > a, .d-toggles .toggle {
+      display: inline-block;
+      vertical-align: middle; }
+    .d-toggles .menu-item-has-children > a {
+      width: 100%;
+      box-sizing: border-box;
+      padding-right: 3.5em;
+      margin-right: -3.5em; }
+    .d-toggles .toggle {
+      width: 2em;
+      height: 2em;
+      border: 1px solid #f01d4f;
+      position: relative;
+      visibility: visible; }
+      .d-toggles .toggle span {
+        display: block;
+        width: .5em;
+        height: .5em;
+        border-width: 0 2px 2px 0;
+        border-style: solid;
+        border-color: #f01d4f;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -.3125em;
+        transition: .2s; }
+    .d-toggles .cb {
+      position: absolute;
+      z-index: -1;
+      visibility: hidden; }
+    .d-toggles .children {
+      clear: both; }
+      .d-toggles .children a {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 0;
+        overflow: hidden;
+        transition: .2s; }
+        .d-toggles .children a:focus {
+          padding-top: .66em;
+          padding-bottom: .66em;
+          line-height: 1.4; }
+    .d-toggles .cb:checked + .toggle span, .d-toggles .checked + .toggle span {
+      transform: rotate(-135deg);
+      margin-top: -.25em; }
+    .d-toggles .cb:checked ~ .children a, .d-toggles .checked ~ .children a {
+      padding-top: .66em;
+      padding-bottom: .66em;
+      line-height: 1.4; } }
 
 @media (min-width: 78em) {
   /******************************************************************
@@ -2633,3 +2636,5 @@ though, go for it.
   .respond-form,
   nav {
     display: none; } }
+
+/*# sourceMappingURL=style.css.map */
