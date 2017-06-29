@@ -34,22 +34,34 @@ point.
 
 .footer {
   .nav {
-
-    * {
+    margin: .5em -.75em;
+  
+    a {
       display: inline !important;
     }
-  
+    
+    & > li {
+      padding: .33em 0;
+    }
+
     .sub-menu,
     .children {
-      border: none;
       position: relative;
-      visibility: visible;
       z-index: 1;
+      
+      &:before {
+        content: '>';
+      }
     
       li {
         a {
           border: none;
+          padding: 0;
         }
+      }
+      
+      &, & li {
+        display: inline;
       }
     }
   }

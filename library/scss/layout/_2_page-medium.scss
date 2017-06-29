@@ -70,15 +70,11 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	
-	.header & {
-	  padding-left: 4.125em;
-	}
-
 	ul {
 		margin-top:0;
 	}
+
 	li {
-		float: left;
 		position: relative;
 
 		a {
@@ -100,6 +96,7 @@ NAVIGATION STYLES
 		&:hover > ul {
 			top: auto;
 			visibility:visible;
+      opacity: 1;
 		}
 	}
 
@@ -109,11 +106,13 @@ NAVIGATION STYLES
   .sub-menu,
   .children {
     margin-top: 0;
-    border: 1px solid #ccc;
+    background: $gray_light;
     border-top: 0;
     position: absolute;
     visibility: hidden;
     z-index: 8999;
+    opacity: 0;
+    transition: .2s opacity;
 
     li {
 
@@ -395,6 +394,15 @@ mobile. Make sure to double check these!
 
 .footer {
   text-align: left;
+  
+  .nav {
+    .sub-menu,
+    .children {
+      opacity: 1;
+      visibility: visible;
+      background: none;
+    }
+  }
   
   .logo, .widgets {
     float: left;
