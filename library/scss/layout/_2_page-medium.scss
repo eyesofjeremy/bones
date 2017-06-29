@@ -181,8 +181,13 @@ POSTS & CONTENT STYLES
   .hentry {
     margin-bottom: 1.5em;
     padding: 0 0 1.5em;
+ 
+    display: flex;
+    flex-flow: row wrap;
 
     header {
+    
+      flex: 1 100%;
 
       .featured-image, .featured-video-plus {
         margin-left: -3em;
@@ -201,6 +206,14 @@ POSTS & CONTENT STYLES
       
       .link_large {
         padding-bottom: 0;
+      }
+    }
+    
+    section {
+      flex: 1;
+      
+      & + section {
+        margin-left: 3em;
       }
     }
     
