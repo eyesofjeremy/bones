@@ -69,9 +69,13 @@
 						<?php					
               // Show blog posts if set for this landing page, and they exist.
             
+              // If we have an array of categories, convert into comma-separated string
+              $cat = $post->page_blog_category;
+              $category = ( is_array( $cat ) ) ? implode( ',', $cat ) : $cat;
+              
               $args = array(
                 'posts_per_page'   => -1,
-                'category'         => implode( ',', $post->page_blog_category )
+                'category'         => $category
               );
             
               $posts = new WP_Query( $args );
