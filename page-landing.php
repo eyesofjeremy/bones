@@ -83,7 +83,7 @@
               if ($posts->have_posts()):
 						?>
 						
-				<div id="sidebar-posts" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
+				<div id="sidebar-posts" class="sidebar m-all t-all d-all cf" role="complementary">
 
 						<?php while ($posts->have_posts()) : $posts->the_post();
 						    echo '<a href="'.get_permalink().'">';
