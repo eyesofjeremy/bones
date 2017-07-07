@@ -23,10 +23,28 @@ LAYOUT & GRID STYLES
 .site {
 	max-width: $page_l;
 	box-shadow: 0 0 2.5em 1em rgba( 0, 0, 0, .25 );
+
+  .banded & {
+    max-width: none;
+  }
 }
 
 .wrap {
   padding: 0 3em;
+
+  .banded & {
+    max-width: $page_l;
+  }
+}
+
+/* bleed to edge of page */
+.nav-bleed {
+  margin: 2em -3em 0;
+  padding: 0 .75em;
+  
+  &, .toggle:not(:checked) ~ & {
+    background: $gray;
+  }
 }
 
 /*********************
@@ -64,6 +82,55 @@ NAVIGATION STYLES
 	.menu_toggle {
 	  display: none;
 	}
+	
+	nav {
+	  li {
+	    a {
+	      font-size: 1em;
+	    }
+	  }
+	}
+
+  .menu-item-has-children {
+    & > a {
+      padding-right: 2em;
+    
+      &:before, &:after {
+        content: '';
+        transition: .2s ease-out;
+        border-bottom: 2px solid $link_color;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: .6em;
+        width: .5em;
+        height: 0;
+      }
+      
+      &:before {
+        transform: rotate(45deg);
+        right: .9em;
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    
+      &:focus {
+        &:before, &:after {
+          width: .75em;
+          right: .75em;
+        }
+        
+        &:before {
+          transform: rotate(135deg);
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
 }
 
 
@@ -76,6 +143,22 @@ NAVIGATION STYLES
 
 	li {
 		position: relative;
+
+    /*
+    focus class gets applied by JS
+    this covers up the anchor element, so clicking again
+    removes :focus
+    */
+    &.focus {
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+      }
+    }
 
 		a {
 			border-bottom: 0;
@@ -93,10 +176,11 @@ NAVIGATION STYLES
 		&:last-child {}
 
 		/* showing sub-menus */
-		&:hover > ul {
-			top: auto;
+		& > a:active ~ ul,
+		& > a:focus ~ ul {
 			visibility:visible;
       opacity: 1;
+      transform: none;
 		}
 	}
 
@@ -105,22 +189,26 @@ NAVIGATION STYLES
   */
   .sub-menu,
   .children {
+    top: 100%;
     margin-top: 0;
+    min-width: 100%;
     background: $gray_light;
     border-top: 0;
     position: absolute;
     visibility: hidden;
     z-index: 8999;
     opacity: 0;
-    transition: .2s opacity;
+    transition: .2s all;
+    transform: scaleY(0);
+    transform-origin: top;
 
     li {
-
+    
       a {
         padding-left: 10px;
         border-right: 0;
         display: block;
-        width: 180px;
+        min-width: 180px;
         border-bottom: 1px solid #ccc;
 
         &:hover,
@@ -156,7 +244,7 @@ NAVIGATION STYLES
       a {}
     }
   }
-
+  
 	/* highlight current page */
 	li.current-menu-item,
 	li.current_page_item,
@@ -414,6 +502,7 @@ mobile. Make sure to double check these!
       opacity: 1;
       visibility: visible;
       background: none;
+      min-width: none;
     }
   }
   
