@@ -20,19 +20,23 @@
 	function toggleFocus() {
 		var self = this;
 
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+    // Apply toggle only to elements with # href
+		if( '#' === self.getAttribute('href') ) {
 
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
-				} else {
-					self.className += ' focus';
-				}
-			}
+      // Move up through the ancestors of the current link until we hit .nav-menu.
+      while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
 
-			self = self.parentElement;
+        // On li elements toggle the class .focus.
+        if ( 'li' === self.tagName.toLowerCase() ) {
+          if ( -1 !== self.className.indexOf( 'focus' ) ) {
+            self.className = self.className.replace( ' focus', '' );
+          } else {
+            self.className += ' focus';
+          }
+        }
+
+        self = self.parentElement;
+      }
 		}
 	}
 	menu = container.getElementsByTagName( 'ul' )[0];
