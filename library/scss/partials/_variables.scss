@@ -49,8 +49,12 @@ $button_color:      $blue;
 $border_color:      #ccc;
 $disabled_color:    #cfcfcf;
 
-$body_background:   $gray;
+$body_background:   $gray_light;
+$page_background:   #eee;
+$header_background: $gray;
+$footer_background: $gray_dark;
 
+$menu_accent:       $gray_med;
 
 /*
 Here's a great tutorial on how to

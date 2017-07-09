@@ -108,7 +108,7 @@ LAYOUT & GRID STYLES
 .site {
 	width: 100%;
 	margin: 0 auto;
-	background: #fff;
+	background: $page_background;
 	max-width: $page_m; // change in queries for larger width site
   // use flexbox to attach footer to bottom of window
   display: flex;
@@ -140,7 +140,7 @@ HEADER STYLES
 
 .header {
   position: relative;
-	background-color: $gray;
+	background-color: $header_background;
   padding-top: 1.5em;
 }
 
@@ -216,7 +216,7 @@ and more scalable.
   .toggle:checked ~ nav {
     max-height: 600px;
     overflow: auto;
-    border-color: $bones_pink;
+    border-color: $border_color;
   }
 	
 	.menu_toggle {
@@ -970,7 +970,7 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $gray_dark;
+	background-color: $footer_background;
 	color: $gray;
 	text-align: center;
 	font-size: .875em;
