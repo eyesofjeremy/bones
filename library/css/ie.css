@@ -34,12 +34,10 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
-/* TU Dominant Colors */
-/* Accent Colors */
 /*
 Here's a great tutorial on how to
 use color variables properly:
-http://v3.sachagreif.com/sass-color-variables/
+http://sachagreif.com/sass-color-variables/
 */
 /*********************
 PAGE WIDTH
@@ -95,16 +93,17 @@ p {
   -ms-word-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3; }
-
-@media (min-width: 48em) {
-  p {
-    -webkit-hyphens: none;
-    -epub-hyphens: none;
-    -moz-hyphens: none;
-    hyphens: none; } }
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
 
 /*
 Mixins for typography
@@ -152,11 +151,11 @@ h5, .h5 {
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #bf2033;
+  color: #f01d4f;
   /* on hover */
   /* on click */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #000; }
+    color: #d10e3c; }
   a:link, a:visited:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
@@ -222,7 +221,7 @@ img {
   height: auto; }
 
 pre {
-  background: #231f20;
+  background: #323944;
   color: #f8f9fa;
   font-size: 0.9em;
   padding: 1.5em;

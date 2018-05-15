@@ -204,12 +204,10 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
-  /* TU Dominant Colors */
-  /* Accent Colors */
   /*
 Here's a great tutorial on how to
 use color variables properly:
-http://v3.sachagreif.com/sass-color-variables/
+http://sachagreif.com/sass-color-variables/
 */
   /*********************
 PAGE WIDTH
@@ -363,7 +361,7 @@ probably best not to use it. I mean, were you going to anyway?
 
 HEY! if you use autoprefixer or another postprocessor, you may
 not need this at all. Just sayin! */
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -614,11 +612,11 @@ not need this at all. Just sayin! */
     text-transform: uppercase;
     letter-spacing: 2px; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #bf2033;
+    color: #f01d4f;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #000; }
+      color: #d10e3c; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor p {
@@ -671,7 +669,7 @@ not need this at all. Just sayin! */
     max-width: 100%;
     height: auto; }
   body#tinymce.wp-editor pre {
-    background: #231f20;
+    background: #323944;
     color: #f8f9fa;
     font-size: 0.9em;
     padding: 1.5em;
