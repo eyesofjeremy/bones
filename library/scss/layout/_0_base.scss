@@ -108,7 +108,6 @@ LAYOUT & GRID STYLES
 .site {
 	width: 100%;
 	margin: 0 auto;
-	background: $page_background;
 	max-width: $page_m; // change in queries for larger width site
   // use flexbox to attach footer to bottom of window
   display: flex;
