@@ -106,30 +106,6 @@ POSTS & CONTENT STYLES
 
 } /* end .entry-content */
 
-.signup form {
-
-  display: flex;
-  flex-flow: row wrap;
-  margin-right: -1em;
-  
-  p {
-    flex: 1 auto;
-    padding-right: 1em;
-  }
-
-  .email, .submit {
-    flex: 1 100%;
-  }
-  
-  .first-name, .last-name {
-    width: 40%;
-  }
-  
-  .zip {
-    width: 20%;
-  }
-}
-
 /*********************
 FOOTER STYLES
 *********************/
