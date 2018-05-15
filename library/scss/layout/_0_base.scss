@@ -975,8 +975,8 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	border-top: .75em solid $turquoise;
-	border-bottom: 2em solid$black;
+	border-top: .75em solid darken( $footer_background, 20% );
+	border-bottom: 2em solid darken( $footer_background, 50% );
 	background-color: $footer_background;
 	color: $gray;
 	text-align: center;
