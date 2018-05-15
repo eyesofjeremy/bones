@@ -37,6 +37,13 @@ LAYOUT & GRID STYLES
   }
 }
 
+.bleed {
+  margin-left: -3em;
+  margin-right: -3em;
+  padding: 1.5em 3em;
+}
+
+
 /* bleed to edge of page */
 .nav-bleed {
   margin: 2em -3em 0;
