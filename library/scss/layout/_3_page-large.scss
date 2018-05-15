@@ -15,3 +15,18 @@ design. Shift the media queries to fit your evil scheme.
 
 .wrap {
 }
+
+.single {
+
+  .entry-content {
+    padding: 1.5em 6em 3em;
+ 
+    .alignleft {
+      margin: 0em 3em 1em -6em;
+    }
+
+    .alignright {
+      margin: 0em -6em 1em 3em;
+    }
+  }
+}
