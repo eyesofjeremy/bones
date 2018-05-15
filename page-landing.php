@@ -12,7 +12,7 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -86,7 +86,7 @@
               if ($posts->have_posts()):
 						?>
 						
-				<div id="sidebar-posts" class="sidebar archives m-all t-all d-all cf" role="complementary">
+				<div id="sidebar-posts" class="sidebar archives cf" role="complementary">
 
 						<?php while ($posts->have_posts()) : $posts->the_post(); ?>
 
