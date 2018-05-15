@@ -109,14 +109,14 @@ NAVIGATION STYLES
         display: block;
         position: absolute;
         top: 50%;
-        right: .6em;
+        right: .7em;
         width: .5em;
         height: 0;
       }
       
       &:before {
         transform: rotate(45deg);
-        right: .9em;
+        right: 1em;
       }
 
       &:after {
