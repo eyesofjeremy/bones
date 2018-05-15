@@ -68,6 +68,9 @@
 
 						<?php					
               // Show blog posts if set for this landing page, and they exist.
+              
+              // First set post so we can return
+              $temp = $post;
             
               // If we have an array of categories, convert into comma-separated string
               $cat = $post->page_blog_category;
@@ -83,18 +86,21 @@
               if ($posts->have_posts()):
 						?>
 						
-				<div id="sidebar-posts" class="sidebar m-all t-all d-all cf" role="complementary">
+				<div id="sidebar-posts" class="sidebar archives m-all t-all d-all cf" role="complementary">
 
-						<?php while ($posts->have_posts()) : $posts->the_post();
-						    echo '<a href="'.get_permalink().'">';
-                echo get_the_post_thumbnail($post->ID, 'category-thumb');
-                the_title( '<h6>', '</h6>' );
-                echo '</a>';
-            endwhile;
-            ?>
+						<?php while ($posts->have_posts()) : $posts->the_post(); ?>
+
+        				<?php get_template_part( 'template-parts/archive', 'post' ); ?>
+
+            <?php endwhile; ?>
 
 				</div>
-            <?php endif; # posts loop ?>
+            <?php
+              endif; # posts loop 
+            
+              // reset post
+              $post = $temp;
+            ?>
 
 						<?php get_sidebar(); ?>
 
