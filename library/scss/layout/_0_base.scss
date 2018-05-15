@@ -167,7 +167,7 @@ a.button {
   padding: .75em 2em;
   
   &:hover {
-    color: $black;
+    color: #000;
     background: darken( $button_color, 3% );
   }
 }
@@ -321,19 +321,8 @@ nav {
 	li.current-menu-item,
 	li.current_page_item {
 
-		.header & {
-		  position: relative;
-
-		  &:before {
-		    content: '';
-		    display: block;
-		    position: absolute;
-		    bottom: 0;
-		    left: .75em;
-		    right: .75em;
-		    height: 4px;
-		    background: $link_color;
-		  }
+		& > a {
+		  color: $blue_light;
 		}
 
 	}  /* end current highlighters */
@@ -407,7 +396,8 @@ POSTS & CONTENT STYLES
 		.page-title,
 		.entry-title {
 			margin: 1em 0 0;
-			font-weight: bold;
+			border-style: solid;
+			border-width: 4px 0 1px;
 			padding: .1875em 0;
 			color: $heading_color;
 		}
@@ -522,29 +512,6 @@ POSTS & CONTENT STYLES
 
       &:after {
         content: 'Close';
-      }
-    }
-  }
-
-.archives {}
-
-  .archive-entry {
-    margin: 1em auto;
-
-    a {
-      display: block;
-      padding: 2em;
-      background: #fff;
-      text-decoration: none;
-      border-bottom: 4px solid $link_color;
-
-      &:hover {
-        background: #f4f4f4;
-      }
-
-      img {
-        display: block;
-        margin-top: -2em;
       }
     }
   }
@@ -969,11 +936,6 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {}
-
-#sidebar1 {
-  clear: both;
-  background: #fff;
-}
 
 .signup {
   max-width: 30em;
