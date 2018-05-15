@@ -17,12 +17,67 @@ Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
 
-$alert_yellow:      #ebe16f;
-$alert_red:         #fbe3e4;
+/* TU Dominant Colors */
+
+$pms_385: #7E7B4B;
+$pms_4495: #90845F;
+$pms_4505: #A39771;
+$pms_4525: #C1B58C;
+
+$pms_5405: #5B6F80;
+$pms_5415: #677F91;
+$pms_5487: #697C7D;
+$pms_5645: #9FAFA5;
+
+$pms_5753: #747C61;
+$pms_5803: #CFD3B8;
+$pms_5845: #A7A375;
+$pms_7544: #9AA5AF;
+
+
+/* Accent Colors */
+
+$pms_360: #5DB860;
+$pms_288: #3D5588;
+
+$pms_153: #AC6F42;
+$pms_450: #7E785A;
+$pms_457: #AD9844;
+$pms_483: #7D5B4F;
+
+$pms_619: #968D54;
+$pms_704: #A24F56;
+$pms_1245: #BB8B41;
+$pms_1525: #BD6439;
+
+$pms_3995: #837B4A;
+$pms_4545: #D6CCA6;
+$pms_4705: #8B6F66;
+$pms_5425: #7993A5;
+
+$pms_5435: #9DB4C4;
+$pms_5527: #B8C7C4;
+$pms_5565: #8AA29A;
+$pms_5585: #A2B9AF;
+
+$pms_5635: #8D9D94;
+$pms_5783: #B5BB9F;
+$pms_5825: #8B865D;
+$pms_5865: #CCC895;
+
+$mole:              #352e2b;
+$turquoise:         #3ea8ab;
+$sandstone:         #eaa16b;
+$logo_yellow:       #fed700;
+$logo_red:          #bf2033;
+
+
+$alert_yellow:      $logo_yellow;
+$alert_red:         $logo_red;
 $alert_green:       #e6efc2;
 $alert_blue:        #d5edf8;
 
-$black:             #323944;
+$black:             #231f20;
 $white:             #fff;
 
 $gray_light:        #f8f9fa;
@@ -33,28 +88,26 @@ $heading_color:     #7b8090;
 $meta_color:        #9fa6b4;
 $gray_dark:         #444;
 
-$tan:               #eceee5;
-
-$green:             #7dd667;
+$green:             $pms_360;
 
 $bones_pink:        #f01d4f;
 $blue:              #2980b9;
 $blue_light:        saturate( lighten( $blue, 10% ), 10%);
 
-$link_color:        $bones_pink;
-$link_hover:        darken($link_color, 9%);
+$link_color:        $alert_red;
+$link_hover:        #000;
 
 $button_color:      $blue;
 
 $border_color:      #ccc;
 $disabled_color:    #cfcfcf;
 
-$body_background:   $gray_light;
+$body_background:   $sandstone;
 $page_background:   #eee;
 $header_background: $gray;
-$footer_background: $gray_dark;
+$footer_background: $mole;
 
-$menu_accent:       $gray_med;
+$menu_accent:       $alert_yellow;
 
 /*
 Here's a great tutorial on how to
