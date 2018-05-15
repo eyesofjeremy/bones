@@ -938,6 +938,34 @@ SIDEBARS & ASIDES
 
 .sidebar {}
 
+.signup {
+  max-width: 30em;
+
+  input {
+    max-width: 100%;
+
+    &[type="submit"] {
+      width: auto;
+      margin: 1em auto;
+      color: #fff;
+      font-size: 1.125em;
+      font-weight: bold;
+      background: $turquoise;
+      border: 2px solid;
+      transition: none;
+      text-shadow: -1px -1px darken( $turquoise, 10% );
+      @include css-gradient( $turquoise, darken( $turquoise, 5% ) );
+      border-color: lighten( $turquoise, 10% ) darken( $turquoise, 20% ) darken( $turquoise, 20% ) lighten( $turquoise, 10% );
+    
+      &:active {
+        @include css-gradient( darken( $turquoise, 15% ), darken( $turquoise, 5% ) );      
+        border-color: darken( $turquoise, 20% ) lighten( $turquoise, 10% ) lighten( $turquoise, 10% ) darken( $turquoise, 20% );
+      }
+    }
+  }
+
+}
+
 	.widgettitle {}
 
 	.widget {
