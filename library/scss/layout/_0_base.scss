@@ -518,6 +518,13 @@ POSTS & CONTENT STYLES
       }
     }
   }
+  
+  /* Callout class for special emphasis */
+  .callout {
+    font-size: 1.1875em;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }  
 
 @keyframes blinker {  
   50% { opacity: 0.0; }
