@@ -173,6 +173,10 @@ THEME SUPPORT
 // Adding WP 3+ Functions & Theme Support
 function bones_theme_support() {
 
+  // Support for wide Gutenberg blocks
+  // http://moc.co/2018/02/gutenberg-and-themes/
+	add_theme_support( 'align-wide' );
+	
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
 

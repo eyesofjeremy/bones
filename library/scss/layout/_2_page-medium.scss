@@ -9,6 +9,10 @@ assume that we're getting fairly complex with our design about now.
 
 ******************************************************************/
 
+%bleed {
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
 
 /*********************
 GENERAL STYLES
@@ -40,16 +44,38 @@ LAYOUT & GRID STYLES
   max-width: $page_l;
 }
 
+.entry-content {
+  
+  & > .alignwide {
+    max-width: 80%;
+  }
+
+  * > .alignfull {
+    max-width: none;
+  }
+}
+
+.columnar .entry-content {
+  
+  & > .alignwide {
+    max-width: none;
+  }
+
+  & > .alignfull {
+    @extend %bleed;
+  }
+}
+
 .bleed {
-  margin-left: -3em;
-  margin-right: -3em;
+  @extend %bleed;
   padding: 1.5em 3em;
 }
 
 
 /* bleed to edge of page */
 .nav-bleed {
-  margin: 2em -3em 0;
+  @extend %bleed;
+  margin-top: 2em;
   padding: 0 .75em;
 }
 

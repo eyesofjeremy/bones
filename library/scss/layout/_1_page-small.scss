@@ -85,23 +85,49 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content {
 
-
 	/* at this larger size, we can start to align images */
-	.alignleft, img.alignleft {
-		margin-right: 1.5em;
-		display: inline;
-		float: left;
+	.alignleft {
+
+	  img, figcaption {
+  		margin-right: 1.5rem;
+	  	float: left;
+	  	clear: left;
+		}
 	}
-	.alignright, img.alignright {
-		margin-left: 1.5em;
-		display: inline;
-		float: right;
+
+	.alignright {
+
+	  img, figcaption {
+  		margin-left: 1.5rem;
+	  	float: right;
+	  	clear: right;
+		}
 	}
-	.aligncenter, img.aligncenter {
-		margin-right: auto;
-		margin-left: auto;
-		display: block;
-		clear: both;
+
+	.alignleft,
+	.alignright {
+
+	  img {
+	    display: block;
+	  	max-width: 50%;
+		}
+
+	  figcaption {
+	    display: block;
+	  	width: 50%;
+		}
+	}
+
+	.aligncenter {
+
+	  img {
+	  	max-width: 80%;
+		}
+
+	  figcaption {
+	  	width: 80%;
+	  	margin: 0 auto;
+		}
 	}
 
 } /* end .entry-content */
