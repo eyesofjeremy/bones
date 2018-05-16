@@ -21,20 +21,23 @@ LAYOUT & GRID STYLES
 *********************/
 
 .site {
-	max-width: $page_l;
 	box-shadow: 0 0 2.5em 1em rgba( 0, 0, 0, .25 );
 
-  .banded & {
-    max-width: none;
+  .columnar & {
+  	max-width: $page_l;
   }
 }
 
-.wrap {
+.columnar .wrap {
   padding: 0 3em;
+}
 
-  .banded & {
-    max-width: $page_l;
-  }
+.article-header > *,
+.entry-content > *,
+.article-footer > *,
+.header .wrap,
+.footer .wrap {
+  max-width: $page_l;
 }
 
 .bleed {

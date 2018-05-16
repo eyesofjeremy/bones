@@ -42,7 +42,7 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container" class="site"><!-- add .banded for full-width header and footer -->
+		<div id="container" class="site"><!-- add .columnar for page w/ defined boundaries -->
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 

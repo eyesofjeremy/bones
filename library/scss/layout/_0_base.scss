@@ -108,15 +108,14 @@ LAYOUT & GRID STYLES
 .site {
 	width: 100%;
 	margin: 0 auto;
-	max-width: $page_m; // change in queries for larger width site
   // use flexbox to attach footer to bottom of window
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
   
-  &.banded {
-    max-width: none;
+  &.columnar {
+  	max-width: $page_m; // change in queries for larger width site
   }
 }
 
@@ -126,11 +125,16 @@ LAYOUT & GRID STYLES
 
 .wrap {
   padding: 0 1.5em;
+}
 
-  .banded & {
-    max-width: $page_m;
-    margin: 0 auto;
-  }
+.article-header > *,
+.entry-content > *,
+.article-footer > *,
+.header .wrap,
+.footer .wrap {
+  max-width: $page_m;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bleed {
@@ -394,7 +398,7 @@ POSTS & CONTENT STYLES
 		.single-title,
 		.page-title,
 		.entry-title {
-			margin: 1em 0 0;
+			margin: 1em auto .5em;
 			border-style: solid;
 			border-width: 4px 0 1px;
 			padding: .1875em 0;
