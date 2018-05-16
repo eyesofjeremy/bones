@@ -37,7 +37,7 @@ http://0to255.com/
 /*
 Here's a great tutorial on how to
 use color variables properly:
-http://sachagreif.com/sass-color-variables/
+http://v3.sachagreif.com/sass-color-variables/
 */
 /*********************
 PAGE WIDTH
@@ -93,17 +93,16 @@ p {
   -ms-word-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig"; }
+  hyphenate-lines: 3; }
+
+@media (min-width: 48rem) {
+  p {
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none; } }
 
 /*
 Mixins for typography
@@ -120,6 +119,7 @@ Mixins for typography
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
   text-rendering: optimizelegibility;
   font-weight: 500; }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
@@ -162,7 +162,7 @@ a, a:visited {
 /*********************
 GENERAL STYLES
 *********************/
-p {
+p, figure, blockquote, pre {
   margin: 0 0 1.5em; }
 
 table {
@@ -195,7 +195,7 @@ th {
     border-right: 0; }
 
 blockquote {
-  margin: 0 0 1.5em 0.75em;
+  margin-left: 0.75em;
   padding: 0 0 0 0.75em;
   border-left: 3px solid #2980b9;
   font-style: italic;
@@ -225,7 +225,6 @@ pre {
   color: #f8f9fa;
   font-size: 0.9em;
   padding: 1.5em;
-  margin: 0 0 1.5em;
   border-radius: 3px; }
 
 ul {

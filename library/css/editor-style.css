@@ -207,7 +207,7 @@ http://0to255.com/
   /*
 Here's a great tutorial on how to
 use color variables properly:
-http://sachagreif.com/sass-color-variables/
+http://v3.sachagreif.com/sass-color-variables/
 */
   /*********************
 PAGE WIDTH
@@ -574,7 +574,7 @@ not need this at all. Just sayin! */
     -webkit-hyphenate-before: 2;
     -webkit-hyphenate-after: 3;
     hyphenate-lines: 3; }
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     body#tinymce.wp-editor p {
       -webkit-hyphens: none;
       -epub-hyphens: none;
@@ -590,6 +590,7 @@ not need this at all. Just sayin! */
   body#tinymce.wp-editor .smallcaps {
     font-size: .75em; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
+    font-family: "Georgia", Cambria, Times New Roman, Times, serif;
     text-rendering: optimizelegibility;
     font-weight: 500; }
     body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
@@ -619,7 +620,7 @@ not need this at all. Just sayin! */
       color: #d10e3c; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
-  body#tinymce.wp-editor p {
+  body#tinymce.wp-editor p, body#tinymce.wp-editor figure, body#tinymce.wp-editor blockquote, body#tinymce.wp-editor pre {
     margin: 0 0 1.5em; }
   body#tinymce.wp-editor table {
     width: 100%;
@@ -647,7 +648,7 @@ not need this at all. Just sayin! */
     body#tinymce.wp-editor th:last-child {
       border-right: 0; }
   body#tinymce.wp-editor blockquote {
-    margin: 0 0 1.5em 0.75em;
+    margin-left: 0.75em;
     padding: 0 0 0 0.75em;
     border-left: 3px solid #2980b9;
     font-style: italic;
@@ -673,7 +674,6 @@ not need this at all. Just sayin! */
     color: #f8f9fa;
     font-size: 0.9em;
     padding: 1.5em;
-    margin: 0 0 1.5em;
     border-radius: 3px; }
   body#tinymce.wp-editor ul {
     list-style-type: disc; }

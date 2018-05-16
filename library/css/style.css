@@ -517,7 +517,7 @@ p {
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3; }
 
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
   p {
     -webkit-hyphens: none;
     -epub-hyphens: none;
@@ -543,6 +543,7 @@ body {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
   text-rendering: optimizelegibility;
   font-weight: 500; }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
@@ -585,7 +586,7 @@ a, a:visited {
 /*********************
 GENERAL STYLES
 *********************/
-p {
+p, figure, blockquote, pre {
   margin: 0 0 1.5em; }
 
 table {
@@ -618,7 +619,7 @@ th {
     border-right: 0; }
 
 blockquote {
-  margin: 0 0 1.5em 0.75em;
+  margin-left: 0.75em;
   padding: 0 0 0 0.75em;
   border-left: 3px solid #2980b9;
   font-style: italic;
@@ -648,7 +649,6 @@ pre {
   color: #f8f9fa;
   font-size: 0.9em;
   padding: 1.5em;
-  margin: 0 0 1.5em;
   border-radius: 3px; }
 
 ul {
@@ -751,204 +751,6 @@ probably best not to use it. I mean, were you going to anyway?
 
 HEY! if you use autoprefixer or another postprocessor, you may
 not need this at all. Just sayin! */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-https://github.com/dope/lemonade - Neat lightweight grid.
-
-
-The grid below is a custom built thingy I modeled a bit after
-Gridset. It's VERY basic and probably shouldn't be used on
-your client projects. The idea is you learn how to roll your
-own grids. It's better in the long run and allows you full control
-over your project's layout.
-
-******************************************************************/
-.last-col {
-  float: right;
-  padding-right: 0 !important; }
-
-/*
-Mobile Grid Styles
-These are the widths for the mobile grid.
-There are four types, but you can add or customize
-them however you see fit.
-*/
-@media (max-width: 47.99em) {
-  .m-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
-  .m-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%; }
-  .m-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%; }
-  .m-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%; }
-  .m-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%; }
-  .m-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%; } }
-
-/* Portrait tablet to landscape */
-@media (min-width: 48em) and (max-width: 59.99em) {
-  .t-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
-  .t-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%; }
-  .t-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%; }
-  .t-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%; }
-  .t-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%; }
-  .t-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%; }
-  .t-1of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 20%; }
-  .t-2of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 40%; }
-  .t-3of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 60%; }
-  .t-4of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 80%; } }
-
-/* Landscape to small desktop */
-@media (min-width: 60em) {
-  .d-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
-  .d-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%; }
-  .d-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%; }
-  .d-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%; }
-  .d-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%; }
-  .d-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%; }
-  .d-1of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 20%; }
-  .d-2of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 40%; }
-  .d-3of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 60%; }
-  .d-4of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 80%; }
-  .d-1of6 {
-    float: left;
-    padding-right: 0.75em;
-    width: 16.6666666667%; }
-  .d-1of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 14.2857142857%; }
-  .d-2of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 28.5714286%; }
-  .d-3of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 42.8571429%; }
-  .d-4of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 57.1428572%; }
-  .d-5of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 71.4285715%; }
-  .d-6of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 85.7142857%; }
-  .d-1of8 {
-    float: left;
-    padding-right: 0.75em;
-    width: 12.5%; }
-  .d-1of9 {
-    float: left;
-    padding-right: 0.75em;
-    width: 11.1111111111%; }
-  .d-1of10 {
-    float: left;
-    padding-right: 0.75em;
-    width: 10%; }
-  .d-1of11 {
-    float: left;
-    padding-right: 0.75em;
-    width: 9.09090909091%; }
-  .d-1of12 {
-    float: left;
-    padding-right: 0.75em;
-    width: 8.33%; } }
-
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1231,7 +1033,7 @@ Started w/ http://codepen.io/vulpesigni/pen/yyZYNy
   display: table;
   clear: both; }
 
-@media (min-width: 32em) {
+@media (min-width: 32rem) {
   .tabbed {
     display: flex;
     flex-wrap: wrap; }
@@ -1347,14 +1149,12 @@ LAYOUT & GRID STYLES
 .site {
   width: 100%;
   margin: 0 auto;
-  background: #eee;
-  max-width: 48em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh; }
-  .site.banded {
-    max-width: none; }
+  .site.columnar {
+    max-width: 48rem; }
 
 #content {
   flex: 1;
@@ -1362,9 +1162,15 @@ LAYOUT & GRID STYLES
 
 .wrap {
   padding: 0 1.5em; }
-  .banded .wrap {
-    max-width: 48em;
-    margin: 0 auto; }
+
+.article-header > *,
+.entry-content > *,
+.article-footer > *,
+.header .wrap,
+.footer .wrap {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto; }
 
 .bleed {
   padding: 1.5em;
@@ -1577,7 +1383,7 @@ POSTS & CONTENT STYLES
 .single-title,
 .page-title,
 .entry-title {
-  margin: 1em 0 0;
+  margin: 1em auto .5em;
   border-style: solid;
   border-width: 4px 0 1px;
   padding: .1875em 0;
@@ -1643,6 +1449,12 @@ POSTS & CONTENT STYLES
     overflow: hidden; }
   .toggle:checked + .button:after, .header .toggle:checked + .menu_toggle:after {
     content: 'Close'; }
+
+/* Callout class for special emphasis */
+.callout {
+  font-size: 1.1875em;
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
 
 @keyframes blinker {
   50% {
@@ -1901,14 +1713,12 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  border-top: 0.75em solid #111111;
-  border-bottom: 2em solid black;
+  border-top: 0.75em solid #777777;
+  border-bottom: 2em solid #111111;
   background-color: #444;
   color: #eaedf2;
   text-align: center;
   font-size: .875em; }
-  .footer .widget {
-    max-width: 28em; }
   .footer h4 {
     color: #777;
     font-size: 1.5em;
@@ -1959,7 +1769,7 @@ FOOTER STYLES
 .copyright {
   padding: 1.5em 0; }
 
-@media (min-width: 32em) {
+@media (min-width: 32rem) {
   /******************************************************************
 Site Name:
 Author:
@@ -2004,19 +1814,27 @@ POSTS & CONTENT STYLES
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */ }
-    .entry-content .alignleft, .entry-content img.alignleft {
-      margin-right: 1.5em;
-      display: inline;
-      float: left; }
-    .entry-content .alignright, .entry-content img.alignright {
-      margin-left: 1.5em;
-      display: inline;
-      float: right; }
-    .entry-content .aligncenter, .entry-content img.aligncenter {
-      margin-right: auto;
-      margin-left: auto;
+    .entry-content .alignleft img, .entry-content .alignleft figcaption {
+      margin-right: 1.5rem;
+      float: left;
+      clear: left; }
+    .entry-content .alignright img, .entry-content .alignright figcaption {
+      margin-left: 1.5rem;
+      float: right;
+      clear: right; }
+    .entry-content .alignleft img,
+    .entry-content .alignright img {
       display: block;
-      clear: both; }
+      max-width: 50%; }
+    .entry-content .alignleft figcaption,
+    .entry-content .alignright figcaption {
+      display: block;
+      width: 50%; }
+    .entry-content .aligncenter img {
+      max-width: 80%; }
+    .entry-content .aligncenter figcaption {
+      width: 80%;
+      margin: 0 auto; }
   /* end .entry-content */
   /*********************
 FOOTER STYLES
@@ -2027,7 +1845,7 @@ do they need tweaking?
 */
   /* end .footer-links */ }
 
-@media (min-width: 40em) {
+@media (min-width: 40rem) {
   /******************************************************************
 Site Name:
 Author:
@@ -2067,7 +1885,7 @@ point.
       .footer .nav .children li {
         display: inline; } }
 
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
   /******************************************************************
 Site Name:
 Author:
@@ -2078,6 +1896,9 @@ Assuming your media queries are about right for tablets, you can
 assume that we're getting fairly complex with our design about now.
 
 ******************************************************************/
+  .columnar .entry-content > .alignfull, .bleed, .nav-bleed {
+    margin-left: -3rem;
+    margin-right: -3rem; }
   /*********************
 GENERAL STYLES
 *********************/
@@ -2085,24 +1906,29 @@ GENERAL STYLES
 LAYOUT & GRID STYLES
 *********************/
   .site {
-    max-width: 60em;
     box-shadow: 0 0 2.5em 1em rgba(0, 0, 0, 0.25); }
-    .banded .site {
-      max-width: none; }
-  .wrap {
+    .columnar .site {
+      max-width: 60rem; }
+  .columnar .wrap {
     padding: 0 3em; }
-    .banded .wrap {
-      max-width: 60em; }
+  .article-header > *,
+  .entry-content > *,
+  .article-footer > *,
+  .header .wrap,
+  .footer .wrap {
+    max-width: 60rem; }
+  .entry-content > .alignwide {
+    max-width: 80%; }
+  .entry-content * > .alignfull {
+    max-width: none; }
+  .columnar .entry-content > .alignwide {
+    max-width: none; }
   .bleed {
-    margin-left: -3em;
-    margin-right: -3em;
     padding: 1.5em 3em; }
   /* bleed to edge of page */
   .nav-bleed {
-    margin: 2em -3em 0;
+    margin-top: 2em;
     padding: 0 .75em; }
-    .nav-bleed, .toggle:not(:checked) ~ .nav-bleed {
-      background: #cbd2df; }
   /*********************
 HEADER STYLES
 *********************/
@@ -2301,32 +2127,9 @@ POSTS & CONTENT STYLES
         margin-left: 3em; }
   .light-featured-image header .featured-image + h1 {
     color: #444; }
-  .pricing li {
-    margin-right: 3em; }
-  .tips {
-    padding: 2em 1.5em 1px 7em;
-    position: relative;
-    min-height: 6.5em; }
-    .tips h4 {
-      position: absolute;
-      margin: 0;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      padding: .75em 0 0;
-      width: 6em;
-      text-align: center; }
-      .tips h4 img {
-        float: none;
-        width: 38px;
-        display: block;
-        margin: 2px auto; }
-  .hc_sched {
-    margin-left: -4.5em;
-    margin-right: -4.5em;
-    padding: 0 4.5em; }
-    .toggle:checked ~ .hc_sched {
-      padding: .5em 4.5em; }
+  .callout {
+    font-size: 1.3125em;
+    line-height: 1.3125; }
   /*********************
 HOME STYLES
 *********************/
@@ -2388,7 +2191,7 @@ mobile. Make sure to double check these!
 			*/ }
   /* end .footer-links */ }
 
-@media (min-width: 60em) {
+@media (min-width: 60rem) {
   /******************************************************************
 Site Name:
 Author:
@@ -2451,14 +2254,20 @@ design. Shift the media queries to fit your evil scheme.
       padding-top: .66em;
       padding-bottom: .66em;
       line-height: 1.4; }
-  .single .entry-content {
-    padding: 1.5em 6em 3em; }
-    .single .entry-content .alignleft {
-      margin: 0em 3em 1em -6em; }
-    .single .entry-content .alignright {
-      margin: 0em -6em 1em 3em; } }
+  /* entry content */
+  .entry-content {
+    /* at this larger size, we can start to align images */ }
+    .entry-content .alignleft img, .entry-content .alignleft figcaption {
+      margin-right: 3rem; }
+    .entry-content .alignright img, .entry-content .alignright figcaption {
+      margin-left: 3rem; }
+    .entry-content .aligncenter img {
+      max-width: 70%; }
+    .entry-content .aligncenter figcaption {
+      width: 70%; }
+  /* end .entry-content */ }
 
-@media (min-width: 78em) {
+@media (min-width: 78rem) {
   /******************************************************************
 Site Name: 
 Author: 
@@ -2480,34 +2289,34 @@ body.debug:before {
   padding: .25em 0;
   background: yellow;
   opacity: 0.4; }
-  @media only screen and (min-width: 20em) {
+  @media only screen and (min-width: 20rem) {
     body.debug:before {
       content: 'xsmall';
-      width: 20em; } }
-  @media only screen and (min-width: 32em) {
+      width: 20rem; } }
+  @media only screen and (min-width: 32rem) {
     body.debug:before {
       content: 'small';
-      width: 32em; } }
-  @media only screen and (min-width: 40em) {
+      width: 32rem; } }
+  @media only screen and (min-width: 40rem) {
     body.debug:before {
       content: 'small2';
-      width: 40em; } }
-  @media only screen and (min-width: 48em) {
+      width: 40rem; } }
+  @media only screen and (min-width: 48rem) {
     body.debug:before {
       content: 'medium';
-      width: 48em; } }
-  @media only screen and (min-width: 60em) {
+      width: 48rem; } }
+  @media only screen and (min-width: 60rem) {
     body.debug:before {
       content: 'large';
-      width: 60em; } }
-  @media only screen and (min-width: 78em) {
+      width: 60rem; } }
+  @media only screen and (min-width: 78rem) {
     body.debug:before {
       content: 'xlarge';
-      width: 78em; } }
-  @media only screen and (min-width: 108em) {
+      width: 78rem; } }
+  @media only screen and (min-width: 108rem) {
     body.debug:before {
       content: 'xxlarge';
-      width: 108em; } }
+      width: 108rem; } }
 
 /*********************
 PRINT STYLESHEET
