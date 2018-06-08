@@ -257,38 +257,6 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-/************* RESPONSIVE FEATURED IMAGE *********************/
-
-// Assumes 3 sizes available, setup above:
-// - featured-l
-// - featured-m
-// - featured-s
-
-function bones_featured_image() {
-  global $post;
-  $thumbnail_id = get_post_thumbnail_id( $post->ID );
-
-  if( $thumbnail_id ) {
-    $thumbnail_data = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
-    $alt = $thumbnail_data[0]->post_title;
-  
-    $image = wp_get_attachment_image_src( $thumbnail_id, 'post-thumbnail' );
-  
-    $img_src = wp_get_attachment_image_url( $thumbnail_id, 'featured-s' );
-    $img_srcset = wp_get_attachment_image_srcset( $thumbnail_id, 'featured-l' );
-  
-  
-    $html = '<figure class="featured-image">
-    <img src="' . esc_url( $img_src ) . '"
-       srcset="' . esc_attr( $img_srcset ) . '"
-       alt="' . $alt . '">
-    </figure>';
-    
-    $html = apply_filters( 'post_thumbnail_html', $html, $post->ID, $thumbnail_id, $size = 'large', $attr = array() );
-
-    echo $html;
-  }
-}
 
 /*
 Let's add a class to the body tag which gives us a page-specific CSS hook
