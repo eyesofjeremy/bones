@@ -17,6 +17,18 @@ Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
 
+/* brand colors */
+$pw_dark_brown:     #463628; // PMS 476
+$pw_pale_teal:      #A6D3D7; // PMS 5503
+
+$pw_sienna:         #B7732B; // PMS 145
+$pw_dark_teal:      #5C898D; // PMS 5483
+$pw_spring_green:   #98A017; // PMS 397
+$pw_marigold:       #F9B744; // PMS 1225
+
+$pw_raspberry:      #C13D45; // PMS 186
+$pw_eggplant:       #573C5F; // PMS 520
+
 $alert_yellow:      #ebe16f;
 $alert_red:         #fbe3e4;
 $alert_green:       #e6efc2;
@@ -28,26 +40,22 @@ $white:             #fff;
 $gray_light:        #f8f9fa;
 $gray:              #eaedf2;
 $gray_med:          #777;
-$text_color:        #5c6b80;
-$heading_color:     #7b8090;
+$text_color:        lighten( saturate( $pw_dark_brown, 20% ), 6% );
+$heading_color:     $pw_sienna;
 $meta_color:        #9fa6b4;
 $gray_dark:         #444;
 
-$tan:               #eceee5;
-
-$green:             #7dd667;
-
-$bones_pink:        #f01d4f;
 $blue:              #2980b9;
 $blue_light:        saturate( lighten( $blue, 10% ), 10%);
 
-$link_color:        $bones_pink;
-$accent_soft:       $gray_light;
-$accent_deep:       $gray_dark;
-$accent_strong:     $bones_pink;
+$accent_soft:       $pw_pale_teal;
+$accent_deep:       $pw_dark_teal;
+$accent_strong:     $pw_sienna;
+
+$link_color:        $pw_sienna;
 $link_hover:        darken($link_color, 9%);
 
-$button_color:      $blue;
+$button_color:      $pw_eggplant;
 
 $border_color:      #ccc;
 $disabled_color:    #cfcfcf;
