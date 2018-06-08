@@ -211,7 +211,7 @@ and more scalable.
 	nav {
 	  transition: .3s all;
 	  border-style: solid;
-    border-color: $bones_pink;
+    border-color: $accent_strong;
 	  border-width: 2px 0;
 	}
 
@@ -236,7 +236,7 @@ and more scalable.
     text-align: center;
     
     &, &:hover {
-      background: $bones_pink;
+      background: $accent_strong;
     }
     
     html & {
