@@ -36,6 +36,13 @@ FONT FACE (IN YOUR FACE)
   }
 
   @font-face {
+      font-family: 'Charter';
+      src: url('../fonts/charter/charter_bold-webfont.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+  }
+
+  @font-face {
       font-family: 'Proxima Soft';
       src: url('../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff2') format('woff2'),
            url('../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff') format('woff');
