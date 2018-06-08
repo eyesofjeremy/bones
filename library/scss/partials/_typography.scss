@@ -40,6 +40,22 @@ FONT FACE (IN YOUR FACE)
   }
 */
 
+  @font-face {
+      font-family: 'Proxima Soft';
+      src: url('../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff2') format('woff2'),
+           url('../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'Proxima Soft';
+      src: url('../fonts/proximasoft_bold_macroman/proximasoft-bold-webfont.woff2') format('woff2'),
+           url('../fonts/proximasoft_regular_macroman/proximasoft-bold-webfont.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+  }
+
 
 /*
 The following is based of Typebase:
@@ -49,7 +65,7 @@ I've edited it a bit, but it's a nice starting point.
 
 
 // font stacks
-$sans:              "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans:              "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 $body_font:         $sans;
 $heading_font:      $serif;
