@@ -204,6 +204,7 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+  /* brand colors */
   /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -238,17 +239,6 @@ FONT FACE (IN YOUR FACE)
   on embedding fonts, go to:
   http://www.fontsquirrel.com/
   Be sure to remove the comment brackets.
-*/
-  /*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
 */
   /*
 The following is based of Typebase:
@@ -361,10 +351,10 @@ probably best not to use it. I mean, were you going to anyway?
 
 HEY! if you use autoprefixer or another postprocessor, you may
 not need this at all. Just sayin! */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Charter, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
+  color: #684425;
   padding: .75em;
   /*********************
 		LARGER MOBILE DEVICES
@@ -567,6 +557,34 @@ not need this at all. Just sayin! */
   body#tinymce.wp-editor span.amp {
     font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
     font-style: italic; }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'Charter';
+    src: url("../fonts/charter/charter_regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal; } }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'Charter';
+    src: url("../fonts/charter/charter_bold-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal; } }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'Proxima Soft';
+    src: url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff2") format("woff2"), url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal; } }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'Proxima Soft';
+    src: url("../fonts/proximasoft_bold_macroman/proximasoft-bold-webfont.woff2") format("woff2"), url("../fonts/proximasoft_regular_macroman/proximasoft-bold-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal; } }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-break: break-word;
@@ -590,9 +608,7 @@ not need this at all. Just sayin! */
   body#tinymce.wp-editor .smallcaps {
     font-size: .75em; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
-    font-family: "Georgia", Cambria, Times New Roman, Times, serif;
-    text-rendering: optimizelegibility;
-    font-weight: 500; }
+    font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
       text-decoration: none; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
@@ -613,19 +629,25 @@ not need this at all. Just sayin! */
     text-transform: uppercase;
     letter-spacing: 2px; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #f01d4f;
+    color: #B7732B;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #d10e3c; }
+      color: #925c22; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+  body#tinymce.wp-editor body {
+    font-family: Charter, Georgia, Cambria, Times New Roman, Times, serif;
+    font-size: 19px;
+    line-height: 1.4;
+    letter-spacing: .02em;
+    color: #684425; }
   body#tinymce.wp-editor p, body#tinymce.wp-editor figure, body#tinymce.wp-editor blockquote, body#tinymce.wp-editor pre {
-    margin: 0 0 1.5em; }
+    margin: 0 0 2em; }
   body#tinymce.wp-editor table {
     width: 100%;
-    border: 1px solid #eaedf2;
-    margin-bottom: 1.5em; }
+    border: 1px solid #A6D3D7;
+    margin-bottom: 2em; }
     body#tinymce.wp-editor table caption {
       margin: 0 0 7px;
       font-size: 0.75em;
@@ -649,10 +671,12 @@ not need this at all. Just sayin! */
       border-right: 0; }
   body#tinymce.wp-editor blockquote {
     margin-left: 0.75em;
-    padding: 0 0 0 0.75em;
-    border-left: 3px solid #2980b9;
-    font-style: italic;
-    color: #9fa6b4; }
+    padding: 0 0 0 0.75em; }
+  body#tinymce.wp-editor blockquote, body#tinymce.wp-editor b, body#tinymce.wp-editor strong, body#tinymce.wp-editor figure {
+    font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body#tinymce.wp-editor figcaption, body#tinymce.wp-editor .wp-block-image figcaption {
+    font-size: 1em;
+    color: #5C898D; }
   body#tinymce.wp-editor dd {
     margin-left: 0;
     font-size: 0.9em;
