@@ -28,17 +28,12 @@ FONT FACE (IN YOUR FACE)
   Be sure to remove the comment brackets.
 */
 
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
+  @font-face {
+      font-family: 'Charter';
+      src: url('../fonts/charter/charter_regular-webfont.woff') format('woff');
       font-weight: normal;
       font-style: normal;
   }
-*/
 
   @font-face {
       font-family: 'Proxima Soft';
@@ -66,7 +61,7 @@ I've edited it a bit, but it's a nice starting point.
 
 // font stacks
 $sans:              "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$serif:             Charter, Georgia, Cambria, Times New Roman, Times, serif;
 $body_font:         $sans;
 $heading_font:      $serif;
 
