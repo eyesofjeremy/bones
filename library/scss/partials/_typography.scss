@@ -132,7 +132,6 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: $heading_font;
-  font-weight: 500;
   a {
     text-decoration: none;
   }
@@ -192,14 +191,23 @@ a, a:visited {
 GENERAL STYLES
 *********************/
 
+body {
+	font-family: $body-font;
+	font-size: 19px;
+	line-height: 1.4;
+	letter-spacing: .02em;
+	color: $text_color;
+}
+
+
 p, figure, blockquote, pre {
-  margin: 0 0 1.5em;
+  margin: 0 0 2em;
 }
 
 table {
   width: 100%;
-  border: 1px solid $gray;
-  margin-bottom: 1.5em;
+  border: 1px solid $accent_soft;
+  margin-bottom: 2em;
 
   caption {
     margin: 0 0 7px;
@@ -239,12 +247,18 @@ th {
 blockquote {
   margin-left: 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid $blue;
-  font-style: italic;
-  color: $meta_color;
 
   &:before {}
 
+}
+
+blockquote, b, strong, figure {
+  font-family: $sans;
+}
+
+figcaption, .wp-block-image figcaption {
+  font-size: 1em;
+  color: $accent_deep;
 }
 
 dd {

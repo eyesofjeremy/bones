@@ -21,12 +21,7 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $body-font;
-	font-size: 100%;
-	line-height: 1.5;
-	color: $text-color;
 	background-color: $body_background;
-  @extend %crispType;
 }
 
 a {
@@ -150,6 +145,7 @@ HEADER STYLES
 
 .header {
   position: relative;
+  font-family: $sans;
 	background-color: $header_background;
   padding-top: 1.5em;
 }
@@ -373,12 +369,9 @@ POSTS & CONTENT STYLES
 			
 			header {
 			  .featured-image, .featured-video-plus {
-			    margin: -1.5em -1.5em 0;
-			    
-			    img {
-			      display: block;
-			      max-width: 100%;
-			    }			  
+			    margin: -1.5em auto 0;
+          display: block;
+          border-radius: 1.5rem;
 			  }
 			  
 			  .link_large {
@@ -400,8 +393,6 @@ POSTS & CONTENT STYLES
 		.page-title,
 		.entry-title {
 			margin: 1em auto .5em;
-			border-style: solid;
-			border-width: 4px 0 1px;
 			padding: .1875em 0;
 			color: $heading_color;
 		}
@@ -525,7 +516,70 @@ POSTS & CONTENT STYLES
     font-size: 1.1875em;
     margin-top: 3rem;
     margin-bottom: 3rem;
-  }  
+  }
+  
+  .panel {
+    padding: 2em;
+    background: $accent_soft;
+    border-radius: 1.5rem;
+    margin: 3em auto;
+  
+    .lens {
+      color: white;
+      display: block;
+      max-width: 42%; /* =========== MOVE THIS?? */
+      padding: 1em 2em;
+      margin: -2em 0 2em;
+      position: relative;
+      z-index: 1;
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #6e4c22;
+        z-index: -1;
+      }
+
+      &:after {
+        top: -1em;
+        background: #e08829;
+        z-index: -2;
+        border-radius: 1em;
+      }
+    }
+
+    &.alignleft .lens {    
+      margin-left: -2em;
+      margin-right: auto;
+    
+      &:before {
+        border-radius: 1em 0;
+      }
+
+      &:after {
+        left: -1em;
+      }
+    }
+
+    &.alignright .lens {
+      margin-left: auto;
+      margin-right: -2em;
+      text-align: right;
+    
+      &:before {
+        border-radius: 0 1em;
+      }
+
+      &:after {
+        right: -1em;
+      }
+    }
+  }
 
 @keyframes blinker {  
   50% { opacity: 0.0; }
@@ -974,7 +1028,7 @@ SIDEBARS & ASIDES
 
 	.no-widgets {
 		padding: 1.5em;
-		text-align: center;
+    text-align: center;
 		border: 1px solid $border-color;
 		border-radius: 2px;
 		margin-bottom: 1.5em;
@@ -986,6 +1040,7 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
+  font-family: $sans;
 	border-top: .75em solid lighten( $footer_background, 20% );
 	border-bottom: 2em solid darken( $footer_background, 20% );
 	background-color: $footer_background;

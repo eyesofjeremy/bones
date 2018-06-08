@@ -308,13 +308,19 @@ POSTS & CONTENT STYLES
         max-width: $page_l + 6rem;
               
         & + h1 {
-          position: absolute;
-          bottom: 2em;
+          position: relative;
           left: .75em;
           color: white;
           padding: .1875em .75em;
           box-sizing: border-box;
-          min-width: 40%;
+          background: $heading_color;
+          border-radius: 1.5rem;
+          
+          @supports( mix-blend-mode:multiply ) {
+            margin-top: -1em;
+            padding-top: 1em;
+            mix-blend-mode: multiply;
+          }
         }
       }
       
