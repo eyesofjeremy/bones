@@ -128,7 +128,7 @@ LAYOUT & GRID STYLES
 .header .wrap,
 .footer .wrap,
 .sidebar > * {
-  max-width: $page_m;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
