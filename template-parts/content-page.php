@@ -2,7 +2,7 @@
 
 								<header class="article-header">
 								
-								  <?php bones_featured_image(); ?>
+								  <?php the_post_thumbnail('featured-l', ['class' => 'featured-image', 'title' => 'Feature image']); ?>
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
