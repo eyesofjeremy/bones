@@ -15,7 +15,7 @@
   .toggle {
     width: 2em;
     height: 2em;
-    border: 1px solid $bones_pink;
+    border: 1px solid $accent_strong;
     position: relative;
     visibility: visible;
     
@@ -25,7 +25,7 @@
       height: .5em;
       border-width: 0 2px 2px 0;
       border-style: solid;
-      border-color: $bones_pink;
+      border-color: $accent_strong;
       transform: rotate(45deg);
       position: absolute;
       top: 50%;

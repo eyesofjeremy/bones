@@ -39,6 +39,9 @@ $blue:              #2980b9;
 $blue_light:        saturate( lighten( $blue, 10% ), 10%);
 
 $link_color:        $bones_pink;
+$accent_soft:       $gray_light;
+$accent_deep:       $gray_dark;
+$accent_strong:     $bones_pink;
 $link_hover:        darken($link_color, 9%);
 
 $button_color:      $blue;
@@ -46,9 +49,9 @@ $button_color:      $blue;
 $border_color:      #ccc;
 $disabled_color:    #cfcfcf;
 
-$body_background:   $gray_light;
-$header_background: $gray;
-$footer_background: $gray_dark;
+$body_background:   $white;
+$header_background: $accent_soft;
+$footer_background: $accent_deep;
 
 $menu_accent:       $gray_med;
 
