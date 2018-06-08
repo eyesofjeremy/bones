@@ -1027,11 +1027,11 @@ SIDEBARS & ASIDES
 	}
 
 	.no-widgets {
-		padding: 1.5em;
+    font-family: $sans;
+    font-size: 10px;
     text-align: center;
-		border: 1px solid $border-color;
-		border-radius: 2px;
-		margin-bottom: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: .05em;
 	}
 
 /*********************
