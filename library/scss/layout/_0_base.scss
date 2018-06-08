@@ -131,7 +131,8 @@ LAYOUT & GRID STYLES
 .entry-content > *,
 .article-footer > *,
 .header .wrap,
-.footer .wrap {
+.footer .wrap,
+.sidebar > * {
   max-width: $page_m;
   margin-left: auto;
   margin-right: auto;
