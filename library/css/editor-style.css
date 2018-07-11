@@ -574,6 +574,13 @@ not need this at all. Just sayin! */
 
 @font-face {
   body#tinymce.wp-editor {
+    font-family: 'Charter';
+    src: url("../fonts/charter/charter_italic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: italic; } }
+
+@font-face {
+  body#tinymce.wp-editor {
     font-family: 'Proxima Soft';
     src: url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff2") format("woff2"), url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff") format("woff");
     font-weight: normal;
