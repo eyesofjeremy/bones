@@ -275,6 +275,20 @@ function bones_add_slug_body_class( $classes ) {
 }
 add_filter( 'body_class', 'bones_add_slug_body_class' );
 
+function bones_custom_logo() {
+	
+	if ( function_exists( 'the_custom_logo' ) ) {
+		$html = get_custom_logo();
+	}
+	
+	// Offer a fallback if no logo in place
+	if( $html === '' ) {
+	  $html = '<a href="' . home_url() . '" rel="nofollow">' . get_bloginfo('name') . '</a>';
+	}
+	
+	echo $html;
+}
+
 /*
 For checking CSS, append ?css=debug to a URL
 */

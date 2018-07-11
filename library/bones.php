@@ -183,6 +183,17 @@ function bones_theme_support() {
 	// default thumb size
 	set_post_thumbnail_size(125, 125, true);
 
+  // Custom Logo is supported
+  add_theme_support( 'custom-logo',
+      array(
+      'height'      => 100,
+      'width'       => 400,
+      'flex-height' => true,
+      'flex-width'  => true,
+      'header-text' => array( 'site-title', 'site-description' ),
+      )
+  );
+
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
 	    array(
