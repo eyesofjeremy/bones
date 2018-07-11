@@ -63,8 +63,7 @@ $disabled_color:    #cfcfcf;
 $body_background:   $white;
 $header_background: $accent_soft;
 $footer_background: $accent_deep;
-
-$menu_accent:       $gray_med;
+$menu_background:   lighten( $accent_soft, 18% );
 
 /*
 Here's a great tutorial on how to
