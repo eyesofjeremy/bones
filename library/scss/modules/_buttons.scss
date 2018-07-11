@@ -30,12 +30,10 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   font-family: $sans;
   text-decoration: none;
   color: $white;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  line-height: 1;
   font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
+  padding: 1em 1.5em;
+  border-radius: .5em;
   border: 0;
   cursor: pointer;
   @include transition(background-color 0.14s ease-in-out);
@@ -52,7 +50,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     top: 1px; // adds a tiny hop to the click
   } // end active
 
-} // end .button
+} // end %btn
+
+.button {
+  @extend %btn;
+}
 
 /*
 An example button.
