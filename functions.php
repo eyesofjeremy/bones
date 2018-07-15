@@ -79,6 +79,8 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
+add_image_size( 'featured-xxl', 2160, 768, true );
+add_image_size( 'featured-xl', 1440, 512, true );
 add_image_size( 'featured-l', 1080, 384, true );
 add_image_size( 'featured-m', 675, 240, true );
 add_image_size( 'featured-s', 405, 144, true );
@@ -117,6 +119,8 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
+      'featured-xxl' => __('2160px by 768px'),
+      'featured-xl' => __('1440px by 512px'),
       'featured-l' => __('1080px by 384px'),
       'featured-m' => __('675px by 240px'),
       'featured-s' => __('405px by 144px'),
