@@ -61,40 +61,33 @@
                'container' => false,                           // remove nav container
                'container_class' => 'menu cf',                 // class of container (should you choose to use it)
                'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-               'menu_class' => 'nav top-nav cf',               // adding custom nav class. Add 'toggles' if using walker below
+               'menu_class' => 'nav top-nav cf',       // adding custom nav class. Add 'toggles' if using walker below
                'theme_location' => 'main-nav',                 // where it's located in the theme
                'before' => '',                                 // before the menu
                'after' => '',                                  // after the menu
                'link_before' => '',                            // before each link
                'link_after' => '',                             // after each link
                'depth' => 0,                                   // limit the depth of the nav
-               // 'walker' => new toggle_Walker_Menu,             // Show checkboxes to toggle submenus
+               //'walker' => new toggle_Walker_Menu,             // Show checkboxes to toggle submenus
+               'fallback_cb' => ''                             // fallback function (if there is one)
+						)); ?>
+
+            <?php wp_nav_menu(array(
+               'container' => false,                           // remove nav container
+               'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+               'menu' => __( 'Secondary Menu', 'bonestheme' ), // nav name
+               'menu_class' => 'nav second-nav cf',            // adding custom nav class. Add 'toggles' if using walker below
+               'theme_location' => 'second-nav',               // where it's located in the theme
+               'before' => '',                                 // before the menu
+               'after' => '',                                  // after the menu
+               'link_before' => '',                            // before each link
+               'link_after' => '',                             // after each link
+               'depth' => 0,                                   // limit the depth of the nav
+               //'walker' => new toggle_Walker_Menu,             // Show checkboxes to toggle submenus
                'fallback_cb' => ''                             // fallback function (if there is one)
 						)); ?>
 
 					</nav>
-
-				<div id="sidebar-header" class="sidebar cf" role="complementary">
-
-					<?php if ( is_active_sidebar( 'sidebar-header' ) ) : ?>
-
-						<?php dynamic_sidebar( 'sidebar-header' ); ?>
-
-					<?php elseif ( current_user_can('edit_theme_options') ) : ?>
-
-						<?php
-							/*
-							 * This content shows up for admins if there are no widgets defined in the backend.
-							*/
-						?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
 
 				</div>
 
