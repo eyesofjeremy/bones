@@ -36,13 +36,16 @@ LAYOUT & GRID STYLES
   padding: 0 3em;
 }
 
-.article-header > *,
 .entry-content > *,
 .article-footer > *,
 .header .wrap,
 .footer .wrap,
 .sidebar > * {
   max-width: $page_l;
+}
+
+.page-title {
+  max-width: $page_l + 4rem;
 }
 
 .entry-content {
@@ -128,11 +131,11 @@ NAVIGATION STYLES
 	  display: none;
 	}
 	
-	  li {
-	    a {
-	      font-size: 1em;
-	    }
-	  }
+  li {
+    a {
+      font-size: 1em;
+    }
+	}
 
   .menu-item-has-children {
     & > a {
@@ -299,27 +302,24 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 
-#content {
-	margin-top: 0;
-}
-
   .hentry {
     margin-bottom: 1.5em;
     padding: 0 0 1.5em;
  
     display: flex;
     flex-flow: row wrap;
+    
+    &.has-post-thumbnail {
+      margin-top: -1.5em;
+    }
 
     header {
-    
       flex: 1 100%;
 
       .featured-image, .featured-video-plus {
-        max-width: $page_l + 6rem;
+        width: 100%;
               
         & + h1 {
-          position: relative;
-          left: .75em;
           color: white;
           padding: .1875em .75em;
           box-sizing: border-box;

@@ -380,10 +380,11 @@ POSTS & CONTENT STYLES
 			}
 			
 			header {
+			  margin: 0 -1.5em;
+			
 			  .featured-image, .featured-video-plus {
 			    margin: -1.5em auto 0;
           display: block;
-          border-radius: 1.5rem;
 			  }
 			  
 			  .link_large {
