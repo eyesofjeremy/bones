@@ -32,7 +32,38 @@ NAVIGATION STYLES
   }
 }
 
-.nav {}
+.nav {
+  .entry-content & {
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+        
+    a {
+      padding: 0;
+      margin: 0;
+    }
+    
+    & > * {
+      width: 14em;
+      margin: 0 2em;
+      padding: 0 1.5em .5em;
+      float: right;
+      clear: right;
+      background: $menu_background;
+    
+      &:first-child {
+        border-radius: 1em 1em 0 0;
+        padding-top: .5em;
+        margin-top: 2em;
+      }
+
+      &:last-child {
+        border-radius: 0 0 1em 1em;
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
 
 	/* .menu is clearfixed inside mixins.scss */
 	.menu {

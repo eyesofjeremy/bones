@@ -228,17 +228,26 @@ and more scalable.
 	.menu_toggle {
 	  color: #fff;
     @extend .button;
-    padding: .75em 1em;
+    padding: 1.5em;
     display: block;
     text-align: center;
     
     &, &:hover {
-      background: $accent_strong;
+      background: $accent_deep;
     }
     
     html & {
       width: auto; // offset width set for buttons
     }
+	}
+	
+	.second-nav {
+	  li {
+	    a {
+	      font-weight: normal;
+	      text-transform: none;
+	    }
+	  }
 	}
 }
 
@@ -258,12 +267,15 @@ nav {
 .nav {
 	border-bottom: 0;
 	margin: 0;
+	padding: 0;
 	
 	li {
+	  list-style: none;
+	  padding: 0;
 
 		a {
 			display: block;
-			color: $link_color;
+			color: $accent_deep;
 			text-decoration: none;
 		  text-transform: uppercase;
 		  letter-spacing: .05em;
@@ -278,7 +290,7 @@ nav {
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
-
+  			color: darken( $accent_deep, 25% );
 			}
 		}
 
@@ -322,7 +334,7 @@ nav {
 	li.current_page_item {
 
 		& > a {
-		  color: $blue_light;
+		  color: darken( $accent_deep, 25% );
 		}
 
 	}  /* end current highlighters */

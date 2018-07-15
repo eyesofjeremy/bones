@@ -12,6 +12,7 @@ point.
 .header {
   .nav {
     display: flex;
+    justify-content: space-between;
   
     ul.sub-menu,
     ul.children {
