@@ -511,6 +511,11 @@ POSTS & CONTENT STYLES
     }
   }
   
+  .lead {
+    font-family: $sans;
+    color: $text_accent;
+  }
+  
   /* Callout class for special emphasis */
   .callout {
     font-size: 1.1875em;
