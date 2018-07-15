@@ -192,6 +192,23 @@ a, a:visited {
 
     -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
   }
+
+  /* in-post styles */
+  .hentry & {
+    text-decoration-color: lighten( $link_color, 33% );
+    padding: .125em .25em;
+    margin: -.125em -.25em;
+    border-radius: .25em;
+  
+    &:hover, &:focus {
+      text-decoration-color: lighten( $link_color, 45% );
+      background: lighten( $link_color, 45% );
+    }  
+  }
+  
+  .hentry .nav & {
+    background: none;
+  }
 }
 
 /*********************
