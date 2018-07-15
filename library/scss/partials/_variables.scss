@@ -51,6 +51,7 @@ $blue_light:        saturate( lighten( $blue, 10% ), 10%);
 $accent_soft:       $pw_pale_teal;
 $accent_deep:       $pw_dark_teal;
 $accent_strong:     $pw_sienna;
+$text_accent:       darken( saturate( $pw_dark_teal, 60% ), 15% );
 
 $link_color:        $pw_sienna;
 $link_hover:        darken($link_color, 9%);
