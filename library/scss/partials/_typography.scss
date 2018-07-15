@@ -185,7 +185,7 @@ a, a:visited {
   &:hover, &:focus {
     color: $link_hover;
   }
-
+  
   /* on click */
   &:active {
 
@@ -247,7 +247,10 @@ figcaption {
 
 table {
   width: 100%;
-  border: 1px solid $accent_soft;
+  background: $menu_background;
+  border-radius: 1em;
+  padding: .5em 1em;
+  border-collapse: initial;
   margin-bottom: 2em;
 
   caption {
@@ -259,35 +262,31 @@ table {
   }
 }
 
-tr {
-  border-bottom: 1px solid $gray;
-  &:nth-child(even) {
-    background-color: $gray_light;
-  }
-}
-
 td {
   padding: 7px;
-  border-right: 1px solid $gray;
+  border-top: 1px solid $white;
+  border-left: 1px dotted $white;
+  text-align: center;
 
-  &:last-child {
-    border-right: 0;
+  tr:first-child & {
+    border-top: 0;
+  }
+
+  &:first-child {
+    border-left: 0;
+    text-align: left;
   }
 }
 
-th {
-  background-color: $gray_light;
-  border-bottom: 1px solid $gray;
-  border-right: 1px solid $gray;
-
-  &:last-child {
-    border-right: 0;
-  }
+th, tr:first-child td {
+  font-weight: bold;
+  font-family: $sans;
 }
 
 blockquote {
-  margin-left: 0.75em;
-  padding: 0 0 0 0.75em;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba( $accent_strong, .3 );
 
   &:before {}
 
