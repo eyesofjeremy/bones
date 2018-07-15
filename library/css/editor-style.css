@@ -620,13 +620,16 @@ not need this at all. Just sayin! */
       text-decoration: none; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
     font-size: 2.5em;
+    padding-top: 2em;
     line-height: 1.333em; }
   body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
-    font-size: 1.75em;
+    font-size: 1.5em;
+    padding-top: 2em;
     line-height: 1.4em;
     margin-bottom: 0.375em; }
   body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3 {
-    font-size: 1.125em; }
+    font-size: 1.125em;
+    padding-top: 1em; }
   body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4 {
     font-size: 1.1em;
     font-weight: 700; }
@@ -638,22 +641,44 @@ not need this at all. Just sayin! */
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
     color: #B7732B;
     /* on hover */
-    /* on click */ }
+    /* on click */
+    /* in-post styles */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #925c22; }
+      color: #463628; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+    .hentry body#tinymce.wp-editor a, .hentry body#tinymce.wp-editor a:visited {
+      text-decoration-color: #e9c6a1;
+      padding: .125em .25em;
+      margin: -.125em -.25em;
+      border-radius: .25em; }
+      .hentry body#tinymce.wp-editor a:hover, .hentry body#tinymce.wp-editor a:focus, .hentry body#tinymce.wp-editor a:visited:hover, .hentry body#tinymce.wp-editor a:visited:focus {
+        text-decoration-color: #f5e4d3;
+        background: #f5e4d3; }
+    .hentry .nav body#tinymce.wp-editor a, .hentry .nav body#tinymce.wp-editor a:visited {
+      background: none; }
   body#tinymce.wp-editor body {
     font-family: Charter, Georgia, Cambria, Times New Roman, Times, serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.4;
     letter-spacing: .02em;
     color: #684425; }
   body#tinymce.wp-editor p, body#tinymce.wp-editor figure, body#tinymce.wp-editor blockquote, body#tinymce.wp-editor pre {
     margin: 0 0 2em; }
+  body#tinymce.wp-editor figure {
+    border-radius: 1em;
+    overflow: hidden;
+    background: #e5f2f3; }
+    body#tinymce.wp-editor figure.alignfull {
+      border-radius: 0; }
+  body#tinymce.wp-editor figcaption {
+    margin: .75em; }
   body#tinymce.wp-editor table {
     width: 100%;
-    border: 1px solid #A6D3D7;
+    background: #e5f2f3;
+    border-radius: 1em;
+    padding: .5em 1em;
+    border-collapse: initial;
     margin-bottom: 2em; }
     body#tinymce.wp-editor table caption {
       margin: 0 0 7px;
@@ -661,24 +686,23 @@ not need this at all. Just sayin! */
       color: #9fa6b4;
       text-transform: uppercase;
       letter-spacing: 1px; }
-  body#tinymce.wp-editor tr {
-    border-bottom: 1px solid #eaedf2; }
-    body#tinymce.wp-editor tr:nth-child(even) {
-      background-color: #f8f9fa; }
   body#tinymce.wp-editor td {
     padding: 7px;
-    border-right: 1px solid #eaedf2; }
-    body#tinymce.wp-editor td:last-child {
-      border-right: 0; }
-  body#tinymce.wp-editor th {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eaedf2;
-    border-right: 1px solid #eaedf2; }
-    body#tinymce.wp-editor th:last-child {
-      border-right: 0; }
+    border-top: 1px solid #fff;
+    border-left: 1px dotted #fff;
+    text-align: center; }
+    tr:first-child body#tinymce.wp-editor td {
+      border-top: 0; }
+    body#tinymce.wp-editor td:first-child {
+      border-left: 0;
+      text-align: left; }
+  body#tinymce.wp-editor th, body#tinymce.wp-editor tr:first-child td {
+    font-weight: bold;
+    font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body#tinymce.wp-editor blockquote {
-    margin-left: 0.75em;
-    padding: 0 0 0 0.75em; }
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(183, 115, 43, 0.3); }
   body#tinymce.wp-editor blockquote, body#tinymce.wp-editor b, body#tinymce.wp-editor strong, body#tinymce.wp-editor figure {
     font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body#tinymce.wp-editor figcaption, body#tinymce.wp-editor .wp-block-image figcaption {

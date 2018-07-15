@@ -503,6 +503,12 @@ FONT FACE (IN YOUR FACE)
   font-style: normal; }
 
 @font-face {
+  font-family: 'Charter';
+  src: url("../fonts/charter/charter_italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
   font-family: 'Proxima Soft';
   src: url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff2") format("woff2"), url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff") format("woff");
   font-weight: normal;
@@ -559,15 +565,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1 {
   font-size: 2.5em;
+  padding-top: 2em;
   line-height: 1.333em; }
 
 h2, .h2 {
-  font-size: 1.75em;
+  font-size: 1.5em;
+  padding-top: 2em;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  padding-top: 1em; }
 
 h4, .h4 {
   font-size: 1.1em;
@@ -585,18 +594,29 @@ LINK STYLES
 a, a:visited {
   color: #B7732B;
   /* on hover */
-  /* on click */ }
+  /* on click */
+  /* in-post styles */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #925c22; }
+    color: #463628; }
   a:link, a:visited:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+  .hentry a, .hentry a:visited {
+    text-decoration-color: #e9c6a1;
+    padding: .125em .25em;
+    margin: -.125em -.25em;
+    border-radius: .25em; }
+    .hentry a:hover, .hentry a:focus, .hentry a:visited:hover, .hentry a:visited:focus {
+      text-decoration-color: #f5e4d3;
+      background: #f5e4d3; }
+  .hentry .nav a, .hentry .nav a:visited {
+    background: none; }
 
 /*********************
 GENERAL STYLES
 *********************/
 body {
   font-family: Charter, Georgia, Cambria, Times New Roman, Times, serif;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.4;
   letter-spacing: .02em;
   color: #684425; }
@@ -604,9 +624,22 @@ body {
 p, figure, blockquote, pre {
   margin: 0 0 2em; }
 
+figure {
+  border-radius: 1em;
+  overflow: hidden;
+  background: #e5f2f3; }
+  figure.alignfull {
+    border-radius: 0; }
+
+figcaption {
+  margin: .75em; }
+
 table {
   width: 100%;
-  border: 1px solid #A6D3D7;
+  background: #e5f2f3;
+  border-radius: 1em;
+  padding: .5em 1em;
+  border-collapse: initial;
   margin-bottom: 2em; }
   table caption {
     margin: 0 0 7px;
@@ -615,27 +648,25 @@ table {
     text-transform: uppercase;
     letter-spacing: 1px; }
 
-tr {
-  border-bottom: 1px solid #eaedf2; }
-  tr:nth-child(even) {
-    background-color: #f8f9fa; }
-
 td {
   padding: 7px;
-  border-right: 1px solid #eaedf2; }
-  td:last-child {
-    border-right: 0; }
+  border-top: 1px solid #fff;
+  border-left: 1px dotted #fff;
+  text-align: center; }
+  tr:first-child td {
+    border-top: 0; }
+  td:first-child {
+    border-left: 0;
+    text-align: left; }
 
-th {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #eaedf2;
-  border-right: 1px solid #eaedf2; }
-  th:last-child {
-    border-right: 0; }
+th, tr:first-child td {
+  font-weight: bold;
+  font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 blockquote {
-  margin-left: 0.75em;
-  padding: 0 0 0 0.75em; }
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(183, 115, 43, 0.3); }
 
 blockquote, b, strong, figure {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -832,27 +863,25 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit {
+.button, .header .menu_toggle, .blue-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  line-height: 1;
   font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
+  padding: 1em 1.5em;
+  border-radius: .5em;
   border: 0;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+  .button:hover, .header .menu_toggle:hover, .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .button:focus, .header .menu_toggle:focus, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .blue-btn:active, .comment-reply-link:active, #submit:active {
+  .button:active, .header .menu_toggle:active, .blue-btn:active, .comment-reply-link:active, #submit:active {
     top: 1px; }
 
 /*
@@ -1184,7 +1213,7 @@ LAYOUT & GRID STYLES
 .header .wrap,
 .footer .wrap,
 .sidebar > * {
-  max-width: 48rem;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto; }
 
@@ -1202,12 +1231,10 @@ HEADER STYLES
   background-color: #A6D3D7;
   padding-top: 1.5em; }
 
-.logo {
-  display: inline-block;
-  padding: 1.375em 1.375em .5em; }
-
 #logo {
-  margin: 0; }
+  margin: 1em auto -18px 0;
+  position: relative;
+  z-index: 1; }
 
 a.button, .button, .header .menu_toggle, .hero-button a {
   color: #444;
@@ -1234,8 +1261,6 @@ and more scalable.
     display: flex;
     flex-flow: row wrap;
     justify-content: center; }
-    .header .wrap #logo {
-      flex: 1 auto; }
     .header .wrap .menu_toggle {
       flex: 0 1 auto;
       min-width: 6em; }
@@ -1244,25 +1269,28 @@ and more scalable.
   .header nav {
     transition: .3s all;
     border-style: solid;
-    border-color: #B7732B;
     border-width: 2px 0; }
   .header .toggle ~ nav {
     max-height: 0;
     border-color: transparent;
     overflow: hidden; }
+  .header .nav, .header .toggle:checked ~ nav {
+    border-color: #ccc; }
   .header .toggle:checked ~ nav {
     max-height: 600px;
-    overflow: auto;
-    border-color: #ccc; }
+    overflow: auto; }
   .header .menu_toggle {
     color: #fff;
-    padding: .75em 1em;
+    padding: 1.5em;
     display: block;
     text-align: center; }
     .header .menu_toggle, .header .menu_toggle:hover {
-      background: #B7732B; }
+      background: #5C898D; }
     html .header .menu_toggle {
       width: auto; }
+  .header .second-nav li a {
+    font-weight: normal;
+    text-transform: none; }
 
 nav ol, nav ul {
   margin: 0;
@@ -1274,6 +1302,7 @@ nav .cb, nav .toggle {
 .nav {
   border-bottom: 0;
   margin: 0;
+  padding: 0;
   /* end .menu li */
   /*
   so you really have to rethink your dropdowns for mobile.
@@ -1287,21 +1316,26 @@ nav .cb, nav .toggle {
   /* end current highlighters */
   /* highlight current parent page */
   /* end current parent */ }
-  .nav li a {
-    display: block;
-    color: #B7732B;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    font-size: .875em;
-    font-weight: bold;
-    padding: 0.75em;
-    /*
+  .nav li {
+    list-style: none;
+    padding: 0; }
+    .nav li a {
+      display: block;
+      color: #5C898D;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      font-size: .875em;
+      font-weight: bold;
+      padding: 0.75em;
+      /*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
 			the style.scss file where it's relevant. We want to
 			keep this file as small as possible!
 			*/ }
+      .nav li a:hover, .nav li a:focus {
+        color: #2a3e40; }
   .nav ul.sub-menu li,
   .nav ul.children li {
     padding: 0 .75em; }
@@ -1310,7 +1344,15 @@ nav .cb, nav .toggle {
       text-transform: none; }
   .nav li.current-menu-item > a,
   .nav li.current_page_item > a {
-    color: #359ce0; }
+    color: #2a3e40; }
+  .entry-content .nav {
+    background: #e5f2f3;
+    border-radius: 1em; }
+    .entry-content .nav li {
+      list-style: none;
+      font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .entry-content .nav > * {
+      margin: 0 2em; }
 
 /* end .nav */
 .toggles {
@@ -1326,7 +1368,8 @@ nav .cb, nav .toggle {
   .toggles .toggle {
     width: 2em;
     height: 2em;
-    border: 1px solid #B7732B;
+    background: #5C898D;
+    border-radius: .5em;
     position: relative;
     visibility: visible; }
     .toggles .toggle span {
@@ -1335,7 +1378,7 @@ nav .cb, nav .toggle {
       height: .5em;
       border-width: 0 2px 2px 0;
       border-style: solid;
-      border-color: #B7732B;
+      border-color: #e5f2f3;
       transform: rotate(45deg);
       position: absolute;
       top: 50%;
@@ -1369,7 +1412,7 @@ nav .cb, nav .toggle {
 /* bleed to edge of page */
 .nav-bleed {
   margin: 1em -1.5em;
-  background: gainsboro;
+  background: #e5f2f3;
   padding: 0 .75em; }
   .toggle:not(:checked) ~ .nav-bleed {
     background: none; }
@@ -1385,13 +1428,14 @@ POSTS & CONTENT STYLES
   .hentry header, .hentry footer {
     position: relative;
     padding: 1.5em 0; }
-  .hentry header .featured-image, .hentry header .featured-video-plus {
-    margin: -1.5em auto 0;
-    display: block;
-    border-radius: 1.5rem; }
-  .hentry header .link_large {
-    display: block;
-    padding-bottom: 2em; }
+  .hentry header {
+    margin: 0 -1.5em; }
+    .hentry header .featured-image, .hentry header .featured-video-plus {
+      margin: -1.5em auto 0;
+      display: block; }
+    .hentry header .link_large {
+      display: block;
+      padding-bottom: 2em; }
   .hentry footer p {
     margin: 0; }
 
@@ -1463,6 +1507,10 @@ POSTS & CONTENT STYLES
     overflow: hidden; }
   .toggle:checked + .button:after, .header .toggle:checked + .menu_toggle:after {
     content: 'Close'; }
+
+.lead {
+  font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0f838e; }
 
 /* Callout class for special emphasis */
 .callout {
@@ -1851,6 +1899,27 @@ NAVIGATION STYLES
 *********************/
   .header .wrap {
     justify-content: space-between; }
+  .entry-content .nav {
+    margin-left: auto;
+    margin-right: auto;
+    background: none; }
+    .entry-content .nav a {
+      padding: 0;
+      margin: 0; }
+    .entry-content .nav > * {
+      width: 14em;
+      margin: 0 2em;
+      padding: 0 1.5em .5em;
+      float: right;
+      clear: right;
+      background: #e5f2f3; }
+      .entry-content .nav > *:first-child {
+        border-radius: 1em 1em 0 0;
+        padding-top: .5em;
+        margin-top: 2em; }
+      .entry-content .nav > *:last-child {
+        border-radius: 0 0 1em 1em;
+        margin-bottom: 2em; }
   /* .menu is clearfixed inside mixins.scss */
   .menu {
     /* end .menu ul */ }
@@ -1917,7 +1986,8 @@ point.
 
 ******************************************************************/
   .header .nav {
-    display: flex; }
+    display: flex;
+    justify-content: space-between; }
     .header .nav ul.sub-menu li,
     .header .nav ul.children li {
       padding: 0; }
@@ -1956,9 +2026,9 @@ Assuming your media queries are about right for tablets, you can
 assume that we're getting fairly complex with our design about now.
 
 ******************************************************************/
-  .columnar .entry-content > .alignfull, .bleed, .nav-bleed {
-    margin-left: -3rem;
-    margin-right: -3rem; }
+  .columnar .entry-content > .alignfull, .bleed, .nav-bleed, .entry-content > blockquote {
+    max-width: 66rem;
+    padding: 1.5rem 3rem; }
   /*********************
 GENERAL STYLES
 *********************/
@@ -1971,25 +2041,25 @@ LAYOUT & GRID STYLES
       max-width: 60rem; }
   .columnar .wrap {
     padding: 0 3em; }
-  .article-header > *,
   .entry-content > *,
   .article-footer > *,
   .header .wrap,
   .footer .wrap,
   .sidebar > * {
     max-width: 60rem; }
+  .page-title {
+    max-width: 64rem; }
   .entry-content > .alignwide {
     max-width: 80%; }
-  .entry-content * > .alignfull {
+  .entry-content > .alignfull {
     max-width: none; }
+  .entry-content > .nav {
+    max-width: 64rem; }
+    .entry-content > .nav > * {
+      margin: 0 0 0 2em; }
   .columnar .entry-content > .alignwide {
     max-width: none; }
-  .bleed {
-    padding: 1.5em 3em; }
   /* bleed to edge of page */
-  .nav-bleed {
-    margin-top: 2em;
-    padding: 0 .75em; }
   /*********************
 HEADER STYLES
 *********************/
@@ -2004,20 +2074,28 @@ HEADER STYLES
   /*********************
 NAVIGATION STYLES
 *********************/
-  .header .nav, .header .menu_toggle ~ nav {
+  .header .wrap {
+    flex-flow: row; }
+  .header .nav, .header .menu_toggle ~ nav, .header .toggle:checked ~ nav {
     border: none;
     max-height: none;
     overflow: visible; }
+  .header nav {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end; }
   .header .menu_toggle {
     display: none; }
-  .header nav li a {
+  .header li a {
     font-size: 1em; }
   .header .menu-item-has-children > a {
     padding-right: 2em; }
     .header .menu-item-has-children > a:before, .header .menu-item-has-children > a:after {
       content: '';
       transition: .2s ease-out;
-      border-bottom: 2px solid #B7732B;
+      border-bottom: 2px solid #5C898D;
       display: block;
       position: absolute;
       top: 50%;
@@ -2077,7 +2155,7 @@ NAVIGATION STYLES
       top: 100%;
       margin-top: 0;
       min-width: 100%;
-      background: #f8f9fa;
+      background: #e5f2f3;
       border-top: 0;
       position: absolute;
       visibility: hidden;
@@ -2118,7 +2196,8 @@ NAVIGATION STYLES
     .t-toggles .toggle {
       width: 2em;
       height: 2em;
-      border: 1px solid #B7732B;
+      background: #5C898D;
+      border-radius: .5em;
       position: relative;
       visibility: visible; }
       .t-toggles .toggle span {
@@ -2127,7 +2206,7 @@ NAVIGATION STYLES
         height: .5em;
         border-width: 0 2px 2px 0;
         border-style: solid;
-        border-color: #B7732B;
+        border-color: #e5f2f3;
         transform: rotate(45deg);
         position: absolute;
         top: 50%;
@@ -2160,20 +2239,18 @@ NAVIGATION STYLES
   /*********************
 POSTS & CONTENT STYLES
 *********************/
-  #content {
-    margin-top: 0; }
   .hentry {
     margin-bottom: 1.5em;
     padding: 0 0 1.5em;
     display: flex;
     flex-flow: row wrap; }
+    .hentry.has-post-thumbnail {
+      margin-top: -1.5em; }
     .hentry header {
       flex: 1 100%; }
       .hentry header .featured-image, .hentry header .featured-video-plus {
-        max-width: 66rem; }
+        width: 100%; }
         .hentry header .featured-image + h1, .hentry header .featured-video-plus + h1 {
-          position: relative;
-          left: .75em;
           color: white;
           padding: .1875em .75em;
           box-sizing: border-box;
@@ -2280,7 +2357,8 @@ design. Shift the media queries to fit your evil scheme.
     .d-toggles .toggle {
       width: 2em;
       height: 2em;
-      border: 1px solid #B7732B;
+      background: #5C898D;
+      border-radius: .5em;
       position: relative;
       visibility: visible; }
       .d-toggles .toggle span {
@@ -2289,7 +2367,7 @@ design. Shift the media queries to fit your evil scheme.
         height: .5em;
         border-width: 0 2px 2px 0;
         border-style: solid;
-        border-color: #B7732B;
+        border-color: #e5f2f3;
         transform: rotate(45deg);
         position: absolute;
         top: 50%;
@@ -2319,6 +2397,8 @@ design. Shift the media queries to fit your evil scheme.
       padding-top: .66em;
       padding-bottom: .66em;
       line-height: 1.4; }
+  .wrap {
+    padding: 0; }
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */ }

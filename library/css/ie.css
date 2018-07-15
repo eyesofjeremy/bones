@@ -83,6 +83,12 @@ FONT FACE (IN YOUR FACE)
   font-style: normal; }
 
 @font-face {
+  font-family: 'Charter';
+  src: url("../fonts/charter/charter_italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
   font-family: 'Proxima Soft';
   src: url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff2") format("woff2"), url("../fonts/proximasoft_regular_macroman/proximasoft-regular-webfont.woff") format("woff");
   font-weight: normal;
@@ -139,15 +145,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1 {
   font-size: 2.5em;
+  padding-top: 2em;
   line-height: 1.333em; }
 
 h2, .h2 {
-  font-size: 1.75em;
+  font-size: 1.5em;
+  padding-top: 2em;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  padding-top: 1em; }
 
 h4, .h4 {
   font-size: 1.1em;
@@ -165,18 +174,29 @@ LINK STYLES
 a, a:visited {
   color: #B7732B;
   /* on hover */
-  /* on click */ }
+  /* on click */
+  /* in-post styles */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #925c22; }
+    color: #463628; }
   a:link, a:visited:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+  .hentry a, .hentry a:visited {
+    text-decoration-color: #e9c6a1;
+    padding: .125em .25em;
+    margin: -.125em -.25em;
+    border-radius: .25em; }
+    .hentry a:hover, .hentry a:focus, .hentry a:visited:hover, .hentry a:visited:focus {
+      text-decoration-color: #f5e4d3;
+      background: #f5e4d3; }
+  .hentry .nav a, .hentry .nav a:visited {
+    background: none; }
 
 /*********************
 GENERAL STYLES
 *********************/
 body {
   font-family: Charter, Georgia, Cambria, Times New Roman, Times, serif;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.4;
   letter-spacing: .02em;
   color: #684425; }
@@ -184,9 +204,22 @@ body {
 p, figure, blockquote, pre {
   margin: 0 0 2em; }
 
+figure {
+  border-radius: 1em;
+  overflow: hidden;
+  background: #e5f2f3; }
+  figure.alignfull {
+    border-radius: 0; }
+
+figcaption {
+  margin: .75em; }
+
 table {
   width: 100%;
-  border: 1px solid #A6D3D7;
+  background: #e5f2f3;
+  border-radius: 1em;
+  padding: .5em 1em;
+  border-collapse: initial;
   margin-bottom: 2em; }
   table caption {
     margin: 0 0 7px;
@@ -195,27 +228,25 @@ table {
     text-transform: uppercase;
     letter-spacing: 1px; }
 
-tr {
-  border-bottom: 1px solid #eaedf2; }
-  tr:nth-child(even) {
-    background-color: #f8f9fa; }
-
 td {
   padding: 7px;
-  border-right: 1px solid #eaedf2; }
-  td:last-child {
-    border-right: 0; }
+  border-top: 1px solid #fff;
+  border-left: 1px dotted #fff;
+  text-align: center; }
+  tr:first-child td {
+    border-top: 0; }
+  td:first-child {
+    border-left: 0;
+    text-align: left; }
 
-th {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #eaedf2;
-  border-right: 1px solid #eaedf2; }
-  th:last-child {
-    border-right: 0; }
+th, tr:first-child td {
+  font-weight: bold;
+  font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 blockquote {
-  margin-left: 0.75em;
-  padding: 0 0 0 0.75em; }
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(183, 115, 43, 0.3); }
 
 blockquote, b, strong, figure {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
