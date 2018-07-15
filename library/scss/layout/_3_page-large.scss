@@ -14,6 +14,7 @@ design. Shift the media queries to fit your evil scheme.
 }
 
 .wrap {
+  padding: 0; // do not need if page wider than .wrap
 }
 
 /* entry content */
