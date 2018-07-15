@@ -346,6 +346,20 @@ nav {
 		}
 
 	}  /* end current parent */
+	
+  .entry-content & {
+    background: $menu_background;
+    border-radius: 1em;
+  
+    li {
+      list-style: none;
+      font-family: $sans;
+    }
+        
+    & > * {
+      margin: 0 2em;
+    }
+  }
 } /* end .nav */
 
 .toggles {

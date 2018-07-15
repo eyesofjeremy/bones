@@ -57,6 +57,14 @@ LAYOUT & GRID STYLES
   * > .alignfull {
     max-width: none;
   }
+  
+  & > .nav {
+    max-width: $page_l + 4rem;
+
+    & > * {
+      margin: 0 0 0 2em;
+    }
+  }
 }
 
 .columnar .entry-content {
