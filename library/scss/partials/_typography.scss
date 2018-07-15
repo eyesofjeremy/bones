@@ -231,6 +231,20 @@ p, figure, blockquote, pre {
   margin: 0 0 2em;
 }
 
+figure {
+  border-radius: 1em;
+  overflow: hidden;
+  background: $menu_background;
+  
+  &.alignfull {
+    border-radius: 0;
+  }
+}
+
+figcaption {
+  margin: .75em;
+}
+
 table {
   width: 100%;
   border: 1px solid $accent_soft;
