@@ -186,8 +186,8 @@ function bones_theme_support() {
   // Custom Logo is supported
   add_theme_support( 'custom-logo',
       array(
-      'height'      => 100,
-      'width'       => 400,
+      'height'      => 300,
+      'width'       => 170,
       'flex-height' => true,
       'flex-width'  => true,
       'header-text' => array( 'site-title', 'site-description' ),
