@@ -2241,32 +2241,24 @@ POSTS & CONTENT STYLES
 *********************/
   .hentry {
     margin-bottom: 1.5em;
-    padding: 0 0 1.5em;
-    display: flex;
-    flex-flow: row wrap; }
+    padding: 0 0 1.5em; }
     .hentry.has-post-thumbnail {
       margin-top: -1.5em; }
-    .hentry header {
-      flex: 1 100%; }
-      .hentry header .featured-image, .hentry header .featured-video-plus {
-        width: 100%; }
-        .hentry header .featured-image + h1, .hentry header .featured-video-plus + h1 {
-          color: white;
-          padding: .1875em .75em;
-          box-sizing: border-box;
-          background: #B7732B;
-          border-radius: 1.5rem; }
-          @supports (mix-blend-mode: multiply) {
-            .hentry header .featured-image + h1, .hentry header .featured-video-plus + h1 {
-              margin-top: -1em;
-              padding-top: 1em;
-              mix-blend-mode: multiply; } }
-      .hentry header .link_large {
-        padding-bottom: 0; }
-    .hentry section {
-      flex: 1; }
-      .hentry section + section {
-        margin-left: 3em; }
+    .hentry header .featured-image, .hentry header .featured-video-plus {
+      width: 100%; }
+      .hentry header .featured-image + h1, .hentry header .featured-video-plus + h1 {
+        color: white;
+        padding: .1875em .75em;
+        box-sizing: border-box;
+        background: #B7732B;
+        border-radius: 1.5rem; }
+        @supports (mix-blend-mode: multiply) {
+          .hentry header .featured-image + h1, .hentry header .featured-video-plus + h1 {
+            margin-top: -1em;
+            padding-top: 1em;
+            mix-blend-mode: multiply; } }
+    .hentry header .link_large {
+      padding-bottom: 0; }
   .light-featured-image header .featured-image + h1 {
     color: #444; }
   .callout {

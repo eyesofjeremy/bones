@@ -314,16 +314,12 @@ POSTS & CONTENT STYLES
   .hentry {
     margin-bottom: 1.5em;
     padding: 0 0 1.5em;
- 
-    display: flex;
-    flex-flow: row wrap;
     
     &.has-post-thumbnail {
       margin-top: -1.5em;
     }
 
     header {
-      flex: 1 100%;
 
       .featured-image, .featured-video-plus {
         width: 100%;
@@ -347,15 +343,6 @@ POSTS & CONTENT STYLES
         padding-bottom: 0;
       }
     }
-    
-    section {
-      flex: 1;
-      
-      & + section {
-        margin-left: 3em;
-      }
-    }
-    
   }
   
   .light-featured-image {
