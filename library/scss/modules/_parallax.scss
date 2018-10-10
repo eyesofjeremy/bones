@@ -90,6 +90,13 @@
         @extend %parallax__layer_back;
         top: -60px;
       }
+      
+      /*
+        Seeing issues where we can't have a parallax element as a
+        sibling of an element using mix-blend-mode: multiply. Very frustrating.
+        Could rework HTML to accommodate but it seems more than a little janky,
+        since it's pretty semantic now.
+      */
             
       // Can target Firefox here, but we are currently skipping entirely.
       @-moz-document url-prefix() {
@@ -117,6 +124,10 @@
           position: relative;
         }
       }
+    }
+    
+    #wpadminbar {
+      top: -32px;
     }
   }
 
