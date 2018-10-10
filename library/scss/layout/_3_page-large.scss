@@ -20,31 +20,17 @@ design. Shift the media queries to fit your evil scheme.
 /* entry content */
 .entry-content {
 
-	/* at this larger size, we can start to align images */
 	.alignleft {
-
-	  img, figcaption {
   		margin-right: 3rem;
 		}
-	}
 
 	.alignright {
-
-	  img, figcaption {
   		margin-left: 3rem;
 		}
-	}
 
 	.aligncenter {
-
-	  img {
 	  	max-width: 70%;
 		}
-
-	  figcaption {
-	  	width: 70%;
-		}
-	}
 
 } /* end .entry-content */
 
