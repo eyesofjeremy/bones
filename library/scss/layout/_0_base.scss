@@ -458,6 +458,12 @@ POSTS & CONTENT STYLES
 			padding: 1.5em auto 0;
 		} /* end .entry-content */
 
+    .wp-block-image {
+      img, figcaption {
+        display: block;
+      }
+    }
+
 		.wp-caption {
 			max-width: 100%;
 			background: #eee;
