@@ -47,7 +47,7 @@ LAYOUT & GRID STYLES
   max-width: $page_l;
 }
 
-.featured-image, .featured-video-plus {
+.featured {
       
   & + .page-title {
     max-width: $bleed-width;
@@ -339,7 +339,8 @@ POSTS & CONTENT STYLES
   
   .light-featured-image {
     header {
-      .featured-image {
+      .featured {
+
         & + h1 {
           color: $gray_dark;
         }

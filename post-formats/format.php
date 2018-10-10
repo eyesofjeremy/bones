@@ -18,7 +18,9 @@
 
                 <header class="article-header entry-header">
 
- 								  <?php bones_featured_image(); ?>
+								  <figure class="featured">
+								  <?php the_post_thumbnail('featured-xxl', ['class' => 'featured-image', 'title' => 'Feature image']); ?>
+                  </figure>
 
                  <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 

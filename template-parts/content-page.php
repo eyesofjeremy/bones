@@ -2,7 +2,9 @@
 
 								<header class="article-header">
 								
+								  <figure class="featured">
 								  <?php the_post_thumbnail('featured-xxl', ['class' => 'featured-image', 'title' => 'Feature image']); ?>
+                  </figure>
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 

@@ -412,9 +412,9 @@ POSTS & CONTENT STYLES
 			}
 		}
 		
-    .featured-image, .featured-video-plus {
+    .featured {
       margin: -1.5em auto 0;
-      display: block;
+      border-radius: 0;
           
       & + h1 {
         color: white;
@@ -432,6 +432,9 @@ POSTS & CONTENT STYLES
       }
     }
 
+    .featured-image, .featured-video-plus {
+      display: block;
+    }
 
 		.single-title,
 		.page-title,
