@@ -239,6 +239,16 @@ figure {
   &.alignfull {
     border-radius: 0;
   }
+  
+  &.wp-block-embed {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  iframe {
+    border-radius: .75rem;
+    box-shadow: 0 0 0px 8px darken( $menu_background, 5% );
+  }
 }
 
 figcaption {
