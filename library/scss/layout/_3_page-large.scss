@@ -34,3 +34,12 @@ design. Shift the media queries to fit your evil scheme.
 
 } /* end .entry-content */
 
+.featured-image, .featured-video-plus {
+      
+  & + h1 {
+    border-radius: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+

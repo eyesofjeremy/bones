@@ -315,28 +315,10 @@ POSTS & CONTENT STYLES
     margin-bottom: 1.5em;
     padding: 0 0 1.5em;
     
-    &.has-post-thumbnail {
-      margin-top: -1.5em;
-    }
-
     header {
 
       .featured-image, .featured-video-plus {
         width: 100%;
-              
-        & + h1 {
-          color: white;
-          padding: .1875em .75em;
-          box-sizing: border-box;
-          background: $heading_color;
-          border-radius: 1.5rem;
-          
-          @supports( mix-blend-mode:multiply ) {
-            margin-top: -1em;
-            padding-top: 1em;
-            mix-blend-mode: multiply;
-          }
-        }
       }
       
       .link_large {

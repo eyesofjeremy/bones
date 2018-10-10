@@ -390,20 +390,6 @@ POSTS & CONTENT STYLES
 			  position: relative;
 				padding: 1.5em 0;
 			}
-			
-			header {
-			  margin: 0 -1.5em;
-			
-			  .featured-image, .featured-video-plus {
-			    margin: -1.5em auto 0;
-          display: block;
-			  }
-			  
-			  .link_large {
-			    display: block;
-			    padding-bottom: 2em;
-			  }
-			}
 
 			footer {
 
@@ -413,6 +399,39 @@ POSTS & CONTENT STYLES
 			}
 
 		} /* end .hentry */
+		
+		.has-post-thumbnail {
+
+		  header {
+			  margin: -1.5em -1.5em 0;
+			
+			  .link_large {
+			    display: block;
+			    padding-bottom: 2em;
+			  }
+			}
+		}
+		
+    .featured-image, .featured-video-plus {
+      margin: -1.5em auto 0;
+      display: block;
+          
+      & + h1 {
+        color: white;
+        padding: .1875em 1.5rem;
+        box-sizing: border-box;
+        background: $heading_color;
+        border-radius: 0 1.5rem 1.5rem 0;
+        margin-right: 1.5rem;
+      
+        @supports( mix-blend-mode:multiply ) {
+          margin-top: -.75em;
+          padding-top: .75em;
+          mix-blend-mode: multiply;
+        }
+      }
+    }
+
 
 		.single-title,
 		.page-title,
@@ -634,12 +653,6 @@ HOME STYLES
   
   .hentry header {  
     padding-bottom: 0;
-    
-    .featured-image {
-
-      & + .page-title {
-      }
-    }
     
     img {
       margin: 0;
