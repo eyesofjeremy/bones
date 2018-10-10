@@ -45,7 +45,7 @@ NAVIGATION STYLES
     
     & > * {
       width: 14em;
-      margin: 0 2em;
+      margin-left: 2em;
       padding: 0 1.5em .5em;
       float: right;
       clear: right;
@@ -118,20 +118,20 @@ POSTS & CONTENT STYLES
 
 	/* at this larger size, we can start to align images */
 	.alignleft {
-  		margin-right: 1.5rem;
-	  	float: left;
-	  	clear: left;
-		}
+    margin-right: 1.5rem;
+    float: left;
+    clear: left;
+	}
 
 	.alignright {
-  		margin-left: 1.5rem;
-	  	float: right;
-	  	clear: right;
-		}
+    margin-left: 1.5rem;
+    float: right;
+    clear: right;
+	}
 
 	.alignleft,
 	.alignright {
-	  	max-width: 50%;
+    max-width: 50%;
 
 	  img, figcaption {
 	    display: block;
@@ -139,8 +139,8 @@ POSTS & CONTENT STYLES
 	}
 
 	.aligncenter {
-	  	max-width: 80%;
-		}
+	  max-width: 80%;
+	}
 
 } /* end .entry-content */
 

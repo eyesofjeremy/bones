@@ -9,9 +9,11 @@ assume that we're getting fairly complex with our design about now.
 
 ******************************************************************/
 
+$bleed-width: $page_l + 4rem;
+
 %bleed {
-  max-width: $page_l + 6rem;
-  padding: 1.5rem 3rem;
+  max-width: $bleed-width;
+  padding: 1.5rem 2rem;
 }
 
 /*********************
@@ -40,12 +42,16 @@ LAYOUT & GRID STYLES
 .article-footer > *,
 .header .wrap,
 .footer .wrap,
-.sidebar > * {
+.sidebar > *,
+.page-title {
   max-width: $page_l;
 }
 
-.page-title {
-  max-width: $page_l + 4rem;
+.featured-image, .featured-video-plus {
+      
+  & + .page-title {
+    max-width: $bleed-width;
+  }
 }
 
 .entry-content {
@@ -59,7 +65,7 @@ LAYOUT & GRID STYLES
   }
   
   & > .nav {
-    max-width: $page_l + 4rem;
+    max-width: $bleed-width;
 
     & > * {
       margin: 0 0 0 2em;
@@ -88,8 +94,12 @@ LAYOUT & GRID STYLES
   @extend %bleed;
 }
 
-.entry-content > blockquote {
-  @extend %bleed;
+.entry-content {
+  
+  & > blockquote,
+  & > table {
+    @extend %bleed;
+  }
 }
 
 /*********************
