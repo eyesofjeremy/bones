@@ -385,6 +385,10 @@ POSTS & CONTENT STYLES
 
 		.hentry {
 			margin-bottom: 1.5em;
+			
+			header {
+			  margin: 0 -1.5em;
+			}
 
 			header, footer {
 			  position: relative;
@@ -403,7 +407,7 @@ POSTS & CONTENT STYLES
 		.has-post-thumbnail {
 
 		  header {
-			  margin: -1.5em -1.5em 0;
+		    margin-top: -1.5em;
 			
 			  .link_large {
 			    display: block;
