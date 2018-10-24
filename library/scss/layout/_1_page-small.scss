@@ -46,7 +46,7 @@ NAVIGATION STYLES
     & > * {
       width: 14em;
       margin-left: 2em;
-      padding: 0 1.5em .5em;
+      padding: 0 $gutter .5em;
       float: right;
       clear: right;
       background: $menu_background;
@@ -118,13 +118,13 @@ POSTS & CONTENT STYLES
 
 	/* at this larger size, we can start to align images */
 	.alignleft {
-    margin-right: 1.5rem;
+    margin-right: $gutter;
     float: left;
     clear: left;
 	}
 
 	.alignright {
-    margin-left: 1.5rem;
+    margin-left: $gutter;
     float: right;
     clear: right;
 	}
