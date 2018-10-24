@@ -13,12 +13,6 @@ design. Shift the media queries to fit your evil scheme.
   @import "../modules/toggles";
 }
 
-@max-width( $page-width + 4rem ) {
-  .wrap {
-    padding: 0; // do not need if page wider than .wrap
-  }
-}
-
 /* entry content */
 .entry-content {
   
