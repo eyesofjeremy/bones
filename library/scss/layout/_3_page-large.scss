@@ -21,6 +21,10 @@ design. Shift the media queries to fit your evil scheme.
 
 /* entry content */
 .entry-content {
+  
+  & > .alignwide {
+    max-width: 92%;
+  }
 
 	.alignleft {
     margin-right: 3rem;

@@ -56,11 +56,16 @@ LAYOUT & GRID STYLES
 .entry-content {
   
   & > .alignwide {
-    max-width: 80%;
+    max-width: 100%;
   }
 
   & > .alignfull {
     max-width: none;
+  }
+  
+  .alignwide, .alignfull {
+    margin-top: 3em;
+    margin-bottom: 5em;
   }
   
   & > .nav {

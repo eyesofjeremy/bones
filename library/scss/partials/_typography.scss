@@ -238,6 +238,9 @@ figure {
   
   &.alignfull {
     border-radius: 0;
+    max-width: none;
+    margin-left: ( -1 * $gutter );
+    margin-right: ( -1 * $gutter );
   }
   
   &.wp-block-embed {

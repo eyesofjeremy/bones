@@ -8,3 +8,10 @@ You can add some advanced styles here if you like.
 
 ******************************************************************/
 
+/* entry content */
+.entry-content {
+  
+  & > .alignwide {
+    max-width: 86%;
+  }
+}
