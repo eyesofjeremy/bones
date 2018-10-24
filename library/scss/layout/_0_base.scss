@@ -364,17 +364,6 @@ nav {
   @import "../modules/toggles";
 }
 
-/* bleed to edge of page */
-.nav-bleed {
-  margin: 1em -1.5em;
-  background: $menu_background;
-  padding: 0 .75em;
-  
-  .toggle:not(:checked) ~ & {
-    background: none;
-  }
-}
-
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -387,7 +376,7 @@ POSTS & CONTENT STYLES
 			margin-bottom: 1.5em;
 			
 			header {
-			  margin: 0 -1.5em;
+			  margin: 0 ( -1 * $gutter );
 			}
 
 			header, footer {

@@ -88,12 +88,6 @@ LAYOUT & GRID STYLES
   @extend %bleed;
 }
 
-
-/* bleed to edge of page */
-.nav-bleed {
-  @extend %bleed;
-}
-
 .entry-content {
   
   & > blockquote,
