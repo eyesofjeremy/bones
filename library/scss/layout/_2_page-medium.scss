@@ -159,6 +159,19 @@ NAVIGATION STYLES
     }
 	}
 	
+	nav > ul > li > a {
+	  border-radius: 1em;
+	}
+	
+	nav > .top-nav > li > a {
+	  border-radius: 1em 1em 0 0;
+	}
+	
+	.sub-menu {
+	  border-radius: 0 0 1em 1em;
+	  overflow: hidden;
+	}
+
   .menu-item-has-children {
     & > a {
       padding-right: 2em;

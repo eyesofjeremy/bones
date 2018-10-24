@@ -218,6 +218,14 @@ and more scalable.
 	  transition: .3s all;
 	  border-style: solid;
 	  border-width: 2px 0;
+
+		a {
+			&:hover, &:focus {
+  			outline: none;
+  			background: rgba( $white, 0.4 );
+			}
+		}
+
 	}
 
   /* if nav comes after a toggle we will hide it unless that toggle is checked */
