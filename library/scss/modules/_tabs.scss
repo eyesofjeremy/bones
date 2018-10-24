@@ -1,21 +1,18 @@
-/******************************************************************
-Site Name:
-Author:
+// ==================================================================
+// Stylesheet: Tabs
 
-Stylesheet: Tab Styles
+// Functionality to create tabs where you’d like.
 
-Functionality to create tabs where you'd like.
+// Hat tip to Stephen Morley. I was almost there, but this model helped:
+// http://code.stephenmorley.org/html-and-css/tabbed-panels/
 
-Hat tip to Stephen Morley. I was almost there, but this model helped:
-http://code.stephenmorley.org/html-and-css/tabbed-panels/
+// Hold on there! Looks like we are doing this with flexbox! Once we
+// get tabs which wrap to more than a line, we run into problems 
+// not easily fixed.
 
-Hold on there! Looks like we are doing this with flexbox! Once we
-get tabs which wrap to more than a line, we run into problems 
-not easily fixed.
+// Started w/ http://codepen.io/vulpesigni/pen/yyZYNy
+// ------------------------------------------------------------------
 
-Started w/ http://codepen.io/vulpesigni/pen/yyZYNy
-
-******************************************************************/
 
 // Styling
 .tabbed {

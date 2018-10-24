@@ -1,23 +1,20 @@
-/******************************************************************
-Site Name:
-Author:
+// ==================================================================
+// Stylesheet: Variables
 
-Stylesheet: Variables
+// Here is where we declare all our variables like colors, fonts,
+// base values, and defaults. We want to make sure this file ONLY
+// contains variables that way our files don’t get all messy.
+// No one likes a mess.
 
-Here is where we declare all our variables like colors, fonts,
-base values, and defaults. We want to make sure this file ONLY
-contains variables that way our files don't get all messy.
-No one likes a mess.
+// ------------------------------------------------------------------
 
-******************************************************************/
+// ==================
+// COLORS
+// Need help w/ choosing your colors? Try this site out:
+// http://0to255.com/
+// ------------------
 
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
-
-/* brand colors */
+// brand colors
 $pw_dark_brown:     #463628; // PMS 476
 $pw_pale_teal:      #A6D3D7; // PMS 5503
 
@@ -66,16 +63,18 @@ $header_background: $accent_soft;
 $footer_background: $accent_deep;
 $menu_background:   lighten( $accent_soft, 18% );
 
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://v3.sachagreif.com/sass-color-variables/
-*/
+// ==================
+// Here’s a great tutorial on how to
+// use color variables properly:
+// http://v3.sachagreif.com/sass-color-variables/
+// ------------------
 
-/*********************
-PAGE WIDTH
-Based on ems.
-*********************/
+
+// ==================
+// PAGE WIDTH
+// Based on ems.
+// ------------------
+
 $page_xs	  : 20rem;
   $page_xs-	: ( $page_xs - .01rem );
 $page_s		  :	32rem;

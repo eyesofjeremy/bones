@@ -1,8 +1,6 @@
 /*! Made with Bones: http://themble.com/bones :) */
 
 /******************************************************************
-Site Name:
-Author:
 
 Stylesheet: Main Stylesheet
 
@@ -16,12 +14,12 @@ http://thesassway.com/advanced/modular-css-naming-conventions
 
 ******************************************************************/
 
-/*********************
-IMPORTING PARTIALS
-These files are needed at the beginning so that we establish all
-our mixins, functions, and variables that we'll be using across
-the whole project.
-*********************/
+// ==================
+// IMPORTING PARTIALS
+// These files are needed at the beginning so that we establish all
+// our mixins, functions, and variables that we’ll be using across
+// the whole project.
+// ------------------
 
 // normalize: http://necolas.github.io/normalize.css/
 @import "partials/normalize";
@@ -41,13 +39,13 @@ the whole project.
 // the grid
 @import "partials/grid";
 
-/*********************
-IMPORTING MODULES
-Modules are reusable blocks or elements we use throughout the project.
-We can break them up as much as we want or just keep them all in one.
-I mean, you can do whatever you want. The world is your oyster. Unless
-you hate oysters, then the world is your peanut butter & jelly sandwich.
-*********************/
+// ==================
+// IMPORTING MODULES
+// Modules are reusable blocks or elements we use throughout the project.
+// We can break them up as much as we want or just keep them all in one.
+// I mean, you can do whatever you want. The world is your oyster. Unless
+// you hate oysters, then the world is your peanut butter & jelly sandwich.
+// ------------------
 
 // alert boxes
 @import "modules/alerts";
@@ -65,24 +63,24 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 // @import "modules/parallax";
 
 
-/*********************
-MEDIA QUERIES
-These are organized with em-based breakpoints. The breakpoints can be
-changed in _queries.scss, and perhaps even should be, depending on your 
-design. Rather than basing breakpoints on specific pixels, this approach 
-allows the design to relate to the actual content. If somebody enlarges 
-the page to read something, the design should adapt.
-The layout files are in, um, the layouts folder.
-Have fun!
-*********************/
+// ==================
+// MEDIA QUERIES
+// These are organized with em-based breakpoints. The breakpoints can be
+// changed in _queries.scss, and perhaps even should be, depending on your 
+// design. Rather than basing breakpoints on specific pixels, this approach 
+// allows the design to relate to the actual content. If somebody enlarges 
+// the page to read something, the design should adapt.
+// The layout files are in, um, the layouts folder.
+// Have fun!
+// ------------------
 @import "partials/queries";
 
-/*********************
-PRINT STYLESHEET
-Feel free to customize this. Remember to add things that won't make
-sense to print at the bottom. Things like nav, ads, and forms should
-be set to display none.
-*********************/
+// ==================
+// PRINT STYLESHEET
+// Feel free to customize this. Remember to add things that won’t make
+// sense to print at the bottom. Things like nav, ads, and forms should
+// be set to display none.
+// ------------------
 @media print {
 
 	// styles in print.scss
