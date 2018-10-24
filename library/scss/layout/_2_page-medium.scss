@@ -39,18 +39,15 @@ LAYOUT & GRID STYLES
 
 .entry-content > *,
 .article-footer > *,
-.header .wrap,
-.footer .wrap,
 .sidebar > *,
 .page-title {
   max-width: $page_l;
 }
 
-.featured {
-      
-  & + .page-title {
+.header .wrap,
+.footer .wrap,
+.featured + .page-title {
   max-width: $callout-width;
-}
 }
 
 .entry-content {
