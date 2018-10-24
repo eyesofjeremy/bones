@@ -1,6 +1,4 @@
 /******************************************************************
-Site Name:
-Author:
 
 Stylesheet: IE Stylesheet
 
@@ -18,58 +16,11 @@ understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 ******************************************************************/
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Variables
-
-Here is where we declare all our variables like colors, fonts,
-base values, and defaults. We want to make sure this file ONLY
-contains variables that way our files don't get all messy.
-No one likes a mess.
-
-******************************************************************/
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
-/* brand colors */
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://v3.sachagreif.com/sass-color-variables/
-*/
-/*********************
-PAGE WIDTH
-Based on ems.
-*********************/
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
+Typography Styles
 ******************************************************************/
 /*********************
 FONT FACE (IN YOUR FACE)
 *********************/
-/*  To embed your own fonts, use this syntax
-  and place your fonts inside the
-  library/fonts folder. For more information
-  on embedding fonts, go to:
-  http://www.fontsquirrel.com/
-  Be sure to remove the comment brackets.
-*/
 @font-face {
   font-family: 'Charter';
   src: url("../fonts/charter/charter_regular-webfont.woff") format("woff");
@@ -100,15 +51,6 @@ FONT FACE (IN YOUR FACE)
   font-weight: bold;
   font-style: normal; }
 
-/*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
-*/
-/*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
-*/
 p {
   -ms-word-wrap: break-word;
   word-break: break-word;
@@ -124,9 +66,6 @@ p {
     -moz-hyphens: none;
     hyphens: none; } }
 
-/*
-Mixins for typography
-*/
 .caps, .smallcaps {
   letter-spacing: .05em;
   font-weight: bold;
@@ -144,12 +83,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 2.5em;
+  font-size: 1.66em;
   padding-top: 2em;
   line-height: 1.333em; }
 
 h2, .h2 {
-  font-size: 1.5em;
+  font-size: 1.33em;
   padding-top: 2em;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
@@ -167,6 +106,12 @@ h5, .h5 {
   line-height: 2.09em;
   text-transform: uppercase;
   letter-spacing: 2px; }
+
+@media (min-width: 40rem) {
+  h1, .h1 {
+    font-size: 2.5em; }
+  h2, .h2 {
+    font-size: 1.5em; } }
 
 /*********************
 LINK STYLES
@@ -209,7 +154,16 @@ figure {
   overflow: hidden;
   background: #e5f2f3; }
   figure.alignfull {
-    border-radius: 0; }
+    border-radius: 0;
+    max-width: none;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem; }
+  figure.wp-block-embed {
+    text-align: center;
+    padding: 1.5rem; }
+  figure iframe {
+    border-radius: .75rem;
+    box-shadow: 0 0 0px 8px #d4eaec; }
 
 figcaption {
   margin: .75em; }
@@ -246,7 +200,23 @@ th, tr:first-child td {
 blockquote {
   padding: 1rem;
   border-radius: 1rem;
-  background: rgba(183, 115, 43, 0.3); }
+  background: rgba(183, 115, 43, 0.3);
+  quotes: '\201c' '\201d'; }
+  blockquote > :first-child:before {
+    content: open-quote;
+    display: inline-block;
+    position: relative;
+    top: -.25em;
+    width: 0.5em;
+    height: .75em;
+    margin: -1.75em -.25em 0 -1em;
+    padding: 0 .375em;
+    color: #fff;
+    background: #B7732B;
+    font-size: 3em;
+    text-align: center;
+    border-radius: .25em;
+    mix-blend-mode: multiply; }
 
 blockquote, b, strong, figure {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -291,53 +261,6 @@ ol, ul {
   padding-left: 1.5em; }
 
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Mixins Stylesheet
-
-This is where you can take advantage of Sass' great features: Mixins.
-I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
-Helpful:
-http://sachagreif.com/useful-sass-mixins/
-http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
-http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
-
-******************************************************************/
-/*********************
-TRANSITION
-*********************/
-/*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
-*/
-/*********************
-CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdo it.
-*********************/
-/* @include css-gradient(#dfdfdf,#f8f8f8); */
-/*********************
-BOX SIZING
-*********************/
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? 
-
-HEY! if you use autoprefixer or another postprocessor, you may
-not need this at all. Just sayin! */
-/******************************************************************
-Site Name:
-Author:
 
 Stylesheet: IE Grid Styles
 

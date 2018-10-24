@@ -1,6 +1,4 @@
 /******************************************************************
-Site Name:
-Author:
 
 Stylesheet: Login Stylesheet
 
@@ -21,8 +19,8 @@ with the width and height.
 .login h1 a {
   background: url(../images/login-logo.png) no-repeat top center;
   /* make sure to replace this! */
-  width: 240px;
-  height: 136px;
+  width: 326px;
+  height: 67px;
   text-indent: -9999px;
   overflow: hidden;
   padding-bottom: 15px;

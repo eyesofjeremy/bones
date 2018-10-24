@@ -1,6 +1,4 @@
 /******************************************************************
-Site Name:
-Author:
 
 Stylesheet: TinyMCE Editor
 
@@ -188,70 +186,11 @@ use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
   /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Variables
-
-Here is where we declare all our variables like colors, fonts,
-base values, and defaults. We want to make sure this file ONLY
-contains variables that way our files don't get all messy.
-No one likes a mess.
-
-******************************************************************/
-  /*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
-  /* brand colors */
-  /*
-Here's a great tutorial on how to
-use color variables properly:
-http://v3.sachagreif.com/sass-color-variables/
-*/
-  /*********************
-PAGE WIDTH
-Based on ems.
-*********************/
-  /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
+Typography Styles
 ******************************************************************/
   /*********************
 FONT FACE (IN YOUR FACE)
 *********************/
-  /*  To embed your own fonts, use this syntax
-  and place your fonts inside the
-  library/fonts folder. For more information
-  on embedding fonts, go to:
-  http://www.fontsquirrel.com/
-  Be sure to remove the comment brackets.
-*/
-  /*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
-*/
-  /*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
-*/
-  /*
-Mixins for typography
-*/
   /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -261,96 +200,6 @@ LINK STYLES
   /*********************
 GENERAL STYLES
 *********************/
-  /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Sass Functions
-
-You can do a lot of really cool things in Sass. Functions help you
-make repeated actions a lot easier. They are really similar to mixins,
-but can be used for so much more.
-
-Anyway, keep them all in here so it's easier to find when you're
-looking for one.
-
-For more info on functions, go here:
-http://sass-lang.com/documentation/Sass/Script/Functions.html
-
-******************************************************************/
-  /*********************
-COLOR FUNCTIONS
-These are helpful when you're working
-with shadows and such things. It's essentially
-a quicker way to write RGBA.
-
-Example:
-box-shadow: 0 0 4px black(0.3);
-compiles to:
-box-shadow: 0 0 4px rgba(0,0,0,0.3);
-*********************/
-  /*********************
-RESPONSIVE HELPER FUNCTION
-If you're creating a responsive site, then
-you've probably already read
-Responsive Web Design: http://www.abookapart.com/products/responsive-web-design
-
-Here's a nice little helper function for calculating
-target / context
-as mentioned in that book.
-
-Example:
-width: cp(650px, 1000px);
-or
-width: calc-percent(650px, 1000px);
-both compile to:
-width: 65%;
-*********************/
-  /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Mixins Stylesheet
-
-This is where you can take advantage of Sass' great features: Mixins.
-I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
-Helpful:
-http://sachagreif.com/useful-sass-mixins/
-http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
-http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
-
-******************************************************************/
-  /*********************
-TRANSITION
-*********************/
-  /*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
-*/
-  /*********************
-CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdo it.
-*********************/
-  /* @include css-gradient(#dfdfdf,#f8f8f8); */
-  /*********************
-BOX SIZING
-*********************/
-  /* @include box-sizing(border-box); */
-  /* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? 
-
-HEY! if you use autoprefixer or another postprocessor, you may
-not need this at all. Just sayin! */
   font-family: Charter, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 1.5;
@@ -619,11 +468,11 @@ not need this at all. Just sayin! */
     body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
       text-decoration: none; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
-    font-size: 2.5em;
+    font-size: 1.66em;
     padding-top: 2em;
     line-height: 1.333em; }
   body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
-    font-size: 1.5em;
+    font-size: 1.33em;
     padding-top: 2em;
     line-height: 1.4em;
     margin-bottom: 0.375em; }
@@ -638,6 +487,11 @@ not need this at all. Just sayin! */
     line-height: 2.09em;
     text-transform: uppercase;
     letter-spacing: 2px; }
+  @media (min-width: 40rem) {
+    body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
+      font-size: 2.5em; }
+    body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
+      font-size: 1.5em; } }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
     color: #B7732B;
     /* on hover */
@@ -670,7 +524,16 @@ not need this at all. Just sayin! */
     overflow: hidden;
     background: #e5f2f3; }
     body#tinymce.wp-editor figure.alignfull {
-      border-radius: 0; }
+      border-radius: 0;
+      max-width: none;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem; }
+    body#tinymce.wp-editor figure.wp-block-embed {
+      text-align: center;
+      padding: 1.5rem; }
+    body#tinymce.wp-editor figure iframe {
+      border-radius: .75rem;
+      box-shadow: 0 0 0px 8px #d4eaec; }
   body#tinymce.wp-editor figcaption {
     margin: .75em; }
   body#tinymce.wp-editor table {
@@ -702,7 +565,23 @@ not need this at all. Just sayin! */
   body#tinymce.wp-editor blockquote {
     padding: 1rem;
     border-radius: 1rem;
-    background: rgba(183, 115, 43, 0.3); }
+    background: rgba(183, 115, 43, 0.3);
+    quotes: '\201c' '\201d'; }
+    body#tinymce.wp-editor blockquote > :first-child:before {
+      content: open-quote;
+      display: inline-block;
+      position: relative;
+      top: -.25em;
+      width: 0.5em;
+      height: .75em;
+      margin: -1.75em -.25em 0 -1em;
+      padding: 0 .375em;
+      color: #fff;
+      background: #B7732B;
+      font-size: 3em;
+      text-align: center;
+      border-radius: .25em;
+      mix-blend-mode: multiply; }
   body#tinymce.wp-editor blockquote, body#tinymce.wp-editor b, body#tinymce.wp-editor strong, body#tinymce.wp-editor figure {
     font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body#tinymce.wp-editor figcaption, body#tinymce.wp-editor .wp-block-image figcaption {
