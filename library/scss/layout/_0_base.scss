@@ -157,6 +157,19 @@ HEADER STYLES
   max-width: 12rem;
 }
 
+.site-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: .25rem .25rem .5rem;
+  font-size: .875em;
+  font-family: $serif;
+  color: $pw_pale_teal;
+  background: $pw_dark_teal;
+  text-align: center;
+}
+  
 a.button {
   @extend .smallcaps;
   color: $gray_dark;
