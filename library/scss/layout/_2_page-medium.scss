@@ -9,11 +9,10 @@ assume that we're getting fairly complex with our design about now.
 
 ******************************************************************/
 
-$bleed-width: $page_l + 4rem;
+$callout-width: $page_l + ( 2 * $gutter_m );
 
-%bleed {
-  max-width: $bleed-width;
-  padding: 1.5rem 2rem;
+%callout {
+  padding: 1.5rem $gutter_m;
 }
 
 /*********************
@@ -50,7 +49,7 @@ LAYOUT & GRID STYLES
 .featured {
       
   & + .page-title {
-    max-width: $bleed-width;
+    max-width: $callout-width;
   }
 }
 
@@ -65,7 +64,7 @@ LAYOUT & GRID STYLES
   }
   
   & > .nav {
-    max-width: $bleed-width;
+    max-width: $callout-width;
 
     & > * {
       margin: 0 0 0 2em;
@@ -80,19 +79,20 @@ LAYOUT & GRID STYLES
   }
 
   & > .alignfull {
-    @extend %bleed;
+    @extend %callout;
   }
 }
 
 .bleed {
-  @extend %bleed;
+  @extend %callout;
 }
 
 .entry-content {
   
   & > blockquote,
   & > table {
-    @extend %bleed;
+    max-width: $callout-width;
+    @extend %callout;
   }
 }
 
