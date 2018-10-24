@@ -23,6 +23,10 @@
   @import "../layout/_4_page-xlarge";
 }
 
+@media( min-width: $page_xxl ) {
+  @import "../layout/_5_page-xxlarge";
+}
+
 body.debug:before {
 	content: 'no mq';
 	position: fixed;
