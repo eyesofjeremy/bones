@@ -49,6 +49,8 @@
 				<div id="inner-header" class="wrap cf">
 
 					<p id="logo" itemscope itemtype="http://schema.org/Organization"><?php bones_custom_logo(); ?></p>
+					
+					<p id="description" class="site-description"><?php bloginfo('description'); ?></p>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
