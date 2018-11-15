@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 
 Stylesheet: IE Stylesheet
@@ -145,12 +146,18 @@ body {
   line-height: 1.4;
   letter-spacing: .02em;
   color: #684425; }
+  @media (min-width: 60rem) {
+    body {
+      line-height: 1.66; } }
 
-p, figure, blockquote, pre {
-  margin: 0 0 2em; }
+p, pre {
+  margin: 0 0 2rem; }
+
+figure, blockquote, .has-background {
+  margin: 1rem 0 3rem;
+  border-radius: 1rem; }
 
 figure {
-  border-radius: 1em;
   overflow: hidden;
   background: #e5f2f3; }
   figure.alignfull {
@@ -198,8 +205,8 @@ th, tr:first-child td {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 blockquote {
-  padding: 1rem;
-  border-radius: 1rem;
+  position: relative;
+  padding: 1rem 1rem .5rem;
   background: rgba(183, 115, 43, 0.3);
   quotes: '\201c' '\201d'; }
   blockquote > :first-child:before {
@@ -214,9 +221,35 @@ blockquote {
     color: #fff;
     background: #B7732B;
     font-size: 3em;
+    line-height: 1.375;
     text-align: center;
     border-radius: .25em;
     mix-blend-mode: multiply; }
+  blockquote cite {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    bottom: -.5rem;
+    color: #fff;
+    padding: .25em 1em .25em .75em; }
+    blockquote cite:before {
+      content: '— '; }
+    blockquote cite:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: #A6D3D7;
+      border-radius: .75em;
+      mix-blend-mode: multiply; }
+
+cite {
+  font-weight: bold;
+  font-style: normal; }
 
 blockquote, b, strong, figure {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }

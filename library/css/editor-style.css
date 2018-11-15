@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 
 Stylesheet: TinyMCE Editor
@@ -517,10 +518,15 @@ GENERAL STYLES
     line-height: 1.4;
     letter-spacing: .02em;
     color: #684425; }
-  body#tinymce.wp-editor p, body#tinymce.wp-editor figure, body#tinymce.wp-editor blockquote, body#tinymce.wp-editor pre {
-    margin: 0 0 2em; }
+    @media (min-width: 60rem) {
+      body#tinymce.wp-editor body {
+        line-height: 1.66; } }
+  body#tinymce.wp-editor p, body#tinymce.wp-editor pre {
+    margin: 0 0 2rem; }
+  body#tinymce.wp-editor figure, body#tinymce.wp-editor blockquote, body#tinymce.wp-editor .has-background {
+    margin: 1rem 0 3rem;
+    border-radius: 1rem; }
   body#tinymce.wp-editor figure {
-    border-radius: 1em;
     overflow: hidden;
     background: #e5f2f3; }
     body#tinymce.wp-editor figure.alignfull {
@@ -563,8 +569,8 @@ GENERAL STYLES
     font-weight: bold;
     font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body#tinymce.wp-editor blockquote {
-    padding: 1rem;
-    border-radius: 1rem;
+    position: relative;
+    padding: 1rem 1rem .5rem;
     background: rgba(183, 115, 43, 0.3);
     quotes: '\201c' '\201d'; }
     body#tinymce.wp-editor blockquote > :first-child:before {
@@ -579,9 +585,34 @@ GENERAL STYLES
       color: #fff;
       background: #B7732B;
       font-size: 3em;
+      line-height: 1.375;
       text-align: center;
       border-radius: .25em;
       mix-blend-mode: multiply; }
+    body#tinymce.wp-editor blockquote cite {
+      display: block;
+      position: absolute;
+      right: 2rem;
+      bottom: -.5rem;
+      color: #fff;
+      padding: .25em 1em .25em .75em; }
+      body#tinymce.wp-editor blockquote cite:before {
+        content: '— '; }
+      body#tinymce.wp-editor blockquote cite:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: #A6D3D7;
+        border-radius: .75em;
+        mix-blend-mode: multiply; }
+  body#tinymce.wp-editor cite {
+    font-weight: bold;
+    font-style: normal; }
   body#tinymce.wp-editor blockquote, body#tinymce.wp-editor b, body#tinymce.wp-editor strong, body#tinymce.wp-editor figure {
     font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body#tinymce.wp-editor figcaption, body#tinymce.wp-editor .wp-block-image figcaption {

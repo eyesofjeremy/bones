@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! Made with Bones: http://themble.com/bones :) */
 /******************************************************************
 
@@ -559,12 +560,18 @@ body {
   line-height: 1.4;
   letter-spacing: .02em;
   color: #684425; }
+  @media (min-width: 60rem) {
+    body {
+      line-height: 1.66; } }
 
-p, figure, blockquote, pre {
-  margin: 0 0 2em; }
+p, pre {
+  margin: 0 0 2rem; }
+
+figure, blockquote, .has-background {
+  margin: 1rem 0 3rem;
+  border-radius: 1rem; }
 
 figure {
-  border-radius: 1em;
   overflow: hidden;
   background: #e5f2f3; }
   figure.alignfull {
@@ -612,8 +619,8 @@ th, tr:first-child td {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 blockquote {
-  padding: 1rem;
-  border-radius: 1rem;
+  position: relative;
+  padding: 1rem 1rem .5rem;
   background: rgba(183, 115, 43, 0.3);
   quotes: '\201c' '\201d'; }
   blockquote > :first-child:before {
@@ -628,9 +635,35 @@ blockquote {
     color: #fff;
     background: #B7732B;
     font-size: 3em;
+    line-height: 1.375;
     text-align: center;
     border-radius: .25em;
     mix-blend-mode: multiply; }
+  blockquote cite {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    bottom: -.5rem;
+    color: #fff;
+    padding: .25em 1em .25em .75em; }
+    blockquote cite:before {
+      content: '— '; }
+    blockquote cite:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: #A6D3D7;
+      border-radius: .75em;
+      mix-blend-mode: multiply; }
+
+cite {
+  font-weight: bold;
+  font-style: normal; }
 
 blockquote, b, strong, figure {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -1307,7 +1340,7 @@ POSTS & CONTENT STYLES
 
 .lead {
   font-family: "Proxima Soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #0f838e; }
+  color: #177d86; }
 
 /* Callout class for special emphasis */
 .callout {
@@ -1621,7 +1654,7 @@ FOOTER STYLES
   border-top: 0.75em solid #95b7ba;
   border-bottom: 2em solid #344d4f;
   background-color: #5C898D;
-  color: #eaedf2;
+  color: #c2e1e4;
   text-align: center;
   font-size: .875em; }
   .footer h4 {
@@ -1749,6 +1782,8 @@ POSTS & CONTENT STYLES
         display: block; }
     .entry-content .aligncenter {
       max-width: 80%; }
+    .entry-content .alignwide, .entry-content .alignfull {
+      clear: both; }
   /* end .entry-content */
   /*********************
 FOOTER STYLES
@@ -1776,6 +1811,9 @@ point.
       padding: 0; }
   .header .toggles .menu-item-has-children > a {
     width: auto; }
+  #logo {
+    margin-top: 0;
+    max-width: 15rem; }
   .site-description {
     font-size: 1em;
     padding: .25em 1em .5em;
@@ -1813,7 +1851,8 @@ assume that we're getting fairly complex with our design about now.
 
 ******************************************************************/
   .columnar .entry-content > .alignfull, .bleed, .entry-content > blockquote,
-  .entry-content > table {
+  .entry-content > table,
+  .entry-content > .has-background {
     padding: 1.5rem 2rem; }
   /*********************
 GENERAL STYLES
@@ -1851,7 +1890,8 @@ LAYOUT & GRID STYLES
   .columnar .entry-content > .alignwide {
     max-width: none; }
   .entry-content > blockquote,
-  .entry-content > table {
+  .entry-content > table,
+  .entry-content > .has-background {
     max-width: 64rem; }
   /*********************
 HEADER STYLES
@@ -2054,6 +2094,9 @@ POSTS & CONTENT STYLES
   .callout {
     font-size: 1.3125em;
     line-height: 1.3125; }
+  figure, blockquote {
+    margin-top: 4rem;
+    margin-bottom: 4rem; }
   /*********************
 HOME STYLES
 *********************/
