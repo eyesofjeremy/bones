@@ -1108,7 +1108,7 @@ FOOTER STYLES
 	border-top: .75em solid lighten( $footer_background, 20% );
 	border-bottom: 2em solid darken( $footer_background, 20% );
 	background-color: $footer_background;
-	color: $gray;
+	color: lighten( $pw_pale_teal, 8% );
 	text-align: center;
 	font-size: .875em;
 	

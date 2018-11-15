@@ -305,7 +305,8 @@ th, tr:first-child td {
 }
 
 blockquote {
-  padding: 1rem;
+  position: relative;
+  padding: 1rem 1rem .5rem;
   border-radius: 1rem;
   background: rgba( $accent_strong, .3 );
   quotes: '\201c' '\201d';
@@ -322,10 +323,43 @@ blockquote {
     color: $white;
     background: $pw_sienna;
     font-size: 3em;
+    line-height: 1.375;
     text-align: center;
     border-radius: .25em;
     mix-blend-mode: multiply;
   }
+  
+  cite {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    bottom: -.5rem;
+    color: $white;
+    padding: .25em 1em .25em .75em; // left padding smaller b/c of dash
+  
+    &:before {
+      content: '— ';
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: $pw_pale_teal;
+      border-radius: .75em;
+      mix-blend-mode: multiply;
+    }
+  }
+}
+
+cite {
+  font-weight: bold;
+  font-style: normal;
 }
 
 blockquote, b, strong, figure {
