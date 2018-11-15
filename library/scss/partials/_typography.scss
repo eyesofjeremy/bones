@@ -228,6 +228,10 @@ body {
 	line-height: 1.4;
 	letter-spacing: .02em;
 	color: $text_color;
+
+	@media( min-width: $page_l ) {
+	  line-height: 1.66;
+	}
 }
 
 
