@@ -1,4 +1,4 @@
-				<div id="sidebar1" class="sidebar bleed cf" role="complementary">
+				<div id="sidebar1" class="sidebar cf" role="complementary">
 
 					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 
