@@ -14,6 +14,9 @@ require_once( 'library/bones.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
+// ADD COLOR PALETTE!
+require_once( 'library/color-palette.php' );
+
 // LOAD WALKER CLASS
 require_once( 'library/classes/toggle_walker_menu.php' );
 
@@ -50,7 +53,7 @@ function bones_ahoy() {
   add_filter( 'gallery_style', 'bones_gallery_style' );
 
   // enqueue base scripts and styles
-  add_action( 'wp_enqueue_scripts', 'bones_scripts_and_styles', 999 );
+  add_action( 'wp_enqueue_scripts', 'bones_scripts_and_styles', 888 );
   // ie conditional wrapper
 
   // launching this stuff after theme setup

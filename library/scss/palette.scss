@@ -1,0 +1,30 @@
+// ==================================================================
+// Stylesheet: Gutenberg Palette
+
+// Set colors to show up in the Gutenberg color palette here.
+// These colors get added to your theme stylesheet, and also parsed
+// so you can choose them!
+
+// Labels must be unique, CSS-friendly, i.e., no spaces,
+// and avoid keywords color or background
+
+// If you want to enable the custom color picker in Gutenberg,
+// comment out the appropriate line in library/color-palette.php
+// ------------------------------------------------------------------
+
+// Sass variables
+@import "partials/variables";
+
+// This mixin does all the magic
+@mixin palette( $label, $thecolor ) {
+  .has-#{$label}-color            { color:            $thecolor }
+  .has-#{$label}-background-color { background-color: $thecolor }
+}
+
+@include palette( 'black',          $black );
+@include palette( 'white',          $white );
+@include palette( 'gray',           $gray );
+@include palette( 'text_accent',    $text_accent );
+@include palette( 'light_accent',   $accent_light );
+@include palette( 'soft_accent',    $accent_soft );
+@include palette( 'deep_accent',    $accent_deep );

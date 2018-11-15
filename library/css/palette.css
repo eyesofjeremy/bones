@@ -1,0 +1,41 @@
+.has-black-color {
+  color: #323944; }
+
+.has-black-background-color {
+  background-color: #323944; }
+
+.has-white-color {
+  color: #fff; }
+
+.has-white-background-color {
+  background-color: #fff; }
+
+.has-gray-color {
+  color: #eaedf2; }
+
+.has-gray-background-color {
+  background-color: #eaedf2; }
+
+.has-text_accent-color {
+  color: #177d86; }
+
+.has-text_accent-background-color {
+  background-color: #177d86; }
+
+.has-light_accent-color {
+  color: #e5f2f3; }
+
+.has-light_accent-background-color {
+  background-color: #e5f2f3; }
+
+.has-soft_accent-color {
+  color: #A6D3D7; }
+
+.has-soft_accent-background-color {
+  background-color: #A6D3D7; }
+
+.has-deep_accent-color {
+  color: #5C898D; }
+
+.has-deep_accent-background-color {
+  background-color: #5C898D; }

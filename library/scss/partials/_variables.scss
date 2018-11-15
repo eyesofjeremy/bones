@@ -6,6 +6,7 @@
 // contains variables that way our files don’t get all messy.
 // No one likes a mess.
 
+// Set colors for your Gutenberg Palette in palette.scss
 // ------------------------------------------------------------------
 
 // ==================
@@ -13,6 +14,12 @@
 // Need help w/ choosing your colors? Try this site out:
 // http://0to255.com/
 // ------------------
+
+$black:             #323944;
+$white:             #fff;
+$gray_light:        #f8f9fa;
+$gray:              #eaedf2;
+$gray_med:          #777;
 
 // brand colors
 $pw_dark_brown:     #463628; // PMS 476
@@ -31,12 +38,6 @@ $alert_red:         #fbe3e4;
 $alert_green:       #e6efc2;
 $alert_blue:        #d5edf8;
 
-$black:             #323944;
-$white:             #fff;
-
-$gray_light:        #f8f9fa;
-$gray:              #eaedf2;
-$gray_med:          #777;
 $text_color:        lighten( saturate( $pw_dark_brown, 20% ), 6% );
 $heading_color:     $pw_sienna;
 $meta_color:        #9fa6b4;
