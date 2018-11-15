@@ -91,7 +91,8 @@ LAYOUT & GRID STYLES
 .entry-content {
   
   & > blockquote,
-  & > table {
+  & > table,
+  & > .has-background {
     max-width: $callout-width;
     @extend %callout;
   }
@@ -363,6 +364,12 @@ POSTS & CONTENT STYLES
     font-size: 1.3125em;
     line-height: 1.3125;
   }  
+
+
+  figure, blockquote {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
 
 
 /*********************

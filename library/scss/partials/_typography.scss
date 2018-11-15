@@ -235,12 +235,16 @@ body {
 }
 
 
-p, figure, blockquote, pre {
-  margin: 0 0 2em;
+p, pre {
+  margin: 0 0 2rem;
+}
+
+figure, blockquote, .has-background {
+  margin: 1rem 0 3rem;
+  border-radius: 1rem;
 }
 
 figure {
-  border-radius: 1em;
   overflow: hidden;
   background: $menu_background;
   
@@ -307,7 +311,6 @@ th, tr:first-child td {
 blockquote {
   position: relative;
   padding: 1rem 1rem .5rem;
-  border-radius: 1rem;
   background: rgba( $accent_strong, .3 );
   quotes: '\201c' '\201d';
 
