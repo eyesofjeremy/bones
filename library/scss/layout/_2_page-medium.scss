@@ -92,7 +92,9 @@ LAYOUT & GRID STYLES
   
   & > blockquote,
   & > table,
-  & > .has-background {
+  & > .has-background,
+  .wp-block-quote.is-large,
+  .wp-block-quote.is-style-large {
     max-width: $callout-width;
     @extend %callout;
   }
