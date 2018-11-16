@@ -2,9 +2,11 @@
 
 								<header class="article-header">
 								
+								  <?php if( has_post_thumbnail() ): ?>
 								  <figure class="featured">
 								  <?php the_post_thumbnail('featured-xxl', ['class' => 'featured-image', 'title' => 'Feature image']); ?>
-                  </figure>
+								  </figure>
+								  <?php endif; ?>
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 

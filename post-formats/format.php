@@ -18,9 +18,11 @@
 
                 <header class="article-header entry-header">
 
+								  <?php if( has_post_thumbnail() ): ?>
 								  <figure class="featured">
 								  <?php the_post_thumbnail('featured-xxl', ['class' => 'featured-image', 'title' => 'Feature image']); ?>
-                  </figure>
+								  </figure>
+								  <?php endif; ?>
 
                  <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 
