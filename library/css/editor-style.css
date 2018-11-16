@@ -522,10 +522,17 @@ GENERAL STYLES
       body#tinymce.wp-editor body {
         line-height: 1.66; } }
   body#tinymce.wp-editor p, body#tinymce.wp-editor pre {
-    margin: 0 0 2rem; }
-  body#tinymce.wp-editor figure, body#tinymce.wp-editor blockquote, body#tinymce.wp-editor .has-background {
-    margin: 1rem 0 3rem;
+    margin: 0 auto 2rem; }
+  body#tinymce.wp-editor figure,
+  body#tinymce.wp-editor blockquote,
+  body#tinymce.wp-editor .has-background,
+  body#tinymce.wp-editor .wp-block-quote.is-large,
+  body#tinymce.wp-editor .wp-block-quote.is-style-large {
+    margin: 1rem auto 3rem;
     border-radius: 1rem; }
+  body#tinymce.wp-editor .wp-block-quote.is-large p,
+  body#tinymce.wp-editor .wp-block-quote.is-style-large p {
+    font-style: normal; }
   body#tinymce.wp-editor figure {
     overflow: hidden;
     background: #e5f2f3; }
@@ -550,7 +557,7 @@ GENERAL STYLES
     border-collapse: initial;
     margin-bottom: 2em; }
     body#tinymce.wp-editor table caption {
-      margin: 0 0 7px;
+      margin: 0 auto 7px;
       font-size: 0.75em;
       color: #9fa6b4;
       text-transform: uppercase;
@@ -572,7 +579,8 @@ GENERAL STYLES
     position: relative;
     padding: 1rem 1rem .5rem;
     background: rgba(183, 115, 43, 0.3);
-    quotes: '\201c' '\201d'; }
+    quotes: '\201c' '\201d';
+    z-index: -2; }
     body#tinymce.wp-editor blockquote > :first-child:before {
       content: open-quote;
       display: inline-block;
@@ -610,6 +618,14 @@ GENERAL STYLES
         background: #A6D3D7;
         border-radius: .75em;
         mix-blend-mode: multiply; }
+    body#tinymce.wp-editor blockquote.reverse {
+      color: #fff;
+      background: #B7732B; }
+      body#tinymce.wp-editor blockquote.reverse > :first-child:before {
+        color: #463628;
+        background: #e5f2f3; }
+      body#tinymce.wp-editor blockquote.reverse cite:after {
+        background: #A6D3D7; }
   body#tinymce.wp-editor cite {
     font-weight: bold;
     font-style: normal; }

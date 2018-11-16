@@ -151,11 +151,19 @@ body {
       line-height: 1.66; } }
 
 p, pre {
-  margin: 0 0 2rem; }
+  margin: 0 auto 2rem; }
 
-figure, blockquote, .has-background {
-  margin: 1rem 0 3rem;
+figure,
+blockquote,
+.has-background,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+  margin: 1rem auto 3rem;
   border-radius: 1rem; }
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+  font-style: normal; }
 
 figure {
   overflow: hidden;
@@ -183,7 +191,7 @@ table {
   border-collapse: initial;
   margin-bottom: 2em; }
   table caption {
-    margin: 0 0 7px;
+    margin: 0 auto 7px;
     font-size: 0.75em;
     color: #9fa6b4;
     text-transform: uppercase;
@@ -208,7 +216,8 @@ blockquote {
   position: relative;
   padding: 1rem 1rem .5rem;
   background: rgba(183, 115, 43, 0.3);
-  quotes: '\201c' '\201d'; }
+  quotes: '\201c' '\201d';
+  z-index: -2; }
   blockquote > :first-child:before {
     content: open-quote;
     display: inline-block;
@@ -246,6 +255,14 @@ blockquote {
       background: #A6D3D7;
       border-radius: .75em;
       mix-blend-mode: multiply; }
+  blockquote.reverse {
+    color: #fff;
+    background: #B7732B; }
+    blockquote.reverse > :first-child:before {
+      color: #463628;
+      background: #e5f2f3; }
+    blockquote.reverse cite:after {
+      background: #A6D3D7; }
 
 cite {
   font-weight: bold;

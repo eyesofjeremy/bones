@@ -565,11 +565,19 @@ body {
       line-height: 1.66; } }
 
 p, pre {
-  margin: 0 0 2rem; }
+  margin: 0 auto 2rem; }
 
-figure, blockquote, .has-background {
-  margin: 1rem 0 3rem;
+figure,
+blockquote,
+.has-background,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+  margin: 1rem auto 3rem;
   border-radius: 1rem; }
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+  font-style: normal; }
 
 figure {
   overflow: hidden;
@@ -597,7 +605,7 @@ table {
   border-collapse: initial;
   margin-bottom: 2em; }
   table caption {
-    margin: 0 0 7px;
+    margin: 0 auto 7px;
     font-size: 0.75em;
     color: #9fa6b4;
     text-transform: uppercase;
@@ -622,7 +630,8 @@ blockquote {
   position: relative;
   padding: 1rem 1rem .5rem;
   background: rgba(183, 115, 43, 0.3);
-  quotes: '\201c' '\201d'; }
+  quotes: '\201c' '\201d';
+  z-index: -2; }
   blockquote > :first-child:before {
     content: open-quote;
     display: inline-block;
@@ -660,6 +669,14 @@ blockquote {
       background: #A6D3D7;
       border-radius: .75em;
       mix-blend-mode: multiply; }
+  blockquote.reverse {
+    color: #fff;
+    background: #B7732B; }
+    blockquote.reverse > :first-child:before {
+      color: #463628;
+      background: #e5f2f3; }
+    blockquote.reverse cite:after {
+      background: #A6D3D7; }
 
 cite {
   font-weight: bold;
@@ -707,6 +724,48 @@ ol {
 ol,
 ul {
   padding-left: 1.5em; }
+
+.has-black-color {
+  color: #323944; }
+
+.has-black-background-color {
+  background-color: #323944; }
+
+.has-white-color {
+  color: #fff; }
+
+.has-white-background-color {
+  background-color: #fff; }
+
+.has-gray-color {
+  color: #eaedf2; }
+
+.has-gray-background-color {
+  background-color: #eaedf2; }
+
+.has-text_accent-color {
+  color: #177d86; }
+
+.has-text_accent-background-color {
+  background-color: #177d86; }
+
+.has-light_accent-color {
+  color: #e5f2f3; }
+
+.has-light_accent-background-color {
+  background-color: #e5f2f3; }
+
+.has-soft_accent-color {
+  color: #A6D3D7; }
+
+.has-soft_accent-background-color {
+  background-color: #A6D3D7; }
+
+.has-deep_accent-color {
+  color: #5C898D; }
+
+.has-deep_accent-background-color {
+  background-color: #5C898D; }
 
 .alert-help, .alert-info, .alert-error, .alert-success {
   margin: 10px;
@@ -1242,14 +1301,12 @@ POSTS & CONTENT STYLES
     margin: 0; }
 
 /* end .hentry */
-.has-post-thumbnail header {
-  margin-top: -1.5em; }
-  .has-post-thumbnail header .link_large {
-    display: block;
-    padding-bottom: 2em; }
+.has-post-thumbnail header .link_large {
+  display: block;
+  padding-bottom: 2em; }
 
 .featured {
-  margin: -1.5em auto 0;
+  margin: -3em auto 0;
   border-radius: 0; }
   .featured + h1 {
     color: white;
@@ -1852,7 +1909,9 @@ assume that we're getting fairly complex with our design about now.
 ******************************************************************/
   .columnar .entry-content > .alignfull, .bleed, .entry-content > blockquote,
   .entry-content > table,
-  .entry-content > .has-background {
+  .entry-content > .has-background,
+  .entry-content .wp-block-quote.is-large,
+  .entry-content .wp-block-quote.is-style-large {
     padding: 1.5rem 2rem; }
   /*********************
 GENERAL STYLES
@@ -1891,7 +1950,9 @@ LAYOUT & GRID STYLES
     max-width: none; }
   .entry-content > blockquote,
   .entry-content > table,
-  .entry-content > .has-background {
+  .entry-content > .has-background,
+  .entry-content .wp-block-quote.is-large,
+  .entry-content .wp-block-quote.is-style-large {
     max-width: 64rem; }
   /*********************
 HEADER STYLES
