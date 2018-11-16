@@ -325,6 +325,7 @@ blockquote {
   padding: 1rem 1rem .5rem;
   background: rgba( $accent_strong, .3 );
   quotes: '\201c' '\201d';
+  z-index: -2;
 
   & > :first-child:before {
     content: open-quote;
@@ -368,6 +369,22 @@ blockquote {
       background: $pw_pale_teal;
       border-radius: .75em;
       mix-blend-mode: multiply;
+    }
+  }
+  
+  &.reverse {
+    color: $white;
+    background: $accent_strong;
+    
+    & > :first-child:before {
+      color: $pw_dark_brown;
+      background: $accent_light;
+    }
+
+    cite {
+      &:after {
+        background: $accent_soft;
+      }
     }
   }
 }
