@@ -415,7 +415,6 @@ POSTS & CONTENT STYLES
 		.has-post-thumbnail {
 
 		  header {
-		    margin-top: -1.5em;
 			
 			  .link_large {
 			    display: block;
@@ -425,7 +424,7 @@ POSTS & CONTENT STYLES
 		}
 		
     .featured {
-      margin: -1.5em auto 0;
+      margin: -3em auto 0;
       border-radius: 0;
           
       & + h1 {
