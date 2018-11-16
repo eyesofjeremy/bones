@@ -236,11 +236,11 @@ body {
 
 
 p, pre {
-  margin: 0 0 2rem;
+  margin: 0 auto 2rem;
 }
 
 figure, blockquote, .has-background {
-  margin: 1rem 0 3rem;
+  margin: 1rem auto 3rem;
   border-radius: 1rem;
 }
 
@@ -279,7 +279,7 @@ table {
   margin-bottom: 2em;
 
   caption {
-    margin: 0 0 7px;
+    margin: 0 auto 7px;
     font-size: 0.75em;
     color: $meta_color;
     text-transform: uppercase;
