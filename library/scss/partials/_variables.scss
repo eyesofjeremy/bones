@@ -49,6 +49,7 @@ $accent_soft:       $pw_pale_teal;
 $accent_deep:       $pw_dark_teal;
 $accent_strong:     $pw_sienna;
 $text_accent:       darken( saturate( $pw_dark_teal, 50% ), 15% );
+$accent_light:      lighten( $accent_soft, 18% );
 
 $link_color:        $pw_sienna;
 $link_hover:        $pw_dark_brown;
@@ -61,7 +62,7 @@ $disabled_color:    #cfcfcf;
 $body_background:   $white;
 $header_background: $accent_soft;
 $footer_background: $accent_deep;
-$menu_background:   lighten( $accent_soft, 18% );
+$menu_background:   $accent_light;
 
 // ==================
 // Here’s a great tutorial on how to
